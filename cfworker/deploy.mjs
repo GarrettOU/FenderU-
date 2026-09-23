@@ -75,8 +75,9 @@ const metadata = {
   bindings,
   keep_assets: true,
   // Send page requests through the Worker so it can add the checkout wiring.
-  // run_worker_first is the current name; serve_directly:false the older one.
-  assets: { config: { run_worker_first: true, serve_directly: false } }
+  // With keep_assets, run_worker_first was accepted but not applied;
+  // serve_directly:false is the older switch for the same behavior.
+  assets: { config: { serve_directly: false } }
 };
 
 const form = new FormData();
