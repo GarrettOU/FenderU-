@@ -2,29 +2,42 @@ name: Deploy fenderu Worker
 
 on:
   push:
-    branches: [main]
+    branches: [main, claude/bold-edison-3ylos0]
     paths: ["cfworker/**", ".github/workflows/deploy-worker.yml"]
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
     steps:
+      - name: Check for Cloudflare token
+        id: token
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "CLOUDFLARE_API_TOKEN secret not added yet; nothing deployed."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@v4
+        if: steps.token.outputs.ready == 'true'
       - uses: actions/setup-node@v4
+        if: steps.token.outputs.ready == 'true'
         with:
           node-version: 22
-      - run: node cfworker/build.mjs
-      - run: node cfworker/deploy.mjs
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+      - if: steps.token.outputs.ready == 'true'
+        run: node cfworker/build.mjs && node cfworker/deploy.mjs
       - name: Verify live site
+        if: steps.token.outputs.ready == 'true'
         run: |
           sleep 15
           html=$(curl -fsSL "https://fenderu.com/?v=$GITHUB_SHA")
           echo "$html" | grep -q "__fuWired" || { echo "checkout wiring missing on live page"; exit 1; }
           echo "$html" | grep -q '\$119' || { echo "\$119 price missing"; exit 1; }
+          if echo "$html" | grep -q 'id="how"'; then echo "How to Order section still showing"; exit 1; fi
           curl -fsS -o /dev/null -w "img %{http_code}\n" https://fenderu.com/og-image.jpg
           echo "live site OK"
