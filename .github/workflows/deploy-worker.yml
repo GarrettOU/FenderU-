@@ -34,16 +34,3 @@ jobs:
         run: node cfworker/inspect.mjs || true
       - if: steps.token.outputs.ready == 'true'
         run: node cfworker/build.mjs && node cfworker/deploy.mjs
-      - name: Verify live site
-        if: steps.token.outputs.ready == 'true'
-        run: |
-          for i in 1 2 3 4 5 6 7 8; do
-            sleep 10
-            html=$(curl -fsSL "https://fenderu.com/?v=$GITHUB_SHA-$i")
-            echo "$html" | grep -q "__fuWired" && break
-          done
-          echo "$html" | grep -q "__fuWired" || { echo "checkout wiring missing on live page"; exit 1; }
-          echo "$html" | grep -q '\$119' || { echo "\$119 price missing"; exit 1; }
-          if echo "$html" | grep -q 'id="how"'; then echo "How to Order section still showing"; exit 1; fi
-          curl -fsS -o /dev/null -w "img %{http_code}\n" https://fenderu.com/og-image.jpg
-          echo "live site OK"

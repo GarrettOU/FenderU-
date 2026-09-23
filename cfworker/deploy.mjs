@@ -1,6 +1,12 @@
-// Uploads dist/worker.js as the `fenderu` Worker. Keeps the static assets
-// already on Cloudflare (keep_assets) and the D1 orders binding, so only the
-// Worker code changes. Needs CLOUDFLARE_API_TOKEN (Workers Scripts: Edit).
+// Uploads dist/worker.js twice:
+//  - `fenderu`: the existing Worker. Keeps its static assets (keep_assets),
+//    which Cloudflare serves directly, so it acts as the asset server.
+//  - `fenderu-front`: same code, no assets. Its ASSETS binding is a service
+//    binding to `fenderu`, so every page passes through this code and gets the
+//    checkout wiring. It is checked on its workers.dev address. Moving
+//    fenderu.com onto it is a separate, owner-approved step.
+// The site's files are never re-uploaded.
+// Needs CLOUDFLARE_API_TOKEN (Workers Scripts: Edit).
 // With STRIPE_SECRET_KEY set, also turns on card checkout: checks the key is
 // the FenderU Stripe account and (re)creates the paid-order webhook.
 import { readFileSync } from "node:fs";
@@ -26,10 +32,8 @@ if (!account) {
   account = accounts[0].id;
 }
 
-const bindings = [
-  { type: "assets", name: "ASSETS" },
-  { type: "d1", name: "DB", id: D1_ID }
-];
+const FRONT = "fenderu-front";
+const shared = [{ type: "d1", name: "DB", id: D1_ID }];
 
 const STRIPE_KEY = process.env.STRIPE_SECRET_KEY;
 const FENDERU_STRIPE_ACCOUNT = "acct_1TbxBGQ7zed58VML";
@@ -62,33 +66,56 @@ if (STRIPE_KEY) {
     description: "fenderu.com paid orders"
   });
   newWebhookId = hook.id;
-  bindings.push({ type: "secret_text", name: "STRIPE_SECRET_KEY", text: STRIPE_KEY });
-  bindings.push({ type: "secret_text", name: "STRIPE_WEBHOOK_SECRET", text: hook.secret });
+  shared.push({ type: "secret_text", name: "STRIPE_SECRET_KEY", text: STRIPE_KEY });
+  shared.push({ type: "secret_text", name: "STRIPE_WEBHOOK_SECRET", text: hook.secret });
   console.log("card checkout: on (Stripe", acct.id + ")");
 } else {
   console.log("card checkout: STRIPE_SECRET_KEY not set, card orders go through PayPal");
 }
 
-const metadata = {
-  main_module: "worker.js",
-  compatibility_date: "2025-01-01",
-  bindings,
-  keep_assets: true,
-  // Send page requests through the Worker so it can add the checkout wiring.
-  // With keep_assets, run_worker_first was accepted but not applied;
-  // serve_directly:false is the older switch for the same behavior.
-  assets: { config: { serve_directly: false } }
-};
+const code = readFileSync(new URL("dist/worker.js", import.meta.url));
+async function upload(name, extra) {
+  const form = new FormData();
+  form.append("metadata", new Blob([JSON.stringify({
+    main_module: "worker.js", compatibility_date: "2025-01-01", ...extra
+  })], { type: "application/json" }));
+  form.append("worker.js", new Blob([code], { type: "application/javascript+module" }), "worker.js");
+  const r = await cf(`/accounts/${account}/workers/scripts/${name}`, { method: "PUT", body: form });
+  console.log("uploaded", name, r.etag || "");
+}
 
-const form = new FormData();
-form.append("metadata", new Blob([JSON.stringify(metadata)], { type: "application/json" }));
-form.append("worker.js", new Blob([readFileSync(new URL("dist/worker.js", import.meta.url))], { type: "application/javascript+module" }), "worker.js");
-
-let result;
 try {
-  result = await cf(`/accounts/${account}/workers/scripts/${SCRIPT}`, { method: "PUT", body: form });
+  await upload(SCRIPT, { bindings: [{ type: "assets", name: "ASSETS" }, ...shared], keep_assets: true });
+  await upload(FRONT, {
+    bindings: [{ type: "service", name: "ASSETS", service: SCRIPT, environment: "production" }, ...shared]
+  });
 } catch (e) {
   if (newWebhookId) await stripeApi("DELETE", `/v1/webhook_endpoints/${newWebhookId}`).catch(() => {});
   throw e;
 }
-console.log("deployed", SCRIPT, result.id || "", result.etag || "");
+
+// Check fenderu-front on its own workers.dev address.
+const sub = (await cf(`/accounts/${account}/workers/subdomain`)).subdomain;
+if (!sub) throw new Error("account has no workers.dev subdomain");
+await cf(`/accounts/${account}/workers/scripts/${FRONT}/subdomain`, {
+  method: "POST", headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ enabled: true, previews_enabled: false })
+});
+const preview = `https://${FRONT}.${sub}.workers.dev`;
+let ok = false, why = "";
+for (let i = 0; i < 12 && !ok; i++) {
+  await new Promise((r) => setTimeout(r, 10000));
+  try {
+    const page = await fetch(`${preview}/?check=${Date.now()}`);
+    const html = await page.text();
+    const img = await fetch(`${preview}/og-image.jpg`);
+    const vid = await fetch(`${preview}/media/fb/reel-4-made-for-american-boats.mp4`, { method: "HEAD" });
+    why = `page ${page.status}, wiring ${html.includes("__fuWired")}, price ${html.includes("$119")}, ` +
+      `how-to-order ${html.includes('id="how"')}, image ${img.status}, video ${vid.status}`;
+    ok = page.ok && html.includes("__fuWired") && html.includes("$119") && !html.includes('id="how"') && img.ok && vid.ok;
+  } catch (e) { why = String(e); }
+  console.log("front check:", why);
+}
+console.log(`FRONT_URL=${preview}`);
+if (!ok) throw new Error(`fenderu-front failed its check (${why})`);
+console.log("fenderu-front passed; fenderu.com not changed");
