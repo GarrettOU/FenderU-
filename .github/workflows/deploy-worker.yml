@@ -29,6 +29,9 @@ jobs:
         if: steps.token.outputs.ready == 'true'
         with:
           node-version: 22
+      - name: Inspect Cloudflare setup (read-only)
+        if: steps.token.outputs.ready == 'true'
+        run: node cfworker/inspect.mjs || true
       - if: steps.token.outputs.ready == 'true'
         run: node cfworker/build.mjs && node cfworker/deploy.mjs
       - name: Verify live site
