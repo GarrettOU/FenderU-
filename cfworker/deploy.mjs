@@ -1,6 +1,8 @@
 // Uploads dist/worker.js as the `fenderu` Worker. Keeps the static assets
 // already on Cloudflare (keep_assets) and the D1 orders binding, so only the
 // Worker code changes. Needs CLOUDFLARE_API_TOKEN (Workers Scripts: Edit).
+// With STRIPE_SECRET_KEY set, also turns on card checkout: checks the key is
+// the FenderU Stripe account and (re)creates the paid-order webhook.
 import { readFileSync } from "node:fs";
 
 const TOKEN = process.env.CLOUDFLARE_API_TOKEN;
@@ -24,13 +26,53 @@ if (!account) {
   account = accounts[0].id;
 }
 
+const bindings = [
+  { type: "assets", name: "ASSETS" },
+  { type: "d1", name: "DB", id: D1_ID }
+];
+
+const STRIPE_KEY = process.env.STRIPE_SECRET_KEY;
+const FENDERU_STRIPE_ACCOUNT = "acct_1TbxBGQ7zed58VML";
+const WEBHOOK_URL = "https://fenderu.com/api/stripe-webhook";
+let newWebhookId = null;
+
+async function stripeApi(method, path, params) {
+  const r = await fetch("https://api.stripe.com" + path, {
+    method,
+    headers: { Authorization: `Bearer ${STRIPE_KEY}`, "Content-Type": "application/x-www-form-urlencoded" },
+    body: params ? new URLSearchParams(params).toString() : undefined
+  });
+  const j = await r.json();
+  if (!r.ok) throw new Error(`Stripe ${path}: ${j?.error?.message || r.status}`);
+  return j;
+}
+
+if (STRIPE_KEY) {
+  const acct = await stripeApi("GET", "/v1/account");
+  if (acct.id !== FENDERU_STRIPE_ACCOUNT) throw new Error(`Stripe key is for ${acct.id}, not the FenderU account`);
+  if (!acct.charges_enabled) throw new Error("FenderU Stripe account cannot take charges yet");
+  const hooks = await stripeApi("GET", "/v1/webhook_endpoints?limit=100");
+  for (const h of hooks.data.filter((h) => h.url === WEBHOOK_URL)) {
+    await stripeApi("DELETE", `/v1/webhook_endpoints/${h.id}`);
+  }
+  const hook = await stripeApi("POST", "/v1/webhook_endpoints", {
+    url: WEBHOOK_URL,
+    "enabled_events[0]": "checkout.session.completed",
+    "enabled_events[1]": "checkout.session.async_payment_succeeded",
+    description: "fenderu.com paid orders"
+  });
+  newWebhookId = hook.id;
+  bindings.push({ type: "secret_text", name: "STRIPE_SECRET_KEY", text: STRIPE_KEY });
+  bindings.push({ type: "secret_text", name: "STRIPE_WEBHOOK_SECRET", text: hook.secret });
+  console.log("card checkout: on (Stripe", acct.id + ")");
+} else {
+  console.log("card checkout: STRIPE_SECRET_KEY not set, card orders go through PayPal");
+}
+
 const metadata = {
   main_module: "worker.js",
   compatibility_date: "2025-01-01",
-  bindings: [
-    { type: "assets", name: "ASSETS" },
-    { type: "d1", name: "DB", id: D1_ID }
-  ],
+  bindings,
   keep_assets: true,
   // Send page requests through the Worker so it can add the checkout wiring.
   assets: { config: { run_worker_first: true } }
@@ -40,5 +82,11 @@ const form = new FormData();
 form.append("metadata", new Blob([JSON.stringify(metadata)], { type: "application/json" }));
 form.append("worker.js", new Blob([readFileSync(new URL("dist/worker.js", import.meta.url))], { type: "application/javascript+module" }), "worker.js");
 
-const result = await cf(`/accounts/${account}/workers/scripts/${SCRIPT}`, { method: "PUT", body: form });
+let result;
+try {
+  result = await cf(`/accounts/${account}/workers/scripts/${SCRIPT}`, { method: "PUT", body: form });
+} catch (e) {
+  if (newWebhookId) await stripeApi("DELETE", `/v1/webhook_endpoints/${newWebhookId}`).catch(() => {});
+  throw e;
+}
 console.log("deployed", SCRIPT, result.id || "", result.etag || "");

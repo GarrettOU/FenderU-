@@ -52,6 +52,46 @@
     });
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
-  else wire();
+  /* Card payments through Stripe, when the Worker has a Stripe key.
+     Any failure falls back to the page's PayPal card checkout. */
+  function cardViaStripe(){
+    if (typeof validateCheckout === 'function' && !validateCheckout()) { if (typeof goStep === 'function') goStep(2); return; }
+    var btn = document.getElementById('placeOrderBtn');
+    var label = btn ? btn.innerHTML : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Opening secure checkout\u2026'; }
+    var v = function(id){ return typeof coVal === 'function' ? coVal(id) : ''; };
+    fetch('/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        qty: window.qty, carrier: window.carrier,
+        first: v('coFirst'), last: v('coLast'), email: v('coEmail'), phone: v('coPhone'),
+        addr1: v('coAddr1'), addr2: v('coAddr2'), city: v('coCity'), state: v('coState'), zip: v('coZip')
+      })
+    })
+      .then(function(r){ return r.json().then(function(j){ if (!r.ok || !j.url) throw new Error(j.error || r.status); return j; }); })
+      .then(function(j){
+        if (typeof fuTrack === 'function' && typeof orderTotal === 'function') fuTrack('AddPaymentInfo', { value: orderTotal(window.qty), currency: 'USD' });
+        window.location.href = j.url;
+      })
+      .catch(function(){
+        if (btn) { btn.disabled = false; btn.innerHTML = label; }
+        if (typeof checkoutPayPal === 'function') checkoutPayPal();
+      });
+  }
+
+  function setupCard(){
+    if (!window.FU_CARD_CHECKOUT || typeof window.placeOrder !== 'function') return;
+    var sub = document.querySelector('label[for="pmCard"] .pm-sub');
+    if (sub) sub.textContent = 'Processed securely by Stripe.';
+    var original = window.placeOrder;
+    window.placeOrder = function(){
+      if (window.payMethod === 'card') return cardViaStripe();
+      return original.apply(this, arguments);
+    };
+  }
+
+  function start(){ wire(); setupCard(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
 })();
