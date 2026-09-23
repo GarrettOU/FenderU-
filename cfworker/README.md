@@ -5,6 +5,8 @@ Serves fenderu.com and takes orders.
 - **Buttons.** The deployed `index.html` lost its `onclick`/`onchange`
   attributes. The Worker adds `wire-checkout.js` to each page, which binds the
   buttons to the checkout code already on the page. Copy and design unchanged.
+- **Removed sections.** The "Get Yours / How to Order" section (`section#how`)
+  and the footer "How It Works" link to it are stripped from the page.
 - **Card (Stripe).** With `STRIPE_SECRET_KEY` set, "Credit or Debit Card" opens
   a Stripe Checkout page. Price ($119 per 2-pack, free shipping) is set by the
   Worker. The order is saved only after Stripe reports it paid (webhook, and

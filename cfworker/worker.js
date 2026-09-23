@@ -48,6 +48,10 @@ export default {
           }
         }
       })
+      // Garrett asked for the "Get Yours / How to Order" section to go, and
+      // with it the footer link that only pointed there.
+      .on("section#how", { element(el) { el.remove(); } })
+      .on('a[href$="#how"]', { element(el) { el.remove(); } })
       .on("body", {
         element(el) {
           el.append(`<script>${flags}${WIRE_CHECKOUT}</script>`, { html: true });
