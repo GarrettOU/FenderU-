@@ -21,7 +21,8 @@ const auth = { Authorization: `Bearer ${TOKEN}` };
 
 async function cf(path, init = {}) {
   const r = await fetch(API + path, { ...init, headers: { ...auth, ...(init.headers || {}) } });
-  const j = await r.json();
+  const text = await r.text();
+  const j = text ? JSON.parse(text) : { success: r.ok, result: null, errors: [r.status] };
   if (!j.success) throw new Error(`${path}: ${JSON.stringify(j.errors)}`);
   return j.result;
 }
@@ -118,7 +119,13 @@ for (let i = 0; i < 12 && !ok; i++) {
   console.log("front check:", why);
 }
 console.log(`FRONT_URL=${preview}`);
-if (!ok) throw new Error(`fenderu-front failed its check (${why})`);
+if (!ok) {
+  const d = (await cf(`/accounts/${account}/workers/domains`)).find((x) => x.hostname === "fenderu.com");
+  if (!d) await cf(`/accounts/${account}/workers/domains`, { method: "PUT", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ hostname: "fenderu.com", service: SCRIPT, environment: "production",
+      zone_id: "c7fe0e0a04190f31b593c231f44272f9", override_existing_origin: true }) });
+  throw new Error(`fenderu-front failed its check (${why})`);
+}
 console.log("fenderu-front passed its check");
 
 // Point fenderu.com at fenderu-front, then check it live; revert on failure.
@@ -134,10 +141,9 @@ if (!current || current.service !== FRONT) {
   try {
     await attach(FRONT);
   } catch (e) {
-    console.log("direct switch refused:", e.message, "- detaching and re-attaching");
-    if (current) await cf(`/accounts/${account}/workers/domains/${current.id}`, { method: "DELETE" });
-    try { await attach(FRONT); }
-    catch (e2) { await attach(SCRIPT).catch(() => {}); throw e2; }
+    // Never leave fenderu.com unattached: fall back to the original Worker.
+    await attach(SCRIPT).catch((e2) => console.log("restore failed:", e2.message));
+    throw e;
   }
   console.log(`${HOSTNAME} pointed at ${FRONT}`);
 }
