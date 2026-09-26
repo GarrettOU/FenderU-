@@ -1,0 +1,32 @@
+name: Fetch site photos for marketing
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download photos from fenderu.com
+        run: |
+          mkdir -p marketing/src
+          for f in media/southern/g01-pair-portrait.jpg media/southern/g02-dock-square.jpg \
+                   media/southern/g03-wake-surf-portrait.jpg media/southern/g04-detail-portrait.jpg \
+                   media/southern/m02-marketplace-product.jpg media/southern/m03-page-american-boats.jpg \
+                   media/southern/m04-page-fit.jpg img/p02.webp img/p03.webp img/p04.webp img/p05.webp \
+                   img/p06.webp og-image.jpg; do
+            out="marketing/src/$(echo "$f" | tr '/' '_')"
+            curl -fsSL "https://fenderu.com/$f" -o "$out" && echo "ok $f" || echo "missing $f"
+          done
+          ls -la marketing/src
+      - name: Commit
+        run: |
+          git config user.name "Garrett French"
+          git config user.email "garrettfrench1979@gmail.com"
+          git add marketing/src
+          git commit -m "Add site photos for marketing reels" || echo "nothing new"
+          git push
