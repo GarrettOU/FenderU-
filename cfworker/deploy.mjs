@@ -3,8 +3,9 @@
 //    which Cloudflare serves directly, so it acts as the asset server.
 //  - `fenderu-front`: same code, no assets. Its ASSETS binding is a service
 //    binding to `fenderu`, so every page passes through this code and gets the
-//    checkout wiring. It is checked on its workers.dev address. Moving
-//    fenderu.com onto it is a separate, owner-approved step.
+//    checkout wiring. It is checked on its workers.dev address first; only
+//    then is fenderu.com pointed at it (Garrett approved this on 2026-09-26).
+//    If fenderu.com fails its live check afterwards, it goes back to fenderu.
 // The site's files are never re-uploaded.
 // Needs CLOUDFLARE_API_TOKEN (Workers Scripts: Edit).
 // With STRIPE_SECRET_KEY set, also turns on card checkout: checks the key is
@@ -118,4 +119,45 @@ for (let i = 0; i < 12 && !ok; i++) {
 }
 console.log(`FRONT_URL=${preview}`);
 if (!ok) throw new Error(`fenderu-front failed its check (${why})`);
-console.log("fenderu-front passed; fenderu.com not changed");
+console.log("fenderu-front passed its check");
+
+// Point fenderu.com at fenderu-front, then check it live; revert on failure.
+const HOSTNAME = "fenderu.com";
+const ZONE_ID = "c7fe0e0a04190f31b593c231f44272f9";
+const attach = (service) => cf(`/accounts/${account}/workers/domains`, {
+  method: "PUT", headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ hostname: HOSTNAME, service, environment: "production", zone_id: ZONE_ID })
+});
+const current = (await cf(`/accounts/${account}/workers/domains`)).find((d) => d.hostname === HOSTNAME);
+console.log(`${HOSTNAME} currently on ${current ? current.service : "nothing"}`);
+if (!current || current.service !== FRONT) {
+  try {
+    await attach(FRONT);
+  } catch (e) {
+    console.log("direct switch refused:", e.message, "- detaching and re-attaching");
+    if (current) await cf(`/accounts/${account}/workers/domains/${current.id}`, { method: "DELETE" });
+    try { await attach(FRONT); }
+    catch (e2) { await attach(SCRIPT).catch(() => {}); throw e2; }
+  }
+  console.log(`${HOSTNAME} pointed at ${FRONT}`);
+}
+
+let live = false;
+for (let i = 0; i < 12 && !live; i++) {
+  await new Promise((r) => setTimeout(r, 10000));
+  try {
+    const page = await fetch(`https://${HOSTNAME}/?check=${Date.now()}`);
+    const html = await page.text();
+    const img = await fetch(`https://${HOSTNAME}/og-image.jpg`);
+    why = `page ${page.status}, wiring ${html.includes("__fuWired")}, price ${html.includes("$119")}, ` +
+      `how-to-order ${html.includes('id="how"')}, image ${img.status}`;
+    live = page.ok && html.includes("__fuWired") && html.includes("$119") && !html.includes('id="how"') && img.ok;
+  } catch (e) { why = String(e); }
+  console.log("live check:", why);
+}
+if (!live) {
+  console.log(`${HOSTNAME} failed its live check; switching it back to ${SCRIPT}`);
+  await attach(SCRIPT);
+  throw new Error(`live check failed (${why}); ${HOSTNAME} restored to ${SCRIPT}`);
+}
+console.log(`LIVE: ${HOSTNAME} is serving the fixed site`);
