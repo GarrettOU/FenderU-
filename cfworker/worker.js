@@ -27,9 +27,12 @@ export default {
       ctx.waitUntil(confirmSession(env, sid, ctx).catch(() => {}));
     }
 
-    const res = await env.ASSETS.fetch(request);
-    const type = res.headers.get("Content-Type") || "";
-    if (!type.includes("text/html")) return res;
+    const raw = await env.ASSETS.fetch(request);
+    const type = raw.headers.get("Content-Type") || "";
+    if (!type.includes("text/html")) return raw;
+    const headers = new Headers(raw.headers);
+    headers.delete("content-length");
+    const res = new Response(scrubCopy(await raw.text()), { status: raw.status, statusText: raw.statusText, headers });
 
     // The deployed pages lost their onclick attributes; put the button wiring back.
     const flags = env.STRIPE_SECRET_KEY ? "window.FU_CARD_CHECKOUT=true;" : "";
@@ -60,6 +63,21 @@ export default {
       .transform(res);
   }
 };
+
+// Copy Garrett asked to remove everywhere: "edge to edge" and
+// "Made for American Boats". Specific sentences first so they still read
+// right, then a general sweep.
+function scrubCopy(html) {
+  const fixes = [
+    ["</strong> — printed edge to edge", "</strong>"],
+    ["Printed edge to edge, port and starboard both covered.", "Port and starboard both covered."],
+    ["Made for American Boats.<br>", ""]
+  ];
+  for (const [from, to] of fixes) html = html.split(from).join(to);
+  return html
+    .replace(/,?\s*(printed\s+)?edge[\s-]to[\s-]edge/gi, "")
+    .replace(/made for american boats\.?\s*/gi, "");
+}
 
 // Venmo / Cash App orders, posted by the page's own sendP2POrder().
 async function p2pOrder(request, env, ctx) {
