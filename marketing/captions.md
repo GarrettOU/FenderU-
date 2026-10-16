@@ -1,36 +1,43 @@
-# FenderU captions (vetted facts only)
+# FenderU captions (approved wording only)
 
-Every line below comes from the approved fact list: marine-grade neoprene,
-full-wrap flag and MAGA print, matched pair, fits 8.5" x 26" cylindrical
-fenders, slips on in seconds, $119 the pair with free shipping, USPS Priority
-with tracking, packed and shipped by the owner from Missouri, out the door in
-48 hours. No dates, no scarcity, no ratings. Never "edge to edge" or
-"Made for American boats" (Garrett, 2026-09-26).
+Use these exactly as written. Every line is copy Garrett has already approved;
+do not add or reword lines. Price is always $119 the pair with free shipping.
+Never say who packs an order, when it ships, or where it ships from. No dates,
+no scarcity, no ratings. The banned-phrase list lives in the posting routines
+and in `cfworker/worker.js` (`scrubCopy`).
 
-## Reel: "MAGA on the water" (Facebook Page)
+## Reel: "Make America Great Again" (Facebook Page)
 
-MAGA on the water.
+Make America Great Again — right down to the fenders.
 
-Full-wrap American flag and MAGA print on marine-grade neoprene. Fits standard 8.5" x 26" cylindrical fenders from Taylor Made, Bass Pro Shops, Dock Edge, Seachoice and Extreme Max. Slips on in seconds, no tools. Sold as a matched pair.
+Marine-grade neoprene, flag print. Sold as a 2-pack.
 
-$119 the pair, free shipping. Packed and shipped by the owner from Missouri, USPS Priority with tracking, out the door in 48 hours.
-
-Make America Great Again.
+$119 for the two-pack, shipping included.
 
 fenderu.com
 
-#MAGA #Trump #TrumpBoatParade #LakeLife #LakeOfTheOzarks #TableRockLake #BoatLife #PontoonLife #Patriot #AmericaFirst
+#maga #boatlife #lakelife #wakesurf #boating #americafirst #patriot
 
-## Photo post: boat parade
+## Photo post
 
-Heading out for the next Trump boat parade? Fly the flag on your fenders too.
+Show your patriotism.
 
-FenderU covers wrap your fenders in the American flag and MAGA print. Marine-grade neoprene, fits standard 8.5" x 26" cylindrical fenders, slips on in seconds with no tools. Sold as a matched pair.
+Marine-grade neoprene. UV protected, waterproof, salt-resistant. Fits standard 8.5" x 26" cylindrical fenders. Sold as a 2-pack.
 
-$119 the pair, free shipping. fenderu.com
+$119 the pair, shipping included.
 
-#TrumpBoatParade #MAGA #Trump #BoatParade #LakeLife #Patriot #AmericaFirst #BoatLife
+fenderu.com
+
+#boataccessories #boatlife #marina #neoprene #boatgear #boating #americafirst #patriot
 
 ## Group post (for patriotic lake and boat parade groups)
 
-Fellow boaters: I make MAGA fender covers. Full-wrap American flag and MAGA print on marine-grade neoprene, sold as a matched pair, fits standard 8.5" x 26" cylindrical fenders and slips on in seconds. $119 the pair with free shipping. I pack and ship every order myself from Missouri, USPS Priority with tracking. fenderu.com
+MAGA fender covers — marine-grade neoprene, sold as a 2-pack.
+
+Fits standard 8.5" x 26" cylindrical fenders. $119 the pair, shipping included.
+
+American-owned and operated.
+
+Questions welcome.
+
+fenderu.com

@@ -2,7 +2,7 @@
 
 Scenes are site photos with a slow push-in and a charcoal text band in the
 site's style (thin red/white/navy rule, letter-spaced uppercase). All copy is
-from the vetted fact list; the end card carries the current price.
+Garrett's approved wording only (see captions.md); the end card carries the current price.
 Usage: python3 marketing/make_reel.py <path-to-Oswald-dir>
 """
 import os, subprocess, sys
@@ -53,16 +53,16 @@ def endcard(name):
     rule(d, 72, top + 80)
     d.text((72, top + 110), "$119 THE PAIR", font=font("700Bold", 150), fill=WHITE)
     spaced(d, (76, top + 320), "FREE SHIPPING", font("500Medium", 52), WHITE, 10)
-    spaced(d, (76, top + 400), "USPS PRIORITY WITH TRACKING", font("400Regular", 34), MUTED, 5)
-    spaced(d, (76, top + 450), "PACKED AND SHIPPED FROM MISSOURI", font("400Regular", 34), MUTED, 5)
+    spaced(d, (76, top + 400), "USPS PRIORITY MAIL WITH TRACKING", font("400Regular", 34), MUTED, 5)
+    spaced(d, (76, top + 450), "SOLD AS A 2-PACK", font("400Regular", 34), MUTED, 5)
     t = "FENDERU.COM"
     f = font("600SemiBold", 56)
     spaced(d, (W - 72 - spaced_width(d, t, f, 10), H - 110), t, f, WHITE, 10)
     img.save(os.path.join(TMP, name))
 
 SCENES = [
-    ("media_southern_g03-wake-surf-portrait.jpg", "MAGA ON THE WATER", "Make America Great Again", 4.0),
-    ("media_southern_g01-pair-portrait.jpg", "FULL-WRAP FLAG\nAND MAGA PRINT", "Marine-grade neoprene. Matched pair.", 4.0),
+    ("media_southern_g03-wake-surf-portrait.jpg", "MAKE AMERICA\nGREAT AGAIN", "Show your patriotism.", 4.0),
+    ("media_southern_g01-pair-portrait.jpg", "MARINE-GRADE\nNEOPRENE", "UV protected. Waterproof. Salt-resistant.", 4.0),
     ("media_southern_g04-detail-portrait.jpg", 'FITS 8.5" x 26"\nFENDERS', "Slips on in seconds. No tools.", 4.0),
     ("img_p02.webp", None, None, 5.0),
 ]
@@ -97,14 +97,14 @@ def main():
               f"[bg][1:v]overlay=0:0,format=yuv420p,fade=t=in:st=0:d=0.3,fade=t=out:st={dur-0.3}:d=0.3[v]")
         subprocess.run([FF, "-v", "error", "-y", "-loop", "1", "-i", os.path.join(SRC, photo),
                         "-i", os.path.join(TMP, ov), "-filter_complex", vf, "-map", "[v]",
-                        "-t", str(dur), "-r", str(FPS), "-c:v", "libx264", "-pix_fmt", "yuv420p", seg], check=True)
+                        "-t", str(dur), "-r", str(FPS), "-c:v", "libx264", "-crf", "16", "-preset", "slow", "-pix_fmt", "yuv420p", seg], check=True)
         segs.append(seg)
     lst = os.path.join(TMP, "list.txt")
     open(lst, "w").write("".join(f"file '{s}'\n" for s in segs))
     out = os.path.join(OUT, "maga-on-the-water.mp4")
     subprocess.run([FF, "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst,
                     "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100", "-shortest",
-                    "-c:v", "libx264", "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", str(FPS),
+                    "-c:v", "libx264", "-crf", "17", "-preset", "slow", "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", str(FPS),
                     "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out], check=True)
     print(out)
 
