@@ -76,7 +76,8 @@ function scrubCopy(html) {
   for (const [from, to] of fixes) html = html.split(from).join(to);
   return html
     .replace(/,?\s*(printed\s+)?edge[\s-]to[\s-]edge/gi, "")
-    .replace(/made for american boats\.?\s*/gi, "");
+    .replace(/made for american boats\.?\s*/gi, "")
+    .replace(/([^.])\.\.(?=\s)/g, "$1.");
 }
 
 // Venmo / Cash App orders, posted by the page's own sendP2POrder().
