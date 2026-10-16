@@ -7,6 +7,21 @@ const PRODUCT_NAME = "FenderU MAGA Fender Cover 2-Pack";
 // Make scenario "FenderU - new order alert" emails each new order to Garrett.
 const ORDER_ALERT_URL = "https://hook.us2.make.com/vnrslz7r1mgscxh8ff28dx32gkghy33g";
 
+// Reels built in marketing/reels after the site's assets were frozen, served
+// from the repo at a pinned commit so Facebook gets a real video/mp4 URL.
+const REELS = {
+  "/media/fb/reel-d-make-america-great-again.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/9c0a5e0/marketing/reels/maga-on-the-water.mp4"
+};
+
+async function serveReel(request, src) {
+  const range = request.headers.get("Range");
+  const r = await fetch(src, { method: request.method === "HEAD" ? "HEAD" : "GET", headers: range ? { Range: range } : {} });
+  const headers = new Headers({ "Content-Type": "video/mp4", "Accept-Ranges": "bytes", "Cache-Control": "public, max-age=86400" });
+  for (const h of ["Content-Length", "Content-Range"]) if (r.headers.get(h)) headers.set(h, r.headers.get(h));
+  return new Response(r.body, { status: r.status, headers });
+}
+
 const json = (body, status = 200) => new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
 const clip = (v, n = 300) => typeof v === "string" ? v.trim().slice(0, n) : "";
 
@@ -19,6 +34,7 @@ export default {
     if (post && url.pathname === "/api/checkout") return cardCheckout(request, env, url);
     if (post && url.pathname === "/api/stripe-webhook") return stripeWebhook(request, env, ctx);
     if (post && url.pathname === "/api/paypal-ipn") return paypalIpn(request, env, ctx);
+    if (REELS[url.pathname]) return serveReel(request, REELS[url.pathname]);
 
     // Back from Stripe (/?thanks=1&sid=cs_...): save the paid order right away,
     // in case Stripe's webhook is slow or missed.
