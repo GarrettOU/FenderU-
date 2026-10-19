@@ -1,15 +1,16 @@
-// Uploads dist/worker.js twice:
-//  - `fenderu`: the existing Worker. Keeps its static assets (keep_assets),
-//    which Cloudflare serves directly, so it acts as the asset server.
-//  - `fenderu-front`: same code, no assets. Its ASSETS binding is a service
-//    binding to `fenderu`, so every page passes through this code and gets the
-//    checkout wiring. It is checked on its workers.dev address first; only
-//    then is fenderu.com pointed at it (Garrett approved this on 2026-09-26).
-//    If fenderu.com fails its live check afterwards, it goes back to fenderu.
-// The site's files are never re-uploaded.
+// Uploads dist/worker.js as `fenderu-front`, which serves fenderu.com. Its
+// ASSETS binding is a service binding to `fenderu`, the Worker that holds the
+// site's files (and its own small router for /returns, /privacy, /terms).
+// `fenderu` is never touched here: its code and files are left as they are.
+// fenderu-front is checked on its workers.dev address first; fenderu.com is
+// then (re)attached to it and checked live. If that fails it goes back to
+// `fenderu`, which serves the plain site.
+// Secrets already set on fenderu-front some other way are kept (keep_bindings).
 // Needs CLOUDFLARE_API_TOKEN (Workers Scripts: Edit).
 // With STRIPE_SECRET_KEY set, also turns on card checkout: checks the key is
 // the FenderU Stripe account and (re)creates the paid-order webhook.
+// With PAYPAL_CLIENT_ID and PAYPAL_SECRET set, also turns on Venmo: checks
+// the pair signs in to PayPal (live) before binding it.
 import { readFileSync } from "node:fs";
 
 const TOKEN = process.env.CLOUDFLARE_API_TOKEN;
@@ -65,6 +66,7 @@ if (STRIPE_KEY) {
     url: WEBHOOK_URL,
     "enabled_events[0]": "checkout.session.completed",
     "enabled_events[1]": "checkout.session.async_payment_succeeded",
+    "enabled_events[2]": "checkout.session.async_payment_failed",
     description: "fenderu.com paid orders"
   });
   newWebhookId = hook.id;
@@ -73,6 +75,22 @@ if (STRIPE_KEY) {
   console.log("card checkout: on (Stripe", acct.id + ")");
 } else {
   console.log("card checkout: STRIPE_SECRET_KEY not set, card orders go through PayPal");
+}
+
+const PP_ID = process.env.PAYPAL_CLIENT_ID, PP_SECRET = process.env.PAYPAL_SECRET;
+if (PP_ID && PP_SECRET) {
+  const r = await fetch("https://api-m.paypal.com/v1/oauth2/token", {
+    method: "POST",
+    headers: { Authorization: "Basic " + Buffer.from(`${PP_ID}:${PP_SECRET}`).toString("base64"),
+      "Content-Type": "application/x-www-form-urlencoded" },
+    body: "grant_type=client_credentials"
+  });
+  if (!r.ok) throw new Error(`PayPal keys did not sign in (live): ${r.status}`);
+  shared.push({ type: "plain_text", name: "PAYPAL_CLIENT_ID", text: PP_ID });
+  shared.push({ type: "secret_text", name: "PAYPAL_SECRET", text: PP_SECRET });
+  console.log("venmo: on (PayPal live keys)");
+} else {
+  console.log("venmo: PAYPAL_CLIENT_ID / PAYPAL_SECRET not set, Venmo not offered");
 }
 
 const code = readFileSync(new URL("dist/worker.js", import.meta.url));
@@ -87,9 +105,9 @@ async function upload(name, extra) {
 }
 
 try {
-  await upload(SCRIPT, { bindings: [{ type: "assets", name: "ASSETS" }, ...shared], keep_assets: true });
   await upload(FRONT, {
-    bindings: [{ type: "service", name: "ASSETS", service: SCRIPT, environment: "production" }, ...shared]
+    bindings: [{ type: "service", name: "ASSETS", service: SCRIPT, environment: "production" }, ...shared],
+    keep_bindings: ["secret_text", "secret_key"]
   });
 } catch (e) {
   if (newWebhookId) await stripeApi("DELETE", `/v1/webhook_endpoints/${newWebhookId}`).catch(() => {});
@@ -111,10 +129,10 @@ for (let i = 0; i < 12 && !ok; i++) {
     const page = await fetch(`${preview}/?check=${Date.now()}`);
     const html = await page.text();
     const img = await fetch(`${preview}/og-image.jpg`);
-    const vid = await fetch(`${preview}/media/fb/reel-4-made-for-american-boats.mp4`, { method: "HEAD" });
+    const terms = await fetch(`${preview}/terms`);
     why = `page ${page.status}, wiring ${html.includes("__fuWired")}, price ${html.includes("$119")}, ` +
-      `how-to-order ${html.includes('id="how"')}, image ${img.status}, video ${vid.status}`;
-    ok = page.ok && html.includes("__fuWired") && html.includes("$119") && !html.includes('id="how"') && img.ok && vid.ok;
+      `how-to-order ${html.includes('id="how"')}, image ${img.status}, terms ${terms.status}`;
+    ok = page.ok && html.includes("__fuWired") && html.includes("$119") && !html.includes('id="how"') && img.ok && terms.ok;
   } catch (e) { why = String(e); }
   console.log("front check:", why);
 }
