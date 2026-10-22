@@ -3,7 +3,9 @@
 Scenes are site photos with a slow push-in and a charcoal text band in the
 site's style (thin red/white/navy rule, letter-spaced uppercase). All copy is
 Garrett's approved wording only (see captions.md); the end card carries the current price.
-Usage: python3 marketing/make_reel.py <path-to-Oswald-dir>
+Usage: python3 marketing/make_reel.py <path-to-Oswald-dir> [studio]
+"studio" builds maga-studio.mp4 from the white-background photos
+(run make_studio.py first for the src/studio-*.jpg plates).
 """
 import os, subprocess, sys
 from PIL import Image, ImageDraw, ImageFont
@@ -67,6 +69,16 @@ SCENES = [
     ("img_p02.webp", None, None, 5.0),
 ]
 
+STUDIO_SCENES = [
+    ("media_southern_g03-wake-surf-portrait.jpg", "MAKE AMERICA\nGREAT AGAIN", "Show your patriotism.", 3.5),
+    ("studio-single.jpg", "MARINE-GRADE\nNEOPRENE", "UV protected. Waterproof. Salt-resistant.", 3.5),
+    ("studio-pair-2.jpg", 'FITS 8.5" x 26"\nFENDERS', "Slips on in seconds. No tools.", 3.5),
+    ("studio-pair.jpg", None, None, 5.0),
+]
+STUDIO = len(sys.argv) > 2 and sys.argv[2] == "studio"
+if STUDIO:
+    SCENES = STUDIO_SCENES
+
 def main():
     os.makedirs(TMP, exist_ok=True); os.makedirs(OUT, exist_ok=True)
     segs = []
@@ -90,7 +102,7 @@ def main():
         seg = os.path.join(TMP, f"seg{i}.mp4")
         # End card shows the whole product above the band instead of a close crop.
         fit = (f"crop=iw*0.76:ih:0:0,scale={W*2}:{(H-640)*2}:force_original_aspect_ratio=decrease,"
-               f"pad={W*2}:{H*2}:(ow-iw)/2:120:color=0x232526," if not title else
+               f"pad={W*2}:{H*2}:(ow-iw)/2:120:color=0x232526," if not title and not photo.startswith("studio") else
                f"scale={W*2}:{H*2}:force_original_aspect_ratio=increase,crop={W*2}:{H*2},")
         vf = (f"[0:v]{fit}"
               f"zoompan=z='1+0.06*on/{frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:s={W}x{H}:fps={FPS}[bg];"
@@ -101,7 +113,7 @@ def main():
         segs.append(seg)
     lst = os.path.join(TMP, "list.txt")
     open(lst, "w").write("".join(f"file '{s}'\n" for s in segs))
-    out = os.path.join(OUT, "maga-on-the-water.mp4")
+    out = os.path.join(OUT, "maga-studio.mp4" if STUDIO else "maga-on-the-water.mp4")
     subprocess.run([FF, "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst,
                     "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100", "-shortest",
                     "-c:v", "libx264", "-crf", "17", "-preset", "slow", "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", str(FPS),
