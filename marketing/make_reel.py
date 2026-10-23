@@ -55,7 +55,7 @@ def endcard(name):
     rule(d, 72, top + 80)
     d.text((72, top + 110), "$119 THE PAIR", font=font("700Bold", 150), fill=WHITE)
     spaced(d, (76, top + 320), "FREE SHIPPING", font("500Medium", 52), WHITE, 10)
-    spaced(d, (76, top + 400), "USPS PRIORITY MAIL WITH TRACKING", font("400Regular", 34), MUTED, 5)
+    spaced(d, (76, top + 400), "UPS WITH TRACKING", font("400Regular", 34), MUTED, 5)
     spaced(d, (76, top + 450), "SOLD AS A 2-PACK", font("400Regular", 34), MUTED, 5)
     t = "FENDERU.COM"
     f = font("600SemiBold", 56)
@@ -66,7 +66,7 @@ SCENES = [
     ("media_southern_g03-wake-surf-portrait.jpg", "MAKE AMERICA\nGREAT AGAIN", "Show your patriotism.", 4.0),
     ("media_southern_g01-pair-portrait.jpg", "MARINE-GRADE\nNEOPRENE", "UV protected. Waterproof. Salt-resistant.", 4.0),
     ("media_southern_g04-detail-portrait.jpg", 'FITS 8.5" x 26"\nFENDERS', "Slips on in seconds. No tools.", 4.0),
-    ("img_p02.webp", None, None, 5.0),
+    ("studio-pair.jpg", None, None, 5.0),
 ]
 
 STUDIO_SCENES = [
