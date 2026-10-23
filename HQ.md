@@ -62,9 +62,9 @@ Newest wins. Where these conflict with the `fenderu-standing-rules` skill, **the
 
 | Task | ID | Schedule (Central unless noted) | Last run |
 |---|---|---|---|
-| Gulf Coast rep, 6 emails | trig_01Cvaa3LDsiQKJxT46gFUqjz | M/W/F 9:08 | 23 Oct OK, 6 sent, links clean |
-| Florida rep, 6 emails | trig_01S31KvhutyKz9TGyNJvEV4N | M/W/F 9:41 | 23 Oct OK, 6 sent, links clean |
-| Desert SW & Texas rep, 6 emails | trig_01Mc7xPsa8Ks2LqFzfwZYErW | M/W/F 10:14 | 23 Oct still running at time of writing |
+| Gulf Coast rep, 6 emails | trig_01Cvaa3LDsiQKJxT46gFUqjz | **paused 23 Oct** (one rep a week) | 23 Oct OK, 6 sent, links clean |
+| Florida rep, 6 emails | trig_01S31KvhutyKz9TGyNJvEV4N | **Mondays 9:41 only** (from 23 Oct) | 23 Oct OK, 6 sent, links clean |
+| Desert SW & Texas rep, 6 emails | trig_01Mc7xPsa8Ks2LqFzfwZYErW | **paused 23 Oct** (one rep a week) | 23 Oct still running at time of writing |
 | Reply desk, drafts for approval | trig_01SrkuhBPr4DKmVHnsf9EHoX | daily 8:17 | 23 Oct: "No new replies" |
 | Order watch | trig_01PS4C8bxWMStfDhsiSharAw | 13:13 and 23:13 UTC | 23 Oct: no orders in 24h, lifetime 1 |
 | Daily Facebook photo (Make 6138535) | trig_018usLi3DXp1gHMwi6qZvBzH | daily 15:00 UTC | 23 Oct OK, posted m04-page-fit |
@@ -92,7 +92,9 @@ Two other tasks on the account are not FenderU and are left alone: "Lawn waterin
 4. **Two reps emailed personal Gmail addresses today** (Perdido Marine Supply and Hull and Hitch), which their own rules forbid. They also still describe each store and its location, which he said to stop on 21 Oct.
 5. **Older Pinterest pin descriptions may still say "USPS Priority Mail".** The Pinterest job can read titles only, not descriptions, so it can't audit them. All 110 earlier titles are clean.
 
-## 7. 30-day cash plan (proposed 23 Oct, awaiting Garrett's approval)
+## 7. 30-day cash plan (23 Oct)
+
+**Garrett's decisions, 23 Oct:** send the Holden Beach check-in (sent 17:38 UTC). One rep a week (Florida, Mondays; Gulf Coast and Desert SW paused, not deleted). Draft the follow-up email for his approval. **No ads.**
 
 The stock is already paid for, so every pair sold is cash. Nothing below goes out without his "send".
 
