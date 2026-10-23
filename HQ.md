@@ -91,3 +91,26 @@ Two other tasks on the account are not FenderU and are left alone: "Lawn waterin
 3. **Holden Beach has gone quiet for three days, and the fit question is the real blocker.** If her boats run smaller fenders, quantity won't come until there's an answer on size. Whether to follow up, and with what, is his call.
 4. **Two reps emailed personal Gmail addresses today** (Perdido Marine Supply and Hull and Hitch), which their own rules forbid. They also still describe each store and its location, which he said to stop on 21 Oct.
 5. **Older Pinterest pin descriptions may still say "USPS Priority Mail".** The Pinterest job can read titles only, not descriptions, so it can't audit them. All 110 earlier titles are clean.
+
+## 7. 30-day cash plan (proposed 23 Oct, awaiting Garrett's approval)
+
+The stock is already paid for, so every pair sold is cash. Nothing below goes out without his "send".
+
+**What each channel has produced so far**
+
+| Channel | Volume | Result |
+|---|---|---|
+| Cold email to marina stores | about 200 sent since mid-Sept | 1 warm lead (Holden Beach), 2 declines, 1 out-of-office, 0 sales |
+| Facebook Page, daily photo | daily since late Aug | 0 confirmed sales |
+| Pinterest | 115 pins since 15 Sept | 0 confirmed sales |
+| Grok "FenderU daily sales push" email | daily | lands in Trash unread, never used |
+| FenderU.com | | 1 order row, unverified |
+
+**What to cut**
+- Most of the new-prospect cold-email volume. At 54 new emails a week, the rate is about 1 warm reply per 200. Proposal: 1 rep run a week instead of 9, with the budget moved to following up shops already emailed.
+- The Grok daily push, which nobody reads. Only Garrett can turn it off; it is outside this setup.
+
+**Three moves, in order**
+1. Close Holden Beach. Send a short check-in asking whether the covers fit her smaller fenders, and how many she wants. The draft is in chat for approval.
+2. One follow-up to the shops already emailed who never answered, re-offering the one free sample pair. Wording would be built only from approved lines and shown first.
+3. A direct-to-buyer gift push before Christmas on the FenderU Page ("gift item" is Garrett's own framing). Organic posting has produced nothing, so this means a small paid boost of the best-performing Page post to boaters in the open-water regions. Budget is his call. Before any money is spent, check the live checkout end to end at phone width, without placing an order.
