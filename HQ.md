@@ -56,6 +56,7 @@ Newest wins. Where these conflict with the `fenderu-standing-rules` skill, **the
 | 21 Oct | "Stop having them say what each marina does or where it is in the email. Get more creative." |
 | 21 Oct | **"Don't say 'the pair' anywhere. Don't sound so cheesy. Sound nice, but professional."** |
 | 21 Oct | "Four sets is not enough for a marina. Don't say a number if you're going to go that low." |
+| 24 Oct | Reply desk sends buyer replies itself from the approved facts. Prices, bulk terms (other than Holden Beach's) and anything the facts don't cover still go to Garrett first. |
 | standing | $119 with free shipping, the only price. FenderU Facebook Page only, never his personal profile. Write the site as `FenderU.com` in email. Only his own photos. |
 
 ## 4. On autopilot (scheduled tasks)
