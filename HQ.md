@@ -117,3 +117,8 @@ The stock is already paid for, so every pair sold is cash. Nothing below goes ou
 1. Close Holden Beach. Send a short check-in asking whether the covers fit her smaller fenders, and how many she wants. The draft is in chat for approval.
 2. One follow-up to the shops already emailed who never answered, re-offering the one free sample pair. Wording would be built only from approved lines and shown first.
 3. A direct-to-buyer gift push before Christmas on the FenderU Page ("gift item" is Garrett's own framing). Organic posting has produced nothing, so this means a small paid boost of the best-performing Page post to boaters in the open-water regions. Budget is his call. Before any money is spent, check the live checkout end to end at phone width, without placing an order.
+
+## 8. Content and marketplaces (24 Oct)
+
+- **Content set 3:** six graphics and three 9:16 reels built from Garrett's own photos, all in `marketing/graphics/set3` and `marketing/reels/set3` (generator: `marketing/make_set3.py`). The older square, portrait and pin graphics and both older reels were rebuilt so they no longer say "the pair". The daily Facebook post rotation now has 18 items, including the 6 new graphics. Pinterest now prefers the set-3 images. Both now use "$119 for the two-pack".
+- **Amazon and Etsy:** ready-to-paste listings and the image set are in `marketing/listings/`. They're waiting on Garrett's seller signups.

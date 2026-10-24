@@ -1,0 +1,84 @@
+<title>FenderU Content Set 3</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: one narrow column of finished pieces, reels first, each with the caption to post beside it. Single dark look on purpose, matching FenderU.com. */
+:root {
+  --bg: #17191b;
+  --panel: #202326;
+  --fg: #f2f2f0;
+  --muted: #a9adb3;
+  --red: #cc2200;
+  --navy: #1b2a4a;
+  --sky: #4664aa;
+  --line: #34383d;
+  --display: "Oswald", "Arial Narrow", Arial, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.5; }
+.wrap { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px; }
+.rule { display: flex; gap: 8px; margin-bottom: 14px; }
+.rule i { width: 38px; height: 4px; display: block; }
+.rule i:nth-child(1) { background: var(--red); } .rule i:nth-child(2) { background: var(--fg); } .rule i:nth-child(3) { background: var(--sky); }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 7vw, 44px); letter-spacing: .02em; text-transform: uppercase; line-height: 1.05; margin: 0 0 10px; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 60ch; margin: 0 0 8px; }
+h2 { font-family: var(--display); font-weight: 500; font-size: 15px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.reels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 560px) { .reels { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } }
+figure { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+video, figure img { width: 100%; max-width: 100%; display: block; background: #000; border-radius: 4px; }
+video { aspect-ratio: 9 / 16; }
+figcaption { font-family: var(--display); font-size: 14px; letter-spacing: .12em; text-transform: uppercase; }
+.note { color: var(--muted); font-size: 14px; margin: 0; }
+.cap { background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 12px 14px; font-size: 14px; white-space: pre-line; color: var(--fg); }
+.foot { margin-top: 44px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
+.foot strong { color: var(--fg); font-weight: 600; }
+</style>
+
+<div class="wrap">
+  <div class="rule"><i></i><i></i><i></i></div>
+  <h1>FenderU Content Set 3</h1>
+  <p class="lede">Three reels and six photo graphics made from your own photos: the white-background shots and your boat pictures. Every word on screen is copy you already approved. Price reads $119 with free shipping, and "the pair" appears nowhere.</p>
+
+  <h2>Reels · 9:16 · 13–14 sec · silent track for Facebook</h2>
+  <div class="reels">
+    <figure>
+      <video src="reels/r1-studio-lineup.mp4" controls muted playsinline loop preload="metadata" poster="graphics/g1-trio-square.jpg"></video>
+      <figcaption>Studio lineup</figcaption>
+      <p class="note">Three covers drop in on white, then "Make America Great Again", then the $119 end card.</p>
+    </figure>
+    <figure>
+      <video src="reels/r2-on-the-boat.mp4" controls muted playsinline loop preload="metadata" poster="graphics/g6-dock-portrait.jpg"></video>
+      <figcaption>On the boat</figcaption>
+      <p class="note">Your Malibu photos with a slow push-in, one approved line per shot.</p>
+    </figure>
+    <figure>
+      <video src="reels/r3-print-reveal.mp4" controls muted playsinline loop preload="metadata" poster="graphics/g5-fit-story.jpg"></video>
+      <figcaption>Print reveal</figcaption>
+      <p class="note">Starts tight on the flag print and pulls back to the full cover, then the 2-pack.</p>
+    </figure>
+  </div>
+
+  <h2>Photo graphics · Facebook Page and Pinterest</h2>
+  <div class="grid">
+    <figure><img src="graphics/g1-trio-square.jpg" alt="Three MAGA fender covers on navy under the line Make America Great Again"><figcaption>Trio · square</figcaption></figure>
+    <figure><img src="graphics/g2-light-hero-portrait.jpg" alt="One cover on a light background beside the words Show your patriotism"><figcaption>Show your patriotism · portrait</figcaption></figure>
+    <figure><img src="graphics/g3-dock-split-portrait.jpg" alt="Two covers on a wake boat above the words Sold as a 2-pack"><figcaption>Sold as a 2-pack · portrait</figcaption></figure>
+    <figure><img src="graphics/g4-detail-square.jpg" alt="Close-up of the flag print on a cover, Marine-grade neoprene"><figcaption>Marine-grade neoprene · square</figcaption></figure>
+    <figure><img src="graphics/g5-fit-story.jpg" alt="Two covers on navy with Fits standard 8.5 by 26 inch fenders"><figcaption>Fit · story 9:16</figcaption></figure>
+    <figure><img src="graphics/g6-dock-portrait.jpg" alt="Covers hanging off a wake boat with MAGA Fender Covers, American-owned and operated"><figcaption>MAGA fender covers · portrait</figcaption></figure>
+  </div>
+
+  <h2>Caption to post with them (your approved wording)</h2>
+  <div class="cap">Make America Great Again — right down to the fenders.
+
+Marine-grade neoprene, flag print. Sold as a 2-pack.
+
+$119 for the two-pack, shipping included.
+
+FenderU.com</div>
+
+  <p class="foot"><strong>Also fixed:</strong> your earlier square, portrait and Pinterest graphics and both earlier reels had "$119 THE PAIR" on screen. They're rebuilt under the same file names to read "$119 · FREE SHIPPING".</p>
+</div>
