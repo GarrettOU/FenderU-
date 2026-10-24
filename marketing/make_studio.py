@@ -91,7 +91,7 @@ def square(name, a, b):
     y += 26
     spaced(d, (x + 2, y), "SOLD AS A 2-PACK", font("400Regular", 28), MUTED, 5)
     y += 80
-    d.text((x, y), "$119 THE PAIR", font=font("700Bold", 60), fill=WHITE)
+    d.text((x, y), "$119", font=font("700Bold", 60), fill=WHITE)
     y += 92
     spaced(d, (x + 2, y), "FREE SHIPPING", font("500Medium", 30), WHITE, 7)
     spaced(d, (W - 60, H - 80), "FENDERU.COM", font("500Medium", 32), MUTED, 9, anchor_right=True)
@@ -108,7 +108,7 @@ def pin(name, a, b):
     rule(d, 70, top + 50)
     d.text((70, top + 75), "MAGA FENDER COVERS", font=font("700Bold", 76), fill=WHITE)
     spaced(d, (72, top + 185), "MARINE-GRADE NEOPRENE  ·  SOLD AS A 2-PACK", font("400Regular", 27), MUTED, 4)
-    spaced(d, (72, top + 240), "$119 THE PAIR  ·  FREE SHIPPING", font("500Medium", 34), WHITE, 5)
+    spaced(d, (72, top + 240), "$119  ·  FREE SHIPPING", font("500Medium", 34), WHITE, 5)
     spaced(d, (72, H - 75), "FENDERU.COM", font("500Medium", 30), MUTED, 9)
     c.save(os.path.join(OUT, name), quality=93)
 
@@ -123,7 +123,7 @@ def portrait(name, n):
     d.rectangle([0, top, W, H], fill=(30, 32, 34))
     rule(d, 72, top + 45)
     d.text((72, top + 68), "SHOW YOUR PATRIOTISM.", font=font("700Bold", 64), fill=WHITE)
-    spaced(d, (74, top + 170), "$119 THE PAIR  ·  FREE SHIPPING", font("500Medium", 30), MUTED, 5)
+    spaced(d, (74, top + 170), "$119  ·  FREE SHIPPING", font("500Medium", 30), MUTED, 5)
     spaced(d, (W - 72, top + 170), "FENDERU.COM", font("500Medium", 30), WHITE, 8, anchor_right=True)
     c.save(os.path.join(OUT, name), quality=93)
 

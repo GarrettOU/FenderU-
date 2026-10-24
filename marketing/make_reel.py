@@ -53,7 +53,7 @@ def endcard(name):
     top = H - 640
     d.rectangle([0, top, W, H], fill=CHAR + (245,))
     rule(d, 72, top + 80)
-    d.text((72, top + 110), "$119 THE PAIR", font=font("700Bold", 150), fill=WHITE)
+    d.text((72, top + 110), "$119", font=font("700Bold", 150), fill=WHITE)
     spaced(d, (76, top + 320), "FREE SHIPPING", font("500Medium", 52), WHITE, 10)
     spaced(d, (76, top + 400), "UPS WITH TRACKING", font("400Regular", 34), MUTED, 5)
     spaced(d, (76, top + 450), "SOLD AS A 2-PACK", font("400Regular", 34), MUTED, 5)
