@@ -128,3 +128,4 @@ The stock is already paid for, so every pair sold is cash. Nothing below goes ou
 | Date | Orders (lifetime / new) | Buyer replies | Holden Beach | Note |
 |---|---|---|---|---|
 | 24 Oct | 1 / 0 | 0 new | No reply. Followed up 23 and 24 Oct. | Follow-up to 34 shops still waiting on Garrett's send |
+| 25 Oct | 1 / 0 | 0 new | No reply (weekend) | Campaign set 4 awaiting Garrett's OK; Bloom has 0 credits |
