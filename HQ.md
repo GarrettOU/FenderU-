@@ -23,7 +23,7 @@ Single home base for FenderU. Last consolidated **23 Oct 2026** from the old ses
    - She has the free sample pair, delivered to the front desk 19 Oct. She said: "The material and print is nice."
    - **Fit question:** most boats there are under 26 ft and use the next size down fender. She was testing fit on those. Garrett told her it's the only size for now, and that a different size would need an order of a few hundred.
    - She asked for cost and retail. On **20 Oct** Garrett sent wholesale terms and asked how many pairs to start with. Those are the only approved wholesale terms, and they apply to her alone.
-   - **Ball is in her court**, with no reply since 20 Oct (confirmed by the reply desk this morning).
+   - **26 Oct, 7:39 Central, she answered:** "the fender covers do not work on the smaller fenders. Too bulky. Would you like to issue a call tag to pick them back up?" No quantity. The bulk deal is off unless Garrett decides otherwise (a smaller size needs a run of a few hundred, as he told her 19 Oct). The reply desk correctly left it for him; **nothing has been sent back to her.** His call: let her keep the sample for the counter and any 8.5 x 26 boats, or take it back.
    - A follow-up drafted on 21 Oct (a dozen sets, or a consignment option) was **never approved or sent**. Consignment is not an approved offer.
 2. **Today's 12 new cold emails** (Gulf Coast 6, Florida 6), plus the Southwest rep's run, which was still running at the time of writing. No replies yet.
 3. **Declined, do not recontact:** Bluewater Bay Marina (Niceville, 19 Oct) and Jacksonville Light Boat Parade (13 Oct).
@@ -132,3 +132,4 @@ The stock is already paid for, so every pair sold is cash. Nothing below goes ou
 |---|---|---|---|---|
 | 24 Oct | 1 / 0 | 0 new | No reply. Followed up 23 and 24 Oct. | Follow-up to 34 shops still waiting on Garrett's send |
 | 25 Oct | 1 / 0 | 0 new | No reply (weekend) | Campaign set 4 awaiting Garrett's OK; Bloom has 0 credits |
+| 26 Oct | 1 / 0 | 1 (Holden Beach) | **Covers don't fit her smaller fenders; asks about a call tag. Needs Garrett.** | Store checked live, checkout code ready, deploy and keys waiting on Garrett; AI boat image rejected |
