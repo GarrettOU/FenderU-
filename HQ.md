@@ -78,7 +78,7 @@ Two other tasks on the account are not FenderU and are left alone: "Lawn waterin
 
 ## 5. Blocked on Garrett's click (one line each)
 
-- **Store (checked live 26 Oct, desktop and phone):** cart, address and payment steps all work, no console errors, no layout overflow; card and PayPal both land on PayPal's hosted page with $119 and free shipping. Venmo isn't offered and Stripe is off because the keys below aren't set. Exact click-by-click steps are in `cfworker/README.md`, "What Garrett has to do".
+- **Store (deployed 26 Oct 18:16 UTC, commit 61b5fb7, re-checked live at desktop and phone width):** cart, address and payment steps all work, no console errors, no layout overflow; card and PayPal both land on PayPal's hosted page with $119 and free shipping. The checkout code is ready for PayPal's own buttons, but Venmo isn't offered and Stripe is off because the keys below aren't set. Exact click-by-click steps are in `cfworker/README.md`, "What Garrett has to do".
 - Stripe secret key (`STRIPE_SECRET_KEY` repo secret): turns on Stripe Checkout with cards, Apple Pay, Google Pay and Cash App Pay. Payout bank account and tax ID in Stripe too.
 - PayPal REST client ID and secret from a PayPal Business account (`PAYPAL_CLIENT_ID`, `PAYPAL_SECRET`): turns on Venmo, and moves PayPal and card payments onto PayPal's modern buttons. Optional `PAYPAL_MERCHANT_ID` takes his Gmail address out of the page source.
 - Delete the Gmail filter that sends info@fenderu.com mail, and the Make order alerts, to Trash. The order watch rescues them twice a day in the meantime.
