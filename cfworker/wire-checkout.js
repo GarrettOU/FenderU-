@@ -86,10 +86,12 @@
      above the button (credit card preselected, as most US buyers use it) and
      the button's label says where it goes next. */
   var method = 'card', venmoReady = false;
+  /* PayPal's own buttons, by method, once the PayPal SDK has drawn them. */
+  var sdkSlots = {};
   var NOTES = {
     card: window.FU_CARD_CHECKOUT
       ? 'Secure checkout by Stripe. We never see or store your card number.'
-      : 'Your card is processed on PayPal\u2019s secure page. No PayPal account needed. We never see or store your card number.',
+      : 'Your card is processed on PayPal\u2019s secure form. No PayPal account needed. We never see or store your card number.',
     paypal: 'You\u2019ll finish paying on PayPal\u2019s secure page.',
     venmo: 'Approve the payment in your Venmo app.'
   };
@@ -111,15 +113,16 @@
       l.querySelector('input').checked = on;
     });
     var btn = document.getElementById('placeOrderBtn');
-    var venmo = document.getElementById('fuVenmoBtn');
+    /* A method with its own PayPal-drawn button takes the Place Order spot. */
+    var slot = sdkSlots[m] || null;
     if (btn) {
       var total = document.getElementById('placeTotal');
       var t = total ? total.textContent : '';
       var lead = m === 'paypal' ? 'Continue to PayPal' : 'Continue to Payment';
       btn.innerHTML = lead + ' \u2014 <span id="placeTotal">' + t + '</span>';
-      btn.style.display = m === 'venmo' ? 'none' : '';
+      btn.style.display = slot ? 'none' : '';
     }
-    if (venmo) venmo.style.display = m === 'venmo' ? '' : 'none';
+    Object.keys(sdkSlots).forEach(function(k){ sdkSlots[k].style.display = sdkSlots[k] === slot ? '' : 'none'; });
     var note = document.querySelector('#coStep3 .co-secure');
     if (note) note.textContent = '\ud83d\udd12 ' + NOTES[m];
   }
@@ -138,50 +141,64 @@
     list.appendChild(option('paypal', 'PayPal', 'Pay with your PayPal account'));
     old.parentNode.replaceChild(list, old);
     choose('card');
-    if (window.FU_PAYPAL_CLIENT_ID) loadVenmo(list);
+    if (window.FU_PAYPAL_CLIENT_ID) loadPayPalButtons(list);
   }
 
-  /* Venmo goes through PayPal's own Venmo button, which only PayPal can draw.
-     It takes the Place Order button's spot when Venmo is chosen, so there is
-     still one button. The option only appears when PayPal says this buyer can
-     use Venmo. */
-  function loadVenmo(list){
+  /* With PayPal REST keys on the Worker, PayPal draws its own buttons: PayPal,
+     Venmo, and (when Stripe is off) its card form. Each takes the Place Order
+     button's spot when its method is chosen, so there is still one button.
+     Every payment is created and captured through /api/paypal/* and recorded
+     the moment it completes; nothing goes through the old PayPal Standard
+     link. Venmo is only offered when PayPal says this buyer can use it. */
+  function loadPayPalButtons(list){
     var s = document.createElement('script');
     s.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(window.FU_PAYPAL_CLIENT_ID) +
-      '&components=buttons&enable-funding=venmo&currency=USD&intent=capture';
+      '&components=buttons&enable-funding=venmo,card&disable-funding=paylater,credit&currency=USD&intent=capture';
     s.onload = function(){
       if (!window.paypal || !paypal.Buttons) return;
-      var orderId = null;
-      var button = paypal.Buttons({
-        fundingSource: paypal.FUNDING.VENMO,
-        style: { height: 48, shape: 'rect' },
-        onClick: function(data, actions){
-          if (typeof validateCheckout === 'function' && !validateCheckout()) { if (typeof goStep === 'function') goStep(2); return actions.reject(); }
-          track();
-          return actions.resolve();
-        },
-        createOrder: function(){
-          var b = shipping(); b.method = 'venmo';
-          return postJson('/api/paypal/order', b).then(function(j){ orderId = j.id; return j.id; });
-        },
-        onApprove: function(data){
-          return postJson('/api/paypal/capture', { id: data.orderID || orderId }).then(function(){
-            window.location.href = window.location.pathname + '?thanks=1&q=' + (window.qty || 1);
-          });
-        },
-        onError: function(){
-          var note = document.querySelector('#coStep3 .co-secure');
-          if (note) note.textContent = 'Venmo didn\u2019t go through. Nothing was charged. Please try again or choose another way to pay.';
-        }
-      });
-      if (!button.isEligible()) return;
-      var slot = document.createElement('div');
-      slot.id = 'fuVenmoBtn';
-      slot.style.cssText = 'flex:1;display:none';
       var btn = document.getElementById('placeOrderBtn');
       if (!btn) return;
-      btn.parentNode.insertBefore(slot, btn.nextSibling);
-      button.render(slot).then(function(){
+      var NAMES = { paypal: 'PayPal', venmo: 'Venmo', card: 'Your card' };
+
+      function draw(m, fundingSource, onReady){
+        var orderId = null;
+        var button = paypal.Buttons({
+          fundingSource: fundingSource,
+          style: { height: 48, shape: 'rect' },
+          onClick: function(data, actions){
+            if (typeof validateCheckout === 'function' && !validateCheckout()) { if (typeof goStep === 'function') goStep(2); return actions.reject(); }
+            track();
+            return actions.resolve();
+          },
+          createOrder: function(){
+            var b = shipping(); b.method = m;
+            return postJson('/api/paypal/order', b).then(function(j){ orderId = j.id; return j.id; });
+          },
+          onApprove: function(data){
+            return postJson('/api/paypal/capture', { id: data.orderID || orderId }).then(function(){
+              window.location.href = window.location.pathname + '?thanks=1&q=' + (window.qty || 1);
+            });
+          },
+          onError: function(){
+            var note = document.querySelector('#coStep3 .co-secure');
+            if (note) note.textContent = NAMES[m] + ' didn\u2019t go through. Nothing was charged. Please try again or choose another way to pay.';
+          }
+        });
+        if (!button.isEligible()) return;
+        var slot = document.createElement('div');
+        slot.id = 'fuPay_' + m;
+        slot.style.cssText = 'flex:1;display:none';
+        btn.parentNode.insertBefore(slot, btn.nextSibling);
+        button.render(slot).then(function(){
+          sdkSlots[m] = slot;
+          if (onReady) onReady();
+          choose(method);
+        });
+      }
+
+      draw('paypal', paypal.FUNDING.PAYPAL);
+      if (!window.FU_CARD_CHECKOUT) draw('card', paypal.FUNDING.CARD);
+      draw('venmo', paypal.FUNDING.VENMO, function(){
         venmoReady = true;
         list.appendChild(option('venmo', 'Venmo', 'Pay with the Venmo app'));
       });

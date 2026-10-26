@@ -92,6 +92,10 @@ if (PP_ID && PP_SECRET) {
 } else {
   console.log("venmo: PAYPAL_CLIENT_ID / PAYPAL_SECRET not set, Venmo not offered");
 }
+if (process.env.PAYPAL_MERCHANT_ID) {
+  shared.push({ type: "plain_text", name: "PAYPAL_MERCHANT_ID", text: process.env.PAYPAL_MERCHANT_ID.trim() });
+  console.log("paypal standard: merchant ID in place of the account email");
+}
 
 const code = readFileSync(new URL("dist/worker.js", import.meta.url));
 async function upload(name, extra) {

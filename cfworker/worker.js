@@ -62,7 +62,11 @@ export default {
     if (!type.includes("text/html")) return raw;
     const headers = new Headers(raw.headers);
     headers.delete("content-length");
-    const res = new Response(scrubCopy(await raw.text()), { status: raw.status, statusText: raw.statusText, headers });
+    let html = scrubCopy(await raw.text());
+    // PayPal Standard takes the merchant ID in place of the account email, so
+    // the page source doesn't carry Garrett's address.
+    if (env.PAYPAL_MERCHANT_ID) html = html.split("business=garrettfrench1979%40gmail.com").join("business=" + encodeURIComponent(env.PAYPAL_MERCHANT_ID));
+    const res = new Response(html, { status: raw.status, statusText: raw.statusText, headers });
 
     const flags = (env.STRIPE_SECRET_KEY ? "window.FU_CARD_CHECKOUT=true;" : "") +
       (env.PAYPAL_CLIENT_ID && env.PAYPAL_SECRET ? `window.FU_PAYPAL_CLIENT_ID=${JSON.stringify(env.PAYPAL_CLIENT_ID)};` : "");
@@ -82,7 +86,9 @@ function scrubCopy(html) {
   return html
     .replace(/,?\s*(printed\s+)?edge[\s-]to[\s-]edge/gi, "")
     .replace(/made for american boats\.?\s*/gi, "")
-    .replace(/([^.])\.\.(?=\s)/g, "$1.");
+    .replace(/([^.])\.\.(?=\s)/g, "$1.")
+    // Hidden Netlify order form left over from the old host; nothing posts to it.
+    .replace(/<form name="fenderu-order"[^>]*data-netlify[^>]*>[\s\S]*?<\/form>\s*/i, "");
 }
 
 async function serveReel(request, src) {
@@ -248,7 +254,8 @@ async function paypalIpn(request, env, ctx) {
     if ((await verify.text()).trim() !== "VERIFIED") return new Response("", { status: 200 });
     const f = new URLSearchParams(raw);
     const receiver = (f.get("receiver_email") || f.get("business") || "").toLowerCase();
-    if (f.get("payment_status") !== "Completed" || receiver !== PAYPAL_RECEIVER || f.get("mc_currency") !== "USD") {
+    const ours = receiver === PAYPAL_RECEIVER || (env.PAYPAL_MERCHANT_ID && f.get("receiver_id") === env.PAYPAL_MERCHANT_ID);
+    if (f.get("payment_status") !== "Completed" || !ours || f.get("mc_currency") !== "USD") {
       return new Response("", { status: 200 });
     }
     const txn = clip(f.get("txn_id"), 64);
@@ -316,7 +323,7 @@ async function paypalCreateOrder(request, env) {
           }
         }
       }],
-      application_context: { shipping_preference: "SET_PROVIDED_ADDRESS", brand_name: "FenderU" }
+      application_context: { shipping_preference: "SET_PROVIDED_ADDRESS", brand_name: "FenderU", user_action: "PAY_NOW" }
     });
     return json({ id: order.id });
   } catch (e) {
@@ -336,7 +343,7 @@ async function paypalCapture(request, env, ctx) {
     let meta = {};
     try { meta = JSON.parse(unit.custom_id || "{}"); } catch (e) {}
     const a = unit.shipping?.address || {};
-    const method = o.payment_source?.venmo ? "Venmo" : "PayPal";
+    const method = o.payment_source?.venmo ? "Venmo" : o.payment_source?.card ? "Card (PayPal)" : "PayPal";
     await saveOrder(env, ctx, {
       created_at: new Date().toISOString(),
       name: clip(meta.n) || clip(unit.shipping?.name?.full_name), email: clip(meta.e), phone: clip(meta.p),

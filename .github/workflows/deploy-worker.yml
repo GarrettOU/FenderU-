@@ -15,6 +15,7 @@ jobs:
       STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
       PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
       PAYPAL_SECRET: ${{ secrets.PAYPAL_SECRET }}
+      PAYPAL_MERCHANT_ID: ${{ secrets.PAYPAL_MERCHANT_ID }}
     steps:
       - name: Check for Cloudflare token
         id: token
