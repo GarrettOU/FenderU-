@@ -30,7 +30,8 @@ Single home base for FenderU. Last consolidated **23 Oct 2026** from the old ses
 4. **Older outreach still unanswered:** about 18 marinas emailed 19 Oct, 6 on 21 Oct, Captain's Locker 16 Oct, and Blue Water Supply and Patriot Depot on 22 Sept.
 5. **The single DB order (5 Oct) and the 21 Aug Stripe $114.** Garrett should confirm whether either was a real buyer who still needs a shipment.
 6. **Draft PR #1 "Commodore"** (CEO agent, 15 Oct). Garrett later said that agent is a separate business. The PR is still open and needs a close-or-keep call.
-7. **Two Facebook reels (posted 17 Oct and 23 Oct) say "USPS PRIORITY MAIL WITH TRACKING" on screen.** Corrected UPS versions are built. Deleting the old ones is waiting on Garrett's "delete the two USPS reels".
+7. **Channel-owner outreach (approved 26 Oct):** free pair to pro-MAGA Telegram/Rumble channel owners who'll post, capped at 5 until he says more. Blocked on his channel links or handles; the DM he sends is drafted in `marketing/outreach/channel-owner-dm.md`.
+8. **Two Facebook reels (posted 17 Oct and 23 Oct) say "USPS PRIORITY MAIL WITH TRACKING" on screen.** Corrected UPS versions are built. Deleting the old ones is waiting on Garrett's "delete the two USPS reels".
 
 ## 3. Garrett's standing decisions (dated)
 
@@ -57,6 +58,7 @@ Newest wins. Where these conflict with the `fenderu-standing-rules` skill, **the
 | 21 Oct | **"Don't say 'the pair' anywhere. Don't sound so cheesy. Sound nice, but professional."** |
 | 21 Oct | "Four sets is not enough for a marina. Don't say a number if you're going to go that low." |
 | 24 Oct | Reply desk sends buyer replies itself from the approved facts. Prices, bulk terms (other than Holden Beach's) and anything the facts don't cover still go to Garrett first. |
+| 26 Oct | **"Yes, give a free pair to channel owners."** One free pair to each owner of a pro-MAGA Telegram or Rumble channel (or a similar social channel) who agrees to post about FenderU. No payment, commission or discount code, and never a wholesale price. **Cap: 5 pairs total until Garrett raises it** (the main session's default, not his number). Garrett sends the DMs himself; nothing is posted or sent by a routine. Draft DM: `marketing/outreach/channel-owner-dm.md`. Waiting on his channel links or handles ("News Treason", "Joe Rambo" couldn't be found by search). |
 | 26 Oct | **"Do not change my MAGA fender cover ever. Just put it on new boats for me."** No AI model ever draws the cover. AI makes only the scene (boat, dock, water, plain fender); the cover is his real photo, placed by hand, and checked side by side against the original before it's shown. Method in `marketing/FENDER-RIGGING.md`. The navy, white and red AI boat images of 25–26 Oct are rejected and must not be posted. |
 | standing | $119 with free shipping, the only price. FenderU Facebook Page only, never his personal profile. Write the site as `FenderU.com` in email. Only his own photos. |
 
