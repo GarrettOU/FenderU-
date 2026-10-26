@@ -4,6 +4,17 @@ Checked 25 Oct 2026 against the pages and photos below. Each rule is tagged **[c
 
 The reference photos are for art direction only. They show what correct rigging looks like. Never composite FenderU covers onto them (standing rule: use only Garrett's own photos).
 
+## The cover itself is never redrawn (hard rule, 26 Oct 2026)
+
+Garrett: "Do not change my MAGA fender cover ever. Just put it on new boats for me." Image generators redraw the product every time, so the print drifts. Three AI-made boat images (navy, white and red hulls) were rejected for this on 25–26 Oct.
+
+1. An AI model may make only the **scene**: the boat, the dock and the water, with a plain white fender or a plain fender-shaped placeholder, hung per the rules below. The prompt never asks for the cover.
+2. The cover comes from Garrett's **real photo**: the cutouts in `marketing/src/cutout/` (from his white-background shots). If a new cutout is needed, it is cut from his photo with a background remover, never generated.
+3. The real pixels are placed on the scene's fender with `marketing/composite/place_cover.py`: resize, a slight warp if the angle needs it, brightness and colour matched to the scene's light, a soft contact shadow, a little water reflection. Nothing on the cover is redrawn, repainted, AI-upscaled or regenerated.
+4. Before anything is shown, the placed cover is put next to his original at the same size (`verify_print()` writes the sheet and a correlation score). The flag, the MAGA letters, the distress marks and the FenderU badge must match. If they don't, the image is not shown.
+
+Worked example: `marketing/composite/red-wake-boat.jpg` (scene `scenes/red-wake-boat-scene.jpg`, check sheet `red-wake-boat-print-check.jpg`).
+
 ## Every boat type
 
 - **Orientation:** vertical against a flat dock, a floating dock, a seawall or another boat. Horizontal against a single piling or post. [confirmed: BoatUS, Boating Mag hang, Discover Boating fenders]

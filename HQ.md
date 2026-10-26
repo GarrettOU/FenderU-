@@ -57,6 +57,7 @@ Newest wins. Where these conflict with the `fenderu-standing-rules` skill, **the
 | 21 Oct | **"Don't say 'the pair' anywhere. Don't sound so cheesy. Sound nice, but professional."** |
 | 21 Oct | "Four sets is not enough for a marina. Don't say a number if you're going to go that low." |
 | 24 Oct | Reply desk sends buyer replies itself from the approved facts. Prices, bulk terms (other than Holden Beach's) and anything the facts don't cover still go to Garrett first. |
+| 26 Oct | **"Do not change my MAGA fender cover ever. Just put it on new boats for me."** No AI model ever draws the cover. AI makes only the scene (boat, dock, water, plain fender); the cover is his real photo, placed by hand, and checked side by side against the original before it's shown. Method in `marketing/FENDER-RIGGING.md`. The navy, white and red AI boat images of 25–26 Oct are rejected and must not be posted. |
 | standing | $119 with free shipping, the only price. FenderU Facebook Page only, never his personal profile. Write the site as `FenderU.com` in email. Only his own photos. |
 
 ## 4. On autopilot (scheduled tasks)
@@ -122,6 +123,7 @@ The stock is already paid for, so every pair sold is cash. Nothing below goes ou
 
 - **Content set 3:** six graphics and three 9:16 reels built from Garrett's own photos, all in `marketing/graphics/set3` and `marketing/reels/set3` (generator: `marketing/make_set3.py`). The older square, portrait and pin graphics and both older reels were rebuilt so they no longer say "the pair". The daily Facebook post rotation now has 18 items, including the 6 new graphics. Pinterest now prefers the set-3 images. Both now use "$119 for the two-pack".
 - **Amazon and Etsy:** ready-to-paste listings and the image set are in `marketing/listings/`. They're waiting on Garrett's seller signups.
+- **Boat scenes with the real cover (26 Oct):** `marketing/composite/` holds the first one, a red wake boat with a white stripe at a floating dock, built with `place_cover.py` from an AI scene plus his real cutout. Its print check scored 0.997 against his photo. Awaiting his OK; not posted.
 
 ## 9. Daily tally
 
