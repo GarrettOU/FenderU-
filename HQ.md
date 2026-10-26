@@ -78,6 +78,7 @@ Two other tasks on the account are not FenderU and are left alone: "Lawn waterin
 
 ## 5. Blocked on Garrett's click (one line each)
 
+- **Link previews fixed (deployed 26 Oct 18:27 UTC, commit 37a8355):** the Facebook and Twitter share previews now read "$119 for the two-pack, free shipping."; the live page has zero "the pair" and zero Netlify leftovers; checkout re-verified at phone width. The paused Desert Southwest rep prompt got the same wording fix the same day (Garrett's OK).
 - **Store (deployed 26 Oct 18:16 UTC, commit 61b5fb7, re-checked live at desktop and phone width):** cart, address and payment steps all work, no console errors, no layout overflow; card and PayPal both land on PayPal's hosted page with $119 and free shipping. The checkout code is ready for PayPal's own buttons, but Venmo isn't offered and Stripe is off because the keys below aren't set. Exact click-by-click steps are in `cfworker/README.md`, "What Garrett has to do".
 - Stripe secret key (`STRIPE_SECRET_KEY` repo secret): turns on Stripe Checkout with cards, Apple Pay, Google Pay and Cash App Pay. Payout bank account and tax ID in Stripe too.
 - PayPal REST client ID and secret from a PayPal Business account (`PAYPAL_CLIENT_ID`, `PAYPAL_SECRET`): turns on Venmo, and moves PayPal and card payments onto PayPal's modern buttons. Optional `PAYPAL_MERCHANT_ID` takes his Gmail address out of the page source.
