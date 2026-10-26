@@ -123,7 +123,7 @@ The stock is already paid for, so every pair sold is cash. Nothing below goes ou
 
 - **Content set 3:** six graphics and three 9:16 reels built from Garrett's own photos, all in `marketing/graphics/set3` and `marketing/reels/set3` (generator: `marketing/make_set3.py`). The older square, portrait and pin graphics and both older reels were rebuilt so they no longer say "the pair". The daily Facebook post rotation now has 18 items, including the 6 new graphics. Pinterest now prefers the set-3 images. Both now use "$119 for the two-pack".
 - **Amazon and Etsy:** ready-to-paste listings and the image set are in `marketing/listings/`. They're waiting on Garrett's seller signups.
-- **Boat scenes with the real cover (26 Oct):** `marketing/composite/` holds the first one, a red wake boat with a white stripe at a floating dock, built with `place_cover.py` from an AI scene plus his real cutout. Its print check scored 0.997 against his photo. Awaiting his OK; not posted.
+- **Boat scenes with the real cover (26 Oct):** `marketing/composite/` holds the first one, a red wake boat with a white stripe at a floating dock, built with `place_cover.py` from an AI scene plus his real cutout. The print check passed (0.997), but **Garrett rejected it: "looks fake or AI, not good."** A polish pass didn't change that. AI boat scenes with the cover pasted on don't look real and shouldn't be shown again unless he asks. Real photos only is the recommendation (his own on-boat shots, plus customer photos).
 
 ## 9. Daily tally
 
