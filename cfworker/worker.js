@@ -88,7 +88,15 @@ function scrubCopy(html) {
     .replace(/made for american boats\.?\s*/gi, "")
     .replace(/([^.])\.\.(?=\s)/g, "$1.")
     // Hidden Netlify order form left over from the old host; nothing posts to it.
-    .replace(/<form name="fenderu-order"[^>]*data-netlify[^>]*>[\s\S]*?<\/form>\s*/i, "");
+    .replace(/<form name="fenderu-order"[^>]*data-netlify[^>]*>[\s\S]*?<\/form>\s*/i, "")
+    // Garrett banned "the pair" (21 Oct). The link-preview tags still had it.
+    .replace(/\$119 the pair with free shipping\./g, () => "$119 for the two-pack, free shipping.")
+    .replace(/\$119 the pair/g, () => "$119 for the two-pack")
+    // Dead code and notes from the old Netlify host. The live-rates block is
+    // replaced by inert stubs because other functions still reference them.
+    .replace(/<!--\s*FIX #8:[\s\S]*?-->\s*/, "")
+    .replace(/\/\* Where Venmo orders get recorded[\s\S]*?\*\/\s*/, "")
+    .replace(/\/\* ---- LIVE CARRIER RATES[\s\S]*?(?=var US_STATES=)/, () => "var LIVE_RATES=null;\nfunction scheduleLiveRates(){}\n");
 }
 
 async function serveReel(request, src) {
