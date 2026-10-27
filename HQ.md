@@ -13,7 +13,7 @@ Single home base for FenderU. Last consolidated **23 Oct 2026** from the old ses
 | Site | FenderU.com is live. `fenderu-front` worker owns `/api/*`, and `fenderu` serves the pages. Checkout is one Place Order button with card / PayPal / Venmo options (commit e548296, 19 Oct). Cards and PayPal both run through PayPal. **Stripe is built but dormant** because there's no key. |
 | Price | $119 with free shipping. It is the only public price. |
 | Sales | **No confirmed revenue.** On 21 Oct Garrett said "we've had no sales or revenue yet." The order DB holds **1 row** (5 Oct, $119, PayPal, a Leawood KS buyer). It is unverified whether that row was a real paid order or a friend/test. There was also a $114 Stripe payment on 21 Aug that nobody confirmed shipped. |
-| Hottest lead | Holden Beach Marina (see §2). Waiting on her quantity. |
+| Hottest lead | None open. Holden Beach closed 27 Oct (boats too small, owner won't do a couple-hundred run). Next: the fit-first reps and the home-lake target list (§9). |
 | Outreach | 3 regional reps send 6 cold emails each, M/W/F (18 a run). The reply desk drafts every buyer reply for Garrett's approval. |
 | Content | Daily Facebook Page photo, Pinterest 5 pins M/W/F (115 pins live after today), occasional reels. |
 
@@ -23,7 +23,7 @@ Single home base for FenderU. Last consolidated **23 Oct 2026** from the old ses
    - She has the free sample pair, delivered to the front desk 19 Oct. She said: "The material and print is nice."
    - **Fit question:** most boats there are under 26 ft and use the next size down fender. She was testing fit on those. Garrett told her it's the only size for now, and that a different size would need an order of a few hundred.
    - She asked for cost and retail. On **20 Oct** Garrett sent wholesale terms and asked how many pairs to start with. Those are the only approved wholesale terms, and they apply to her alone.
-   - **26 Oct, 7:39 Central, she answered:** "the fender covers do not work on the smaller fenders. Too bulky. Would you like to issue a call tag to pick them back up?" No quantity. **Garrett's answer, sent 26 Oct 11:00 Central (his words):** she keeps the covers; would the marina want a size for the smaller fenders? It would need a decent-size order, a couple hundred or so, and he's happy to check into pricing. **Ball is back in her court.** If she comes back with interest, the next step is Garrett pricing a smaller-size run with the supplier.
+   - **26 Oct, 7:39 Central, she answered:** "the fender covers do not work on the smaller fenders. Too bulky. Would you like to issue a call tag to pick them back up?" No quantity. **Garrett's answer, sent 26 Oct 11:00 Central (his words):** she keeps the covers; would the marina want a size for the smaller fenders? It would need a decent-size order, a couple hundred or so, and he's happy to check into pricing. **Closed 27 Oct:** she replied (26 Oct, 2:15 Central) "There is no way our owner would let me place an order that large. I'm very sorry." A short thank-you close was sent 27 Oct; she keeps the sample; door left open if the fleet or the minimum changes. Lesson applied: the fit rule now runs before any rep writes.
    - A follow-up drafted on 21 Oct (a dozen sets, or a consignment option) was **never approved or sent**. Consignment is not an approved offer.
 2. **Today's 12 new cold emails** (Gulf Coast 6, Florida 6), plus the Southwest rep's run, which was still running at the time of writing. No replies yet.
 3. **Declined, do not recontact:** Bluewater Bay Marina (Niceville, 19 Oct) and Jacksonville Light Boat Parade (13 Oct).
@@ -198,4 +198,5 @@ creative runs as a normal product ad. Rumble self-serve ads start at $100.
 |---|---|---|---|---|
 | 24 Oct | 1 / 0 | 0 new | No reply. Followed up 23 and 24 Oct. | Follow-up to 34 shops still waiting on Garrett's send |
 | 25 Oct | 1 / 0 | 0 new | No reply (weekend) | Campaign set 4 awaiting Garrett's OK; Bloom has 0 credits |
+| 27 Oct | 1 / 0 | 1 (Holden Beach) | **Closed: owner won't approve an order of a couple hundred.** Thank-you close sent. | Fit rule live in the Florida rep; Home Lakes rep awaiting "turn on"; money/ads reminder set for 28 Oct |
 | 26 Oct | 1 / 0 | 1 (Holden Beach) | **Covers don't fit her smaller fenders; asks about a call tag. Needs Garrett.** | Store checked live, checkout code ready, deploy and keys waiting on Garrett; AI boat image rejected |
