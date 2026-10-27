@@ -58,6 +58,7 @@ Newest wins. Where these conflict with the `fenderu-standing-rules` skill, **the
 | 21 Oct | **"Don't say 'the pair' anywhere. Don't sound so cheesy. Sound nice, but professional."** |
 | 21 Oct | "Four sets is not enough for a marina. Don't say a number if you're going to go that low." |
 | 24 Oct | Reply desk sends buyer replies itself from the approved facts. Prices, bulk terms (other than Holden Beach's) and anything the facts don't cover still go to Garrett first. |
+| 27 Oct | **The market, in his words:** owners of boats that fit the cover (25-35 ft; "those boat owners also have more money based on the size of boat they bought. That's my market"), and "any Trump or MAGA boat parade, they're obviously Trump and MAGA enthusiasts. That's who we need to target." The fit rule went into the Florida rep the same day. Money and advertising: "remind me tomorrow" (reminder set for 28 Oct, 9:30 Central). |
 | 26 Oct | **"Yes, give a free pair to channel owners."** One free pair to each owner of a pro-MAGA Telegram or Rumble channel (or a similar social channel) who agrees to post about FenderU. No payment, commission or discount code, and never a wholesale price. **Cap: 5 pairs total until Garrett raises it** (the main session's default, not his number). Garrett sends the DMs himself; nothing is posted or sent by a routine. Draft DM: `marketing/outreach/channel-owner-dm.md`. Waiting on his channel links or handles ("News Treason", "Joe Rambo" couldn't be found by search). |
 | 26 Oct | **"Do not change my MAGA fender cover ever. Just put it on new boats for me."** No AI model ever draws the cover. AI makes only the scene (boat, dock, water, plain fender); the cover is his real photo, placed by hand, and checked side by side against the original before it's shown. Method in `marketing/FENDER-RIGGING.md`. The navy, white and red AI boat images of 25–26 Oct are rejected and must not be posted. |
 | standing | $119 with free shipping, the only price. FenderU Facebook Page only, never his personal profile. Write the site as `FenderU.com` in email. Only his own photos. |
@@ -175,9 +176,11 @@ was not. Meta treats a MAGA-print ad as a political ad (ID verification and
 creative runs as a normal product ad. Rumble self-serve ads start at $100.
 
 **Proposed, waiting on Garrett (nothing changed yet):**
-1. A Home Lakes rep (Lake of the Ozarks + Grand Lake, weekly) that works the
-   target list with the fit rule, and the fit rule added to the Florida rep's
-   prompt so every rep qualifies by boat length before writing.
+1. DONE 27 Oct: the fit rule is in the Florida rep's prompt (qualify by boat
+   length before writing; report why each business passed). NOT YET: a Home
+   Lakes rep (Lake of the Ozarks + Grand Lake + Table Rock, Tuesdays) with the
+   researched list in its prompt. Creating a new scheduled task is gated by
+   this session's permissions; it needs Garrett's explicit go.
 2. Sponsor/vendor outreach, by him or with his OK, to the organizers who
    repeat: Jupiter (Gavidia), Lee County GOP (Fort Myers), Camden County
    Republican Club (LOTO), the Alabama Gulf Coast cluster, Michigan
