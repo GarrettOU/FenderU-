@@ -129,7 +129,67 @@ The stock is already paid for, so every pair sold is cash. Nothing below goes ou
 - **Amazon and Etsy:** ready-to-paste listings and the image set are in `marketing/listings/`. They're waiting on Garrett's seller signups.
 - **Boat scenes with the real cover (26 Oct):** `marketing/composite/` holds the first one, a red wake boat with a white stripe at a floating dock, built with `place_cover.py` from an AI scene plus his real cutout. The print check passed (0.997), but **Garrett rejected it: "looks fake or AI, not good."** A polish pass didn't change that. AI boat scenes with the cover pasted on don't look real and shouldn't be shown again unless he asks. Real photos only is the recommendation (his own on-boat shots, plus customer photos).
 
-## 9. Daily tally
+## 9. Fit-first sales plan (27 Oct)
+
+Garrett, 27 Oct: Holden Beach bit, then didn't fit. "Become an expert on who
+uses the size fenders that I have fender covers for... figure out how to
+target the agents in the different regions to find marinas with boats that
+are using my fender size... get better at targeting any type of social media
+Trump/MAGA groups. If there's a Trump parade, we need to be advertising and
+posting in those chats."
+
+Research files (all sourced): `marketing/targeting/fender-size-rule.md`,
+`marketing/targeting/home-lakes-targets.md`, `marketing/targeting/maga-boating-map.md`.
+
+**The size fact that changes the targeting.** The 8.5 x 26 is the fender for
+25-35 ft boats on every manufacturer chart (Taylor Made, Polyform G-5,
+Seachoice, West Marine, Lippert). It is not the most common fender on an
+inland lake: 22 ft pontoons, 20-24 ft bowriders and 20-26 ft wake boats
+(the volume boats) run 6.5", and wake boats mostly use 6 x 15 or flat pads.
+Houseboats and 35 ft+ yachts run 10"+. So the targets are cruiser marinas
+(slips mostly 30-40 ft), cruiser and sport-boat dealers with parts counters
+(Sea Ray 260-350, Cobalt, Formula, Regal, Chaparral, Crownline, Monterey,
+Chris-Craft), and 25 ft+ tritoon dealers. Skip wake-boat-only dealers,
+fishing dealers, rental pontoon fleets and marinas whose slips top out at
+25 ft.
+
+**Home lakes.** Lake of the Ozarks is the region's big-cruiser lake (MarineMax
+Lake Ozark's 189 slips are all 32-58 ft; Toad Cove 30-72 ft) with Cobalt,
+Chaparral, Formula, Monterey, Crownline and Cruisers Yachts dealers that have
+parts counters. Grand Lake's big-boat water is the Duck Creek arm and Monkey
+Island; Arrowhead (Cobalt/Regal/Barletta, four ship stores, five marinas) is
+one buyer for most of it. 13 + 14 targets listed, with published business
+emails for 6 of them; the rest have contact forms or phones. Late October is
+winterization time, but parts counters and sales offices stay open and that
+is when a store picks spring stock.
+
+**MAGA boaters.** Trump boat parades are an election-year thing: 2020 and
+2024 huge, 2025 and 2026 almost only June 14 (Flag Day / Trump's birthday).
+Nothing announced for 2027. Organizing lives on Facebook events run by GOP
+clubs and volunteers; no dedicated MAGA-boater channel exists on Telegram,
+Rumble, X or Truth Social. Lake of the Ozarks' only organizer is the Camden
+County Republican Club. Grand Lake has no parade or group on record. News
+Treason was found (X ~81k, Telegram ~35k, runs product placements); Joe Rambo
+was not. Meta treats a MAGA-print ad as a political ad (ID verification and
+"Paid for by" disclaimer, no political targeting since 2022); a flag-only
+creative runs as a normal product ad. Rumble self-serve ads start at $100.
+
+**Proposed, waiting on Garrett (nothing changed yet):**
+1. A Home Lakes rep (Lake of the Ozarks + Grand Lake, weekly) that works the
+   target list with the fit rule, and the fit rule added to the Florida rep's
+   prompt so every rep qualifies by boat length before writing.
+2. Sponsor/vendor outreach, by him or with his OK, to the organizers who
+   repeat: Jupiter (Gavidia), Lee County GOP (Fort Myers), Camden County
+   Republican Club (LOTO), the Alabama Gulf Coast cluster, Michigan
+   Conservative Coalition. June 14, 2027 is the next date.
+3. A free pair to News Treason under the 26 Oct channel-owner rule, once
+   Garrett sends the DM.
+4. Whether to spend on a Meta boost with a flag-only creative around the lake
+   ZIP codes, or a Rumble self-serve test. He said "no ads" on 23 Oct and
+   "we need to be advertising" on 27 Oct, so this is his call to make
+   explicitly, with a number.
+
+## 10. Daily tally
 
 | Date | Orders (lifetime / new) | Buyer replies | Holden Beach | Note |
 |---|---|---|---|---|
