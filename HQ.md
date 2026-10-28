@@ -19,6 +19,7 @@ Single home base for FenderU. Last consolidated **23 Oct 2026** from the old ses
 
 ## 2. Open threads, in priority order
 
+0. **Garrett's Runway photos (28 Oct).** He made seven lifestyle photos of the cover on boats in Runway AI and sent them to use ("you haven't done your job getting the message out there... Runway AI did"). They're in `marketing/runway/` (README there). Live now: items 19-24 of the daily Facebook rotation (posting first, from 28 Oct 15:00 UTC) and the Pinterest image list (three of every five pins until each is pinned once). Written: the channel-owner DM now attaches one, and three Boaters for Trump posts are in `marketing/outreach/boaters-for-trump-posts.md` for him to paste. Not used: 07 (garbled hat and shirt lettering). **Waiting on "deploy it":** the site gallery gains the six photos (commit c2c5220 on `claude/fenderu-hq`, tested locally); after that deploy the reps can point to FenderU.com for on-the-boat photos. Rep emails can't carry a photo link under the link rule and attachments are too large for the mail tool.
 1. **Holden Beach Marina, Ashley Portis Dyer (office manager), Supply NC.** This is the bulk deal.
    - She has the free sample pair, delivered to the front desk 19 Oct. She said: "The material and print is nice."
    - **Fit question:** most boats there are under 26 ft and use the next size down fender. She was testing fit on those. Garrett told her it's the only size for now, and that a different size would need an order of a few hundred.
@@ -60,6 +61,7 @@ Newest wins. Where these conflict with the `fenderu-standing-rules` skill, **the
 | 24 Oct | Reply desk sends buyer replies itself from the approved facts. Prices, bulk terms (other than Holden Beach's) and anything the facts don't cover still go to Garrett first. |
 | 27 Oct | **The market, in his words:** owners of boats that fit the cover (25-35 ft; "those boat owners also have more money based on the size of boat they bought. That's my market"), and "any Trump or MAGA boat parade, they're obviously Trump and MAGA enthusiasts. That's who we need to target." The fit rule went into the Florida rep the same day. Money and advertising: "remind me tomorrow" (reminder set for 28 Oct, 9:30 Central). |
 | 26 Oct | **"Yes, give a free pair to channel owners."** One free pair to each owner of a pro-MAGA Telegram or Rumble channel (or a similar social channel) who agrees to post about FenderU. No payment, commission or discount code, and never a wholesale price. **Cap: 5 pairs total until Garrett raises it** (the main session's default, not his number). Garrett sends the DMs himself; nothing is posted or sent by a routine. Draft DM: `marketing/outreach/channel-owner-dm.md`. Waiting on his channel links or handles ("News Treason", "Joe Rambo" couldn't be found by search). |
+| 28 Oct | **Use the Runway photos.** Garrett made seven AI lifestyle photos of the cover on boats himself and sent them to use. They are the only AI boat scenes allowed; the 26 Oct rule still bars any AI redraw or paste-up of the cover done here. Also 28 Oct: "most boats use my size" (he disputes the 25-35 ft reading of the fit charts; the fit rule stays in the Florida rep until he says otherwise). |
 | 26 Oct | **"Do not change my MAGA fender cover ever. Just put it on new boats for me."** No AI model ever draws the cover. AI makes only the scene (boat, dock, water, plain fender); the cover is his real photo, placed by hand, and checked side by side against the original before it's shown. Method in `marketing/FENDER-RIGGING.md`. The navy, white and red AI boat images of 25–26 Oct are rejected and must not be posted. |
 | standing | $119 with free shipping, the only price. FenderU Facebook Page only, never his personal profile. Write the site as `FenderU.com` in email. Only his own photos. |
 
@@ -72,8 +74,8 @@ Newest wins. Where these conflict with the `fenderu-standing-rules` skill, **the
 | Desert SW & Texas rep, 6 emails | trig_01Mc7xPsa8Ks2LqFzfwZYErW | **paused 23 Oct** (one rep a week) | 23 Oct still running at time of writing |
 | Reply desk, drafts for approval | trig_01SrkuhBPr4DKmVHnsf9EHoX | daily 8:17 | 23 Oct: "No new replies" |
 | Order watch | trig_01PS4C8bxWMStfDhsiSharAw | 13:13 and 23:13 UTC | 23 Oct: no orders in 24h, lifetime 1 |
-| Daily Facebook photo (Make 6138535) | trig_018usLi3DXp1gHMwi6qZvBzH | daily 15:00 UTC | 23 Oct OK, posted m04-page-fit |
-| Pinterest, 5 pins (Make 6229425) | trig_01RsiDJJzPciuoeXAxuYtfgn | M/W/F 14:00 UTC | 23 Oct OK, 5 pins live |
+| Daily Facebook photo (Make 6138535) | trig_018usLi3DXp1gHMwi6qZvBzH | daily 15:00 UTC | 27 Oct OK; 24-item rotation from 28 Oct, Runway photos 19-24 post first |
+| Pinterest, 5 pins (Make 6229425) | trig_01RsiDJJzPciuoeXAxuYtfgn | M/W/F 14:00 UTC | 26 Oct OK, 5 pins live; Runway photos in the list from 28 Oct |
 | Weekly reel (Make 6138548) | trig_01BcnYr68vXND9MAdaxa4yQD | **disabled** since 15 Oct | last 3 Oct |
 | Instant order alert | Make 6374100 | on every order | must stay active |
 
@@ -85,6 +87,7 @@ Two other tasks on the account are not FenderU and are left alone: "Lawn waterin
 - **Store (deployed 26 Oct 18:16 UTC, commit 61b5fb7, re-checked live at desktop and phone width):** cart, address and payment steps all work, no console errors, no layout overflow; card and PayPal both land on PayPal's hosted page with $119 and free shipping. The checkout code is ready for PayPal's own buttons, but Venmo isn't offered and Stripe is off because the keys below aren't set. Exact click-by-click steps are in `cfworker/README.md`, "What Garrett has to do".
 - Stripe secret key (`STRIPE_SECRET_KEY` repo secret): turns on Stripe Checkout with cards, Apple Pay, Google Pay and Cash App Pay. Payout bank account and tax ID in Stripe too.
 - PayPal REST client ID and secret from a PayPal Business account (`PAYPAL_CLIENT_ID`, `PAYPAL_SECRET`): turns on Venmo, and moves PayPal and card payments onto PayPal's modern buttons. Optional `PAYPAL_MERCHANT_ID` takes his Gmail address out of the page source.
+- **Say "deploy it"** to put the six Runway photos in the site's gallery section (commit c2c5220, `claude/fenderu-hq`; the deploy branch fast-forwards to it). Nothing else on the page changes.
 - Delete the Gmail filter that sends info@fenderu.com mail, and the Make order alerts, to Trash. The order watch rescues them twice a day in the meantime.
 - Say "delete the two USPS reels".
 - Finish TikTok Shop signup, and give Etsy OAuth consent.
@@ -128,6 +131,7 @@ The stock is already paid for, so every pair sold is cash. Nothing below goes ou
 
 - **Content set 3:** six graphics and three 9:16 reels built from Garrett's own photos, all in `marketing/graphics/set3` and `marketing/reels/set3` (generator: `marketing/make_set3.py`). The older square, portrait and pin graphics and both older reels were rebuilt so they no longer say "the pair". The daily Facebook post rotation now has 18 items, including the 6 new graphics. Pinterest now prefers the set-3 images. Both now use "$119 for the two-pack".
 - **Amazon and Etsy:** ready-to-paste listings and the image set are in `marketing/listings/`. They're waiting on Garrett's seller signups.
+- **Runway photos (28 Oct):** Garrett's own seven AI lifestyle shots, `marketing/runway/` (README lists scenes, fit notes and where each is used). Six are in the Facebook and Pinterest rotations; 07 is held back for garbled lettering. Paid Meta ads built on them may need Meta's AI-generated label; organic posts don't.
 - **Boat scenes with the real cover (26 Oct):** `marketing/composite/` holds the first one, a red wake boat with a white stripe at a floating dock, built with `place_cover.py` from an AI scene plus his real cutout. The print check passed (0.997), but **Garrett rejected it: "looks fake or AI, not good."** A polish pass didn't change that. AI boat scenes with the cover pasted on don't look real and shouldn't be shown again unless he asks. Real photos only is the recommendation (his own on-boat shots, plus customer photos).
 
 ## 9. Fit-first sales plan (27 Oct)
@@ -198,5 +202,6 @@ creative runs as a normal product ad. Rumble self-serve ads start at $100.
 |---|---|---|---|---|
 | 24 Oct | 1 / 0 | 0 new | No reply. Followed up 23 and 24 Oct. | Follow-up to 34 shops still waiting on Garrett's send |
 | 25 Oct | 1 / 0 | 0 new | No reply (weekend) | Campaign set 4 awaiting Garrett's OK; Bloom has 0 credits |
+| 28 Oct | 1 / 0 | 0 new | Closed; thank-you close still needs his "send". | Runway photos live in FB (from 15:00 UTC) and Pinterest (from 14:00 UTC); site gallery waits on "deploy it"; 3 group posts and the DM ready for him |
 | 27 Oct | 1 / 0 | 1 (Holden Beach) | **Closed: owner won't approve an order of a couple hundred.** Thank-you close drafted, needs his "send". | Fit rule live in the Florida rep; Home Lakes rep awaiting "turn on"; money/ads reminder set for 28 Oct |
 | 26 Oct | 1 / 0 | 1 (Holden Beach) | **Covers don't fit her smaller fenders; asks about a call tag. Needs Garrett.** | Store checked live, checkout code ready, deploy and keys waiting on Garrett; AI boat image rejected |
