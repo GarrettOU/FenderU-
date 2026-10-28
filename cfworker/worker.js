@@ -32,6 +32,23 @@ const REELS = {
     "https://raw.githubusercontent.com/GarrettOU/FenderU-/9c0a5e0/marketing/reels/maga-on-the-water.mp4"
 };
 
+// Garrett's on-the-boat photos (28 Oct 2026, marketing/runway), served from
+// the repo at a pinned commit and shown in the gallery section below.
+const PHOTOS = {
+  "/media/runway/01-yellow-cruiser-parade.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/01-yellow-cruiser-parade.jpg",
+  "/media/runway/02-red-express-cruiser.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/02-red-express-cruiser.jpg",
+  "/media/runway/03-yellow-bowrider.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/03-yellow-bowrider.jpg",
+  "/media/runway/04-red-bowrider-bimini.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/04-red-bowrider-bimini.jpg",
+  "/media/runway/05-teal-wakeboat-party.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/05-teal-wakeboat-party.jpg",
+  "/media/runway/06-white-wakeboat-party.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/06-white-wakeboat-party.jpg"
+};
+
 const json = (body, status = 200) => new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
 const clip = (v, n = 300) => typeof v === "string" ? v.trim().slice(0, n) : "";
 
@@ -49,6 +66,7 @@ export default {
     if (post && url.pathname === "/api/paypal/order") return paypalCreateOrder(request, env);
     if (post && url.pathname === "/api/paypal/capture") return paypalCapture(request, env, ctx);
     if (REELS[url.pathname]) return serveReel(request, REELS[url.pathname]);
+    if (PHOTOS[url.pathname]) return servePhoto(request, PHOTOS[url.pathname]);
 
     // Back from Stripe (/?thanks=1&sid=cs_...): save the paid order right away,
     // in case Stripe's webhook is slow or missed.
@@ -96,8 +114,11 @@ function scrubCopy(html) {
     // replaced by inert stubs because other functions still reference them.
     .replace(/<!--\s*FIX #8:[\s\S]*?-->\s*/, "")
     .replace(/\/\* Where Venmo orders get recorded[\s\S]*?\*\/\s*/, "")
-    .replace(/\/\* ---- LIVE CARRIER RATES[\s\S]*?(?=var US_STATES=)/, () => "var LIVE_RATES=null;\nfunction scheduleLiveRates(){}\n");
+    .replace(/\/\* ---- LIVE CARRIER RATES[\s\S]*?(?=var US_STATES=)/, () => "var LIVE_RATES=null;\nfunction scheduleLiveRates(){}\n")
+    // Six more boats in the gallery section (Garrett's photos, 28 Oct 2026).
+    .replace(/(<section class="gallery-sec">[\s\S]*?)(<\/div>\s*<\/section>)/, (m, a, b) => a + GALLERY_CARDS + b);
 }
+const GALLERY_CARDS = "<div class=\"gallery-card\"><img src=\"/media/runway/01-yellow-cruiser-parade.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/02-red-express-cruiser.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/03-yellow-bowrider.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/04-red-bowrider-bimini.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/05-teal-wakeboat-party.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/06-white-wakeboat-party.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div>";
 
 async function serveReel(request, src) {
   const range = request.headers.get("Range");
@@ -105,6 +126,14 @@ async function serveReel(request, src) {
   const headers = new Headers({ "Content-Type": "video/mp4", "Accept-Ranges": "bytes", "Cache-Control": "public, max-age=86400" });
   for (const h of ["Content-Length", "Content-Range"]) if (r.headers.get(h)) headers.set(h, r.headers.get(h));
   return new Response(r.body, { status: r.status, headers });
+}
+
+async function servePhoto(request, src) {
+  const r = await fetch(src, { method: request.method === "HEAD" ? "HEAD" : "GET", cf: { cacheTtl: 86400, cacheEverything: true } });
+  if (!r.ok) return new Response("Not found", { status: 404 });
+  const headers = new Headers({ "Content-Type": "image/jpeg", "Cache-Control": "public, max-age=86400" });
+  if (r.headers.get("Content-Length")) headers.set("Content-Length", r.headers.get("Content-Length"));
+  return new Response(r.body, { status: 200, headers });
 }
 
 // Shipping details from the checkout form; null if anything required is missing.
