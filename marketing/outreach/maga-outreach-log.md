@@ -8,7 +8,8 @@ Status key: **ready** = researched, email built, waiting on Garrett's "send" ·
 **sent** · **replied** · **declined** (never recontact).
 
 Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was read back: no google.com/url, and the photo is attached. Sent-mail check beforehand: no earlier mail to any of these domains.
-index lags 10 to 15 minutes, so check again right before sending).
+
+29 Oct: 7 new rows marked ready (Template A, yellow-cruiser photo), waiting on Garrett's "send". Sent-mail check on 29 Oct found no earlier mail to any of them (the index lags 10 to 15 minutes, so check again right before sending). Replies to the 28 Oct batch: none, no bounces.
 
 | Date | Name | Org | Email | Type | Template | Status | Source / context |
 |---|---|---|---|---|---|---|---|
@@ -26,6 +27,13 @@ index lags 10 to 15 minutes, so check again right before sending).
 | 28 Oct | Amy | Gadsden and Culpeper | amy@gadsdenandculpeper.com | Patriotic retailer | B | sent 28 Oct | gadsdenandculpeper.com/pages/wholesale (the store's own wholesale contact) |
 | 28 Oct | (orders) | We The People, Pigeon Forge TN | orders@wethepeoplepigeonforge.com | Patriotic gift shop | B | sent 28 Oct | wethepeoplepigeonforge.com/contact |
 | 28 Oct | (info) | Trump Store (Trump Organization), NYC | info@trumpstore.com | Trump retailer | B | sent 28 Oct | trumpstore.com/shipping-returns. Sells a TRUMP boat flag. Official store, so it is unlikely to take outside products |
+| 29 Oct | (chairman) | Republican Party of Palm Beach County FL | Chairman@palmbeach.gop | County GOP (Jupiter / Palm Beach parades) | A | ready | florida.gop/republican-parties/palm-beach. Home county of the Jupiter and Mar-a-Lago Trump boat parades |
+| 29 Oct | (info) | Pinellas County Republican Party FL | info@pinellasrepublicans.com | County GOP (Pinellas parades) | A | ready | florida.gop/republican-parties/pinellas. Pinellas waters hosted the Memorial Day and birthday Trump boat rallies |
+| 29 Oct | (vice chair) | Monroe County Republican Party, Florida Keys | vicechairman@keysgop.com | County GOP (Keys parade) | A | ready | florida.gop/republican-parties/monroe. Keys Republican clubs alerted members to the Keys Trump boat parade |
+| 29 Oct | Doug Stauffer (chair) | Okaloosa County GOP, Destin FL | chairman@okaloosagop.com | County GOP (Destin parade) | A | ready | okaloosagop.com and florida.gop. Office on Harbor Blvd, Destin; county hosts the Destin Trump boat parade |
+| 29 Oct | (info) | Let the People Speak, AL | info@letthepeoplespeak.us | Parade organizer | A | ready | algop.org event page. Organized the Official Lake Martin Trump Boat Parade, Aug 31, 2024, Ridge Marina to Parker Creek |
+| 29 Oct | (chairman) | Broward County Republican Party FL | Chairman@BrowardGop.com | County GOP (Fort Lauderdale) | A | ready | florida.gop/republican-parties/broward. No parade found that it ran |
+| 29 Oct | Rick (officer) | Santa Rosa County Republican Executive Committee FL | rick@srcrec.com | County GOP (Navarre / Pensacola Bay) | A | ready | florida.gop/republican-parties/santa-rosa (org domain srcrec.com). No parade found that it ran |
 
 ## Held back (not sendable as found)
 
@@ -34,5 +42,6 @@ index lags 10 to 15 minutes, so check again right before sending).
 - Kosciusko County GOP (Lake Wawasee): info@kcountygop.com. Seen only in a search snippet; unconfirmed.
 - Baldwin County GOP (AL, Oct 2024 ICW parade): no address verified on its own site.
 - No email found: Boaters for Trump (Facebook only), the Jupiter parade (Carlos Gavidia), Saltwater Finaddicts, Saratoga County GOP, Harris and Galveston County GOP, the Table Rock organizers.
+- 29 Oct, skipped (personal addresses only on the party pages): Bay County GOP (ran the 2024 Trump Patriot Boat Parade; yahoo and gmail only), Martin, Sarasota, Collier, Volusia and St. Lucie GOP, Charlotte County Trump Club (comcast). Kosciusko GOP: kcountygop.com no longer resolves, dropped.
 - Channel owners: no public business email found yet. 0 of 5 free 2-packs promised.
 - Do not contact: Jacksonville Light Boat Parade and Bluewater Bay Marina (both declined).
