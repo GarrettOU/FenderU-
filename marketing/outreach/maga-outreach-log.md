@@ -34,6 +34,11 @@ Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was r
 | 29 Oct | (info) | Let the People Speak, AL | info@letthepeoplespeak.us | Parade organizer | A | sent 29 Oct | algop.org event page. Organized the Official Lake Martin Trump Boat Parade, Aug 31, 2024, Ridge Marina to Parker Creek |
 | 29 Oct | (chairman) | Broward County Republican Party FL | Chairman@BrowardGop.com | County GOP (Fort Lauderdale) | A | sent 29 Oct | florida.gop/republican-parties/broward. No parade found that it ran |
 | 29 Oct | Rick (officer) | Santa Rosa County Republican Executive Committee FL | rick@srcrec.com | County GOP (Navarre / Pensacola Bay) | A | sent 29 Oct | florida.gop/republican-parties/santa-rosa (org domain srcrec.com). No parade found that it ran |
+| 30 Oct | (chair) | Republican Party of Hillsborough County, Tampa FL | chair@hillsborough.gop | County GOP (Tampa Bay) | A | ready | florida.gop/republican-parties/hillsborough. No parade found that it ran |
+| 30 Oct | (chairman) | Indian River County GOP, Vero Beach FL | Chairman@ircgop.com | County GOP (Indian River Lagoon) | A | ready | florida.gop/republican-parties/indian-river. No parade found that it ran |
+| 30 Oct | (info) | Miami-Dade Republican Party FL | Info@MiamiDadeGOP.org | County GOP (Biscayne Bay) | A | ready | florida.gop/republican-parties/miami-dade. Miami boaters held a Trump boat parade before the Oct 15, 2020 town hall (NBC Miami) |
+| 30 Oct | (chairman) | Montgomery County Republican Party, Montgomery TX | chairman@mctxgop.org | County GOP (Lake Conroe) | A | ready | mctxgop.org/leadership |
+| 30 Oct | (chairman) | Nueces County Republican Party, Corpus Christi TX | Chairman@NuecesCountyGOP.com | County GOP (Corpus Christi Bay) | A | ready | nuecescountygop.com/officers |
 
 ## Held back (not sendable as found)
 
@@ -43,5 +48,6 @@ Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was r
 - Baldwin County GOP (AL, Oct 2024 ICW parade): no address verified on its own site.
 - No email found: Boaters for Trump (Facebook only), the Jupiter parade (Carlos Gavidia), Saltwater Finaddicts, Saratoga County GOP, Harris and Galveston County GOP, the Table Rock organizers.
 - 29 Oct, skipped (personal addresses only on the party pages): Bay County GOP (ran the 2024 Trump Patriot Boat Parade; yahoo and gmail only), Martin, Sarasota, Collier, Volusia and St. Lucie GOP, Charlotte County Trump Club (comcast). Kosciusko GOP: kcountygop.com no longer resolves, dropped.
+- 30 Oct, skipped (personal addresses only): Horry and Beaufort SC GOP (gmail), Manatee, St. Johns and Escambia FL GOP. Brazoria and Charleston GOP: contact forms only.
 - Channel owners: no public business email found yet. 0 of 5 free 2-packs promised.
 - Do not contact: Jacksonville Light Boat Parade and Bluewater Bay Marina (both declined).
