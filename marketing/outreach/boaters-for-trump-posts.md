@@ -12,15 +12,16 @@ photo with the first line only and answer "where did you get those?" in the
 comments with FenderU.com.
 
 Every line below is copy Garrett has already approved. Nothing new was
-written. Photos are his Runway set (`marketing/runway/`). The three chosen
-are the cruiser and bowrider shots, the 25 to 35 foot boats that use this
-fender size.
+written. Photos are the three Runway shots Garrett kept on 30 Oct 2026, sharpened
+(`marketing/runway/sharp/`): the red express cruiser, the yellow bowrider and
+the teal wake boat. Photos 01, 04 and 06 are retired (out of focus) and 07 is
+never used.
 
 ---
 
 ## Post 1
 
-Photo: `marketing/runway/01-yellow-cruiser-parade.jpg`
+Photo: `marketing/runway/sharp/02-red-express-cruiser.jpg`
 
 Make America Great Again — right down to the fenders.
 
@@ -34,7 +35,7 @@ FenderU.com
 
 ## Post 2
 
-Photo: `marketing/runway/02-red-express-cruiser.jpg`
+Photo: `marketing/runway/sharp/03-yellow-bowrider.jpg`
 
 Show your patriotism.
 
@@ -50,7 +51,7 @@ FenderU.com
 
 ## Post 3
 
-Photo: `marketing/runway/04-red-bowrider-bimini.jpg`
+Photo: `marketing/runway/sharp/05-teal-wakeboat-party.jpg`
 
 Bare fenders are a wasted opportunity.
 

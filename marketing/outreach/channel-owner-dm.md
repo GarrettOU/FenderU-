@@ -6,11 +6,13 @@ of a pro-MAGA Telegram or Rumble channel (or a similar social channel) who
 agrees to post about FenderU. No payment, no commission, no discount code,
 never a wholesale price. Cap: 5 pairs total until Garrett raises it.
 
-Attach two photos with the DM: one of Garrett's Runway photos
-(`marketing/runway/01-yellow-cruiser-parade.jpg` or
-`05-teal-wakeboat-party.jpg`, the parade shots land best with this crowd) and
-one real photo (`marketing/src/img_p03.webp`, the Malibu at the dock, both
-covers on). Never 07-wakeboat-maga-crew.jpg (garbled lettering).
+Attach two photos with the DM: one of Garrett's sharpened Runway photos
+(`marketing/runway/sharp/05-teal-wakeboat-party.jpg` or
+`marketing/runway/sharp/02-red-express-cruiser.jpg`, the parade shots land
+best with this crowd) and one real photo (`marketing/src/img_p03.webp`, the
+Malibu at the dock, both covers on). Only the three sharpened photos under
+`marketing/runway/sharp/` may be used (Garrett, 30 Oct 2026); never 01, 04, 06
+or 07.
 
 Fill in the channel name. Keep it under 120 words. Plain, no exclamation marks.
 
