@@ -32,21 +32,15 @@ const REELS = {
     "https://raw.githubusercontent.com/GarrettOU/FenderU-/9c0a5e0/marketing/reels/maga-on-the-water.mp4"
 };
 
-// Garrett's on-the-boat photos (28 Oct 2026, marketing/runway), served from
+// Garrett's on-the-boat photos (28 Oct 2026, marketing/runway; sharpened 30 Oct, three kept), served from
 // the repo at a pinned commit and shown in the gallery section below.
 const PHOTOS = {
-  "/media/runway/01-yellow-cruiser-parade.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/01-yellow-cruiser-parade.jpg",
   "/media/runway/02-red-express-cruiser.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/02-red-express-cruiser.jpg",
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/bfdc93ee90a18a5cbe80204c604ab39e454bcdb5/marketing/runway/sharp/02-red-express-cruiser.jpg",
   "/media/runway/03-yellow-bowrider.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/03-yellow-bowrider.jpg",
-  "/media/runway/04-red-bowrider-bimini.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/04-red-bowrider-bimini.jpg",
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/bfdc93ee90a18a5cbe80204c604ab39e454bcdb5/marketing/runway/sharp/03-yellow-bowrider.jpg",
   "/media/runway/05-teal-wakeboat-party.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/05-teal-wakeboat-party.jpg",
-  "/media/runway/06-white-wakeboat-party.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/fd4fd17a2396203823745f879c4bc29a79982d4c/marketing/runway/web/06-white-wakeboat-party.jpg"
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/bfdc93ee90a18a5cbe80204c604ab39e454bcdb5/marketing/runway/sharp/05-teal-wakeboat-party.jpg"
 };
 
 const json = (body, status = 200) => new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
@@ -118,7 +112,7 @@ function scrubCopy(html) {
     // Six more boats in the gallery section (Garrett's photos, 28 Oct 2026).
     .replace(/(<section class="gallery-sec">[\s\S]*?)(<\/div>\s*<\/section>)/, (m, a, b) => a + GALLERY_CARDS + b);
 }
-const GALLERY_CARDS = "<div class=\"gallery-card\"><img src=\"/media/runway/01-yellow-cruiser-parade.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/02-red-express-cruiser.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/03-yellow-bowrider.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/04-red-bowrider-bimini.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/05-teal-wakeboat-party.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/06-white-wakeboat-party.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div>";
+const GALLERY_CARDS = "<div class=\"gallery-card\"><img src=\"/media/runway/02-red-express-cruiser.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/03-yellow-bowrider.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/05-teal-wakeboat-party.jpg\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div>";
 
 async function serveReel(request, src) {
   const range = request.headers.get("Range");
