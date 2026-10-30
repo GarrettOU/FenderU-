@@ -205,6 +205,7 @@ creative runs as a normal product ad. Rumble self-serve ads start at $100.
 |---|---|---|---|---|
 | 24 Oct | 1 / 0 | 0 new | No reply. Followed up 23 and 24 Oct. | Follow-up to 34 shops still waiting on Garrett's send |
 | 25 Oct | 1 / 0 | 0 new | No reply (weekend) | Campaign set 4 awaiting Garrett's OK; Bloom has 0 credits |
+| 30 Oct | 1 / 0 | 0 new | Closed. | Daily photo posted (item 3, set-3 trio square, exec 8739ce8b); Pinterest Friday batch: 5 new pins, 5 Runway vertical crops, 5 boards (exec 321ecc9c); reply desk: no new replies to the 21 MAGA outreach emails or the marina pitches; Pinterest prompt fixed (full URLs, no letter prefixes; TOOL RULE added) |
 | 29 Oct | 1 / 0 | 0 new | Closed (Garrett sent his own sign-off 28 Oct). | Daily photo posted (item 2, Runway red cruiser square); reel live since 28 Oct 15:44 UTC; 14 MAGA outreach emails out 28 Oct, reply desk now routes them; no replies yet |
 | 28 Oct | 1 / 0 | 0 new | Closed by Garrett's own reply (28 Oct 00:02 UTC); the drafted close is moot. | Gallery deployed 04:57; 30-item rotation loaded; Runway reel posted 15:44 UTC (Make exec db687d0c); the day's photo failed on a mis-built URL (fixed: full URLs in the prompt) and the rotation resumed 29 Oct |
 | 27 Oct | 1 / 0 | 1 (Holden Beach) | **Closed: owner won't approve an order of a couple hundred.** Thank-you close drafted, needs his "send". | Fit rule live in the Florida rep; Home Lakes rep awaiting "turn on"; money/ads reminder set for 28 Oct |
