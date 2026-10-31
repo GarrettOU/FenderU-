@@ -1,7 +1,8 @@
 name: Orders report
 
-# Read-only count of FenderU orders in the D1 database, for the daily sales
-# check. Uses the same Cloudflare token as the deploy. Prints counts and dates
+# Read-only count of FenderU orders, for the daily sales check. Calls the
+# site's /api/orders-summary endpoint with a key derived from the deploy
+# token (deploy.mjs sets the same key on the Worker). Prints counts and dates
 # only: no names, addresses, emails or phone numbers ever reach this log
 # (the repository is public).
 
@@ -13,30 +14,23 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      D1_ID: 0487edf4-30e2-40ca-a3a8-a89c3de1d48c
     steps:
       - name: Query order counts
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then echo "ORDERS_REPORT: no CLOUDFLARE_API_TOKEN"; exit 1; fi
-          API=https://api.cloudflare.com/client/v4
-          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            CLOUDFLARE_ACCOUNT_ID=$(curl -sS "$API/accounts" -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" | jq -r '.result[0].id')
-          fi
-          q() { curl -sS "$API/accounts/$CLOUDFLARE_ACCOUNT_ID/d1/database/$D1_ID/query" \
-                 -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" \
-                 --data "$(jq -cn --arg sql "$1" '{sql:$sql}')"; }
-          S=$(q "SELECT COUNT(*) AS lifetime, MAX(substr(created_at,1,10)) AS latest, SUM(CASE WHEN substr(created_at,1,10) >= date('now','-1 day') THEN 1 ELSE 0 END) AS last_24h, SUM(CASE WHEN substr(created_at,1,10) >= date('now','-7 day') THEN 1 ELSE 0 END) AS last_7d, SUM(CASE WHEN notified = 0 THEN 1 ELSE 0 END) AS unnotified FROM orders")
-          if [ "$(echo "$S" | jq -r '.success')" != "true" ]; then echo "ORDERS_REPORT: query failed: $(echo "$S" | jq -c '.errors')"; exit 1; fi
-          R=$(q "SELECT id, substr(created_at,1,10) AS day, quantity, payment_method FROM orders ORDER BY id DESC LIMIT 5")
-          echo "ORDERS_REPORT: $(echo "$S" | jq -c '.result[0].results[0]')"
-          echo "ORDERS_RECENT: $(echo "$R" | jq -c '.result[0].results')"
+          KEY=$(printf %s "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -d' ' -f1)
+          echo "::add-mask::$KEY"
+          R=$(curl -sS -w '\n%{http_code}' "https://fenderu.com/api/orders-summary?t=$(date +%s)" -H "X-Report-Key: $KEY")
+          CODE=$(echo "$R" | tail -1); BODY=$(echo "$R" | sed '$d')
+          if [ "$CODE" != "200" ]; then echo "ORDERS_REPORT: endpoint returned $CODE: $BODY"; exit 1; fi
+          echo "ORDERS_REPORT: $(echo "$BODY" | jq -c '.summary')"
+          echo "ORDERS_RECENT: $(echo "$BODY" | jq -c '.recent')"
           {
             echo "## FenderU orders (counts only)"
             echo '```'
-            echo "$S" | jq -r '.result[0].results[0] | to_entries | map("\(.key): \(.value)") | .[]'
+            echo "$BODY" | jq -r '.summary | to_entries | map("\(.key): \(.value)") | .[]'
             echo
             echo "recent (id, day, quantity, payment_method):"
-            echo "$R" | jq -r '.result[0].results[] | "\(.id)  \(.day)  qty \(.quantity)  \(.payment_method)"'
+            echo "$BODY" | jq -r '.recent[] | "\(.id)  \(.day)  qty \(.quantity)  \(.payment_method)"'
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"

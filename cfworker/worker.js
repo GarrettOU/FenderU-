@@ -51,6 +51,7 @@ export default {
     const url = new URL(request.url);
     const post = request.method === "POST";
 
+    if (url.pathname === "/api/orders-summary") return ordersSummary(request, env);
     if (url.pathname === "/api/order") {
       return json({ error: "This endpoint is closed. Orders are only recorded from a verified payment." }, 410);
     }
@@ -165,6 +166,31 @@ async function alertOrder(env, order) {
     if (!r.ok || !order.order_id) return;
     await env.DB.prepare("UPDATE orders SET notified = 1 WHERE id = ?").bind(order.order_id).run();
   } catch (e) {}
+}
+
+// ---------- Orders summary (counts only, for the daily sales check) ----------
+// Read-only. Needs the X-Report-Key header to equal REPORT_KEY, which deploy.mjs
+// sets to the SHA-256 of the Cloudflare deploy token; the Orders report Action
+// computes the same value. Returns counts and dates only: never a name,
+// address, email or phone number.
+async function ordersSummary(request, env) {
+  const key = request.headers.get("x-report-key") || "";
+  if (!env.REPORT_KEY || key.length !== env.REPORT_KEY.length || key !== env.REPORT_KEY) {
+    return json({ error: "forbidden" }, 403);
+  }
+  try {
+    const summary = await env.DB.prepare(
+      `SELECT COUNT(*) AS lifetime, MAX(substr(created_at,1,10)) AS latest,
+              SUM(CASE WHEN substr(created_at,1,10) >= date('now','-1 day') THEN 1 ELSE 0 END) AS last_24h,
+              SUM(CASE WHEN substr(created_at,1,10) >= date('now','-7 day') THEN 1 ELSE 0 END) AS last_7d,
+              SUM(CASE WHEN notified = 0 THEN 1 ELSE 0 END) AS unnotified
+       FROM orders`).first();
+    const recent = (await env.DB.prepare(
+      `SELECT id, substr(created_at,1,10) AS day, quantity, payment_method FROM orders ORDER BY id DESC LIMIT 5`).all()).results;
+    return new Response(JSON.stringify({ summary, recent }), { status: 200, headers: { ...JSON_HEADERS, "Cache-Control": "no-store" } });
+  } catch (e) {
+    return json({ error: "query failed" }, 500);
+  }
 }
 
 // ---------- Stripe (cards, Apple Pay, Google Pay) ----------

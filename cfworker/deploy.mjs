@@ -12,6 +12,7 @@
 // With PAYPAL_CLIENT_ID and PAYPAL_SECRET set, also turns on Venmo: checks
 // the pair signs in to PayPal (live) before binding it.
 import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 
 const TOKEN = process.env.CLOUDFLARE_API_TOKEN;
 if (!TOKEN) { console.error("CLOUDFLARE_API_TOKEN is not set"); process.exit(1); }
@@ -37,6 +38,10 @@ if (!account) {
 
 const FRONT = "fenderu-front";
 const shared = [{ type: "d1", name: "DB", id: D1_ID }];
+// Key for the read-only /api/orders-summary endpoint: the SHA-256 of the deploy
+// token. The Orders report Action derives the same value; the token itself
+// never leaves GitHub's secrets.
+shared.push({ type: "secret_text", name: "REPORT_KEY", text: createHash("sha256").update(TOKEN).digest("hex") });
 
 const STRIPE_KEY = process.env.STRIPE_SECRET_KEY;
 const FENDERU_STRIPE_ACCOUNT = "acct_1TbxBGQ7zed58VML";
