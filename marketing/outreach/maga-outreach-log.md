@@ -15,6 +15,8 @@ Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was r
 
 31 Oct: nothing sent; the 5 ready rows still wait on Garrett's "send". Replies to the 21 sent: none, no bounces. Rules from the COO session, 30 and 31 Oct: nothing new without Garrett's yes; no replies to prospects (reply desk only); one email per organization ever, no follow-ups to non-responders; before any send, check every FenderU send log (this log, the reps, the reply desk) so no address gets two emails within 7 days.
 
+1 Nov: nothing sent; the 5 ready rows still wait on Garrett's "send". Replies to the 21 sent: none, no bounces.
+
 | Date | Name | Org | Email | Type | Template | Status | Source / context |
 |---|---|---|---|---|---|---|---|
 | 28 Oct | (office) | Republican Party of Lee County, Fort Myers FL | office@LeeGOP.org | Parade organizer (GOP) | A | sent 28 Oct | leegop.org footer. Ran the "Trumparilla" boat parade on the Caloosahatchee, July 27, 2024 |
