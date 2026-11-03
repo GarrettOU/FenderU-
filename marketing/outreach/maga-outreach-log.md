@@ -21,6 +21,8 @@ Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was r
 
 3 Nov: nothing sent. v2 (Malibu photo, no 'on the water' lines) is in maga-approval-2026-11-02.md, waiting on Garrett's "send". Replies: none, no bounces. Standing: Malibu photo only; no corny 'your boaters are on the water' lines.
 
+3 Nov: the 5 v2 emails sent 17:01 to 17:14 UTC on Garrett's "send them" (Malibu photo, subject "MAGA fender covers: a free sample for your club"). Every sent copy read back: no google.com/url, photo attached. 26 sent in total.
+
 | Date | Name | Org | Email | Type | Template | Status | Source / context |
 |---|---|---|---|---|---|---|---|
 | 28 Oct | (office) | Republican Party of Lee County, Fort Myers FL | office@LeeGOP.org | Parade organizer (GOP) | A | sent 28 Oct | leegop.org footer. Ran the "Trumparilla" boat parade on the Caloosahatchee, July 27, 2024 |
@@ -44,11 +46,11 @@ Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was r
 | 29 Oct | (info) | Let the People Speak, AL | info@letthepeoplespeak.us | Parade organizer | A | sent 29 Oct | algop.org event page. Organized the Official Lake Martin Trump Boat Parade, Aug 31, 2024, Ridge Marina to Parker Creek |
 | 29 Oct | (chairman) | Broward County Republican Party FL | Chairman@BrowardGop.com | County GOP (Fort Lauderdale) | A | sent 29 Oct | florida.gop/republican-parties/broward. No parade found that it ran |
 | 29 Oct | Rick (officer) | Santa Rosa County Republican Executive Committee FL | rick@srcrec.com | County GOP (Navarre / Pensacola Bay) | A | sent 29 Oct | florida.gop/republican-parties/santa-rosa (org domain srcrec.com). No parade found that it ran |
-| 30 Oct | (chair) | Republican Party of Hillsborough County, Tampa FL | chair@hillsborough.gop | County GOP (Tampa Bay) | A | ready | florida.gop/republican-parties/hillsborough. No parade found that it ran |
-| 30 Oct | (chairman) | Indian River County GOP, Vero Beach FL | Chairman@ircgop.com | County GOP (Indian River Lagoon) | A | ready | florida.gop/republican-parties/indian-river. No parade found that it ran |
-| 30 Oct | (info) | Miami-Dade Republican Party FL | Info@MiamiDadeGOP.org | County GOP (Biscayne Bay) | A | ready | florida.gop/republican-parties/miami-dade. Miami boaters held a Trump boat parade before the Oct 15, 2020 town hall (NBC Miami) |
-| 30 Oct | (chairman) | Montgomery County Republican Party, Montgomery TX | chairman@mctxgop.org | County GOP (Lake Conroe) | A | ready | mctxgop.org/leadership |
-| 30 Oct | (chairman) | Nueces County Republican Party, Corpus Christi TX | Chairman@NuecesCountyGOP.com | County GOP (Corpus Christi Bay) | A | ready | nuecescountygop.com/officers |
+| 30 Oct | (chair) | Republican Party of Hillsborough County, Tampa FL | chair@hillsborough.gop | County GOP (Tampa Bay) | A v2 (Malibu) | sent 3 Nov | florida.gop/republican-parties/hillsborough. No parade found that it ran |
+| 30 Oct | (chairman) | Indian River County GOP, Vero Beach FL | Chairman@ircgop.com | County GOP (Indian River Lagoon) | A v2 (Malibu) | sent 3 Nov | florida.gop/republican-parties/indian-river. No parade found that it ran |
+| 30 Oct | (info) | Miami-Dade Republican Party FL | Info@MiamiDadeGOP.org | County GOP (Biscayne Bay) | A v2 (Malibu) | sent 3 Nov | florida.gop/republican-parties/miami-dade. Miami boaters held a Trump boat parade before the Oct 15, 2020 town hall (NBC Miami) |
+| 30 Oct | (chairman) | Montgomery County Republican Party, Montgomery TX | chairman@mctxgop.org | County GOP (Lake Conroe) | A v2 (Malibu) | sent 3 Nov | mctxgop.org/leadership |
+| 30 Oct | (chairman) | Nueces County Republican Party, Corpus Christi TX | Chairman@NuecesCountyGOP.com | County GOP (Corpus Christi Bay) | A v2 (Malibu) | sent 3 Nov | nuecescountygop.com/officers |
 
 ## Held back (not sendable as found)
 
