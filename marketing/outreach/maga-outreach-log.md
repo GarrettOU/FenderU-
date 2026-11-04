@@ -23,7 +23,7 @@ Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was r
 
 3 Nov: the 5 v2 emails sent 17:01 to 17:14 UTC on Garrett's "send them" (Malibu photo, subject "MAGA fender covers: a free sample for your club"). Every sent copy read back: no google.com/url, photo attached. 26 sent in total.
 
-4 Nov: 8 new rows ready (v2 text, Malibu photo), shown to Garrett for approval (maga-approval-2026-11-04.md). No earlier mail to any of these domains in Gmail or any FenderU branch. Skipped (personal addresses only): Lake, Walton, Hernando, Flagler, Marion, Highlands, Gulf FL GOP; Galveston, Brazoria, Calhoun, Aransas and other Texas coastal/lake county chairs. Nassau and Osceola pages list no email.
+4 Nov: 8 new rows ready (v2 text, Malibu photo), shown to Garrett for approval (maga-approval-2026-11-04.md). No earlier mail to any of these domains in Gmail or any FenderU branch. Skipped (personal addresses only): Lake, Walton, Hernando, Flagler, Marion, Highlands, Gulf FL GOP; Galveston, Brazoria, Calhoun, Aransas and other Texas coastal/lake county chairs. Nassau and Osceola pages list no email. Garrett approved ("send them"); all 8 sent 07:25 to 07:55 UTC from Gmail with the Malibu photo, each sent copy read back (text matches, no google.com/url, photo attached). 34 sent in total.
 
 | Date | Name | Org | Email | Type | Template | Status | Source / context |
 |---|---|---|---|---|---|---|---|
@@ -53,14 +53,14 @@ Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was r
 | 30 Oct | (info) | Miami-Dade Republican Party FL | Info@MiamiDadeGOP.org | County GOP (Biscayne Bay) | A v2 (Malibu) | sent 3 Nov | florida.gop/republican-parties/miami-dade. Miami boaters held a Trump boat parade before the Oct 15, 2020 town hall (NBC Miami) |
 | 30 Oct | (chairman) | Montgomery County Republican Party, Montgomery TX | chairman@mctxgop.org | County GOP (Lake Conroe) | A v2 (Malibu) | sent 3 Nov | mctxgop.org/leadership |
 | 30 Oct | (chairman) | Nueces County Republican Party, Corpus Christi TX | Chairman@NuecesCountyGOP.com | County GOP (Corpus Christi Bay) | A v2 (Malibu) | sent 3 Nov | nuecescountygop.com/officers |
-| 4 Nov | (chair) | Republican Party of Pasco County, FL (Gulf coast north of Tampa) | chair@pascogop.com | County GOP | A v2 (Malibu) | ready | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
-| 4 Nov | (chairman) | Citrus County Republican Party, FL (Crystal River, Homosassa) | chairman@citrusgop.org | County GOP | A v2 (Malibu) | ready | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
-| 4 Nov | (Chairman) | Republican Party of Duval County, Jacksonville FL | Chairman@duval.gop | County GOP | A v2 (Malibu) | ready | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
-| 4 Nov | (chair) | Seminole County Republican Party, FL (Lake Monroe, Lake Jesup) | chair@seminolegop.org | County GOP | A v2 (Malibu) | ready | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
-| 4 Nov | (chair) | Republican Party of Orange County, Orlando FL (Butler Chain of Lakes) | chair@orangefl.gop | County GOP | A v2 (Malibu) | ready | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
-| 4 Nov | (chairman) | Polk County Republican Party, FL (Lakeland, Winter Haven chain of lakes) | chairman@polkgop.org | County GOP | A v2 (Malibu) | ready | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
-| 4 Nov | (chairman) | Clay County Republican Party, FL (St. Johns River) | chairman@clayrepublicans.com | County GOP | A v2 (Malibu) | ready | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
-| 4 Nov | (chair) | Harris County Republican Party, Houston TX (Clear Lake, Lake Houston) | chair@harriscountygop.com | County GOP | A v2 (Malibu) | ready | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chair) | Republican Party of Pasco County, FL (Gulf coast north of Tampa) | chair@pascogop.com | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chairman) | Citrus County Republican Party, FL (Crystal River, Homosassa) | chairman@citrusgop.org | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (Chairman) | Republican Party of Duval County, Jacksonville FL | Chairman@duval.gop | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chair) | Seminole County Republican Party, FL (Lake Monroe, Lake Jesup) | chair@seminolegop.org | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chair) | Republican Party of Orange County, Orlando FL (Butler Chain of Lakes) | chair@orangefl.gop | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chairman) | Polk County Republican Party, FL (Lakeland, Winter Haven chain of lakes) | chairman@polkgop.org | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chairman) | Clay County Republican Party, FL (St. Johns River) | chairman@clayrepublicans.com | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chair) | Harris County Republican Party, Houston TX (Clear Lake, Lake Houston) | chair@harriscountygop.com | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
 
 ## Held back (not sendable as found)
 
