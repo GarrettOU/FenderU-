@@ -16,7 +16,7 @@ tagline or scene line was written. Scene openers ("Boat parade day." and the
 like) are NOT in here; they need his yes first and are listed in HQ §5.
 Captions C1-C24 are the first 24 of the 30 written on 28 Oct, unchanged.
 
-Runway base (pinned): https://raw.githubusercontent.com/GarrettOU/FenderU-/bfdc93ee90a18a5cbe80204c604ab39e454bcdb5/marketing/runway/sharp/
+Runway base (pinned): https://raw.githubusercontent.com/GarrettOU/FenderU-/ca73ec5ffb09f9e3a2821169a78c38d6c679e992/marketing/runway/sharp/
 Set 3 base: https://raw.githubusercontent.com/GarrettOU/FenderU-/69276ce2d023a9b7e39c50d7c4fbd532ec08a0d2/marketing/graphics/set3/
 Site photo base: https://fenderu.com/media/southern/
 
@@ -50,4 +50,6 @@ Site photo base: https://fenderu.com/media/southern/
 
 The caption text for C1 to C24 is in the scheduled task's prompt
 (trig_018usLi3DXp1gHMwi6qZvBzH). C25-C30 from the 28 Oct plan are unused for
-now. Sharpened files: `marketing/runway/sharp/` at commit bfdc93e.
+now. Sharpened files: `marketing/runway/sharp/` at commit ca73ec5 (re-sharpened
+4 Nov; the bfdc93e versions are retired). The rotation picks the next item by
+file name, so the hash change did not reset it.

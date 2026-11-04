@@ -25,15 +25,26 @@ focus and use half of them. the middle middle, right middle, and middle bottom
 photos." Those gallery positions are 02, 03 and 05. `sharp/` holds the only
 versions now in use: each of the three at 1600 wide (`<name>.jpg`), square
 (`-sq`, 1350), vertical 4:5 (`-45`, 1080 x 1350) and a 4:5 detail crop close
-on the covers (`-detail`). Sharpening is a two-pass unsharp mask applied after
-the Lanczos downscale from the 2752-px original (radius 2.0 at 90 %, then
-radius 0.8 at 120 %); nothing in the picture was redrawn. Pinned URLs use
-commit bfdc93e.
+on the covers (`-detail`), plus two site sizes (`-1100`, 1100 x 614, and
+`-720`, 720 x 402) for the gallery.
+
+**4 Nov 2026, Garrett:** "clean up and focus the bottom 3 pictures under 'MAGA
+on the water' because they are fuzzy and out of focus. stop making these
+mistakes." The first pass (commit bfdc93e, two-pass unsharp mask) was not
+enough: the site was downscaling a 1600-px file to a 342-px card, which
+softened it again. Every file in `sharp/` was regenerated at commit ca73ec5
+with a stronger pipeline applied at the output size, after the Lanczos
+downscale: ImageMagick adaptive-sharpen 0x1.2 and unsharp 0x1.5+1.2+0.02,
+then a fine unsharp mask (radius 0.7, 100 %) and 5 % contrast. Nothing in the
+picture was redrawn. The site now serves the 720 and 1100 files through
+`srcset` so phones get the 1100 file at about 2.8x and desktops the 720 file at
+2x, both sharpened for that size. Pinned URLs use commit ca73ec5; the bfdc93e
+files are retired.
 
 Where the three are used:
 - Daily Facebook Page post rotation: 12 of 24 items (wide, square, 4:5 and detail of each), never two days running.
 - Pinterest: at most two of every five pins, until each of the nine remaining variants has been pinned once.
-- Site gallery: `/media/runway/02-…`, `03-…`, `05-…` served by the front worker from `sharp/`.
+- Site gallery: `/media/runway/02-…`, `03-…`, `05-…` (`-720` and `-1100`, with `srcset`) served by the front worker from `sharp/` at ca73ec5.
 - Channel-owner DM (`marketing/outreach/channel-owner-dm.md`): 05 or 02.
 - Boaters for Trump group posts Garrett pastes himself (`marketing/outreach/boaters-for-trump-posts.md`): 02, 03, 05.
 Still posted before the change and not yet taken down: the 28 Oct Facebook reel (`marketing/reels/runway-reel-01-fb.mp4`), which uses all six; two 30 Oct pins on 01 and 06 are deleted and re-made by the next Pinterest run.
