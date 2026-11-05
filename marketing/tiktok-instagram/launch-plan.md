@@ -13,7 +13,7 @@ posters use."
 | Thing | State | Who can change it |
 |---|---|---|
 | TikTok account | None exists: @fenderu, @fenderu.com and @fenderucovers all return "Couldn't find this account" | Garrett creates @fenderu in the TikTok app (phone number or email; a **personal/creator** account, not Business, see §4) |
-| TikTok Shop | Not started. AfterShip shows 0 of 3 onboarding steps and no store connected. TikTok Shop seller signup needs his ID, tax ID and bank account | Garrett. Until then every post points to FenderU.com (link in bio) and that is still selling through TikTok |
+| Where buyers go | **FenderU.com, always.** Garrett, 5 Nov: "can they not be directed to buy from my website. FenderU.com. That's how I currently sell." Link in bio and every caption point there. TikTok Shop is not part of the plan | Settled |
 | Instagram account | He has one (the connector can't see it: the Make Facebook login has no Instagram scopes) | Garrett connects it to vidIQ once (one sign-in card) if he wants reels published for him without music; otherwise posts from the phone |
 | Posting with real-band music | Only possible **inside the TikTok and Instagram apps**, from the sound picker. No API, connector or scheduled task can attach a licensed song, and burning a song into the file would get the post muted or removed | Garrett, or anyone with his phone: about five taps per post (§4) |
 | Video files | Six 9:16 reels from his own photos, silent audio track, no banned copy on screen (audited frame by frame 5 Nov) | Ready; hook versions built as drafts (§3) |
@@ -106,7 +106,7 @@ Account type matters: TikTok **Business** accounts and Instagram **professional
 business** accounts are limited to the royalty-free commercial library and
 cannot pick these songs. Set TikTok up as a personal account and Instagram as a
 Creator account (or stay personal). Both still get a link in bio
-(FenderU.com) and, on TikTok, the Shop tab once TikTok Shop exists.
+(FenderU.com), which is where every buyer is sent.
 
 What the connector can do instead: once Garrett connects Instagram to vidIQ, a
 scheduled task can publish the reels for him, but **without a song** (the API
@@ -131,11 +131,11 @@ cannot attach licensed music). That is a fallback, not the plan he asked for.
 
 ## 6. What needs Garrett's word
 
+Settled 5 Nov: buyers are sent to FenderU.com, nothing else.
+
 - "yes" on the hooks P1-P4 as shown (all from his own approved lines) and on the
   two new hooks P5 and P6, or "no" to either.
 - "yes" on the song pairings, or name the songs he wants instead.
 - Create the TikTok account (@fenderu) and say when it exists.
 - Decide: posts go out from his phone with the songs (his taps), or from the
   connector without songs (one Instagram sign-in to vidIQ).
-- TikTok Shop signup, when he is ready to sell inside TikTok rather than through
-  the link in bio.
