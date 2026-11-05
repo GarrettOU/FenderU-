@@ -1,0 +1,78 @@
+# MAGA outreach log
+
+Every contact, one row. Emails only to addresses the organization publishes
+itself, never personal ones. Before sending, check Sent mail: nobody gets a
+second email. Buyer replies go to the reply desk.
+
+Status key: **ready** = researched, email built, waiting on Garrett's "send" ·
+**sent** · **replied** · **declined** (never recontact).
+
+Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was read back: no google.com/url, and the photo is attached. Sent-mail check beforehand: no earlier mail to any of these domains.
+
+29 Oct: 7 more sent 23:03 to 23:35 UTC on Garrett's second "send" (Template A, yellow-cruiser photo). Every sent copy read back: no google.com/url, photo attached. No earlier mail to any of these domains. Replies to the 28 Oct batch: none, no bounces.
+
+30 Oct: 5 new rows ready (Template A), waiting on Garrett's "send". No earlier mail to any of them.
+
+31 Oct: nothing sent; the 5 ready rows still wait on Garrett's "send". Replies to the 21 sent: none, no bounces. Rules from the COO session, 30 and 31 Oct: nothing new without Garrett's yes; no replies to prospects (reply desk only); one email per organization ever, no follow-ups to non-responders; before any send, check every FenderU send log (this log, the reps, the reply desk) so no address gets two emails within 7 days.
+
+1 Nov: nothing sent; the 5 ready rows still wait on Garrett's "send". Replies to the 21 sent: none, no bounces.
+
+2 Nov: nothing sent. Garrett asked on 1 Nov to see the emails and photo first; approval sheet is maga-approval-2026-11-01.md. Still waiting on his answer. Replies: none, no bounces.
+
+3 Nov: nothing sent. v2 (Malibu photo, no 'on the water' lines) is in maga-approval-2026-11-02.md, waiting on Garrett's "send". Replies: none, no bounces. Standing: Malibu photo only; no corny 'your boaters are on the water' lines.
+
+3 Nov: the 5 v2 emails sent 17:01 to 17:14 UTC on Garrett's "send them" (Malibu photo, subject "MAGA fender covers: a free sample for your club"). Every sent copy read back: no google.com/url, photo attached. 26 sent in total.
+
+4 Nov: 8 new rows ready (v2 text, Malibu photo), shown to Garrett for approval (maga-approval-2026-11-04.md). No earlier mail to any of these domains in Gmail or any FenderU branch. Skipped (personal addresses only): Lake, Walton, Hernando, Flagler, Marion, Highlands, Gulf FL GOP; Galveston, Brazoria, Calhoun, Aransas and other Texas coastal/lake county chairs. Nassau and Osceola pages list no email. Garrett approved ("send them"); all 8 sent 07:25 to 07:55 UTC from Gmail with the Malibu photo, each sent copy read back (text matches, no google.com/url, photo attached). 34 sent in total.
+5 Nov: Garrett approved Leon and Brevard (maga-approval-2026-11-04-pm.md); both sent 16:19 and 16:23 UTC with the Malibu photo, sent copies read back OK. 36 sent in total. Daily scheduled task's instructions updated to approval-first and the Malibu photo.
+
+| Date | Name | Org | Email | Type | Template | Status | Source / context |
+|---|---|---|---|---|---|---|---|
+| 28 Oct | (office) | Republican Party of Lee County, Fort Myers FL | office@LeeGOP.org | Parade organizer (GOP) | A | sent 28 Oct | leegop.org footer. Ran the "Trumparilla" boat parade on the Caloosahatchee, July 27, 2024 |
+| 28 Oct | (info) | Michigan Conservative Coalition, Metro Detroit MI | info@michiganconservativecoalition.com | Parade organizer | A | sent 28 Oct | michiganconservativecoalition.com. Runs the Michigan MAGA Boat Parade (Lake St. Clair, 2024) |
+| 28 Oct | (support) | Camden County Republican Club, Lake of the Ozarks MO | support@ccrclub.com | Parade organizer (GOP) | A | sent 28 Oct | ccrclub.com/contact. Ran the Sept 22, 2024 Trump boat parade, H-Toads to Dog Days |
+| 28 Oct | (chair) | Bell County Republican Party, Belton TX | chair@belltxgop.org | County GOP (Lake Belton) | A | sent 28 Oct | belltxgop.org/about. No parade found that it ran |
+| 28 Oct | (communications) | Travis County Republican Party, Austin TX | Communications@TravisGOP.com | County GOP (Lake Travis) | A | sent 28 Oct | travisgop.com. The 2020 Lake Travis parade was run by an individual |
+| 28 Oct | (info) | Hall County Republican Party, Gainesville GA | info@hallcountyrepublicanparty.com | County GOP (Lake Lanier) | A | sent 28 Oct | hallcountyrepublicanparty.com. Home county of the 2020 Lanier parade |
+| 28 Oct | (chairman) | Forsyth County GOP, Cumming GA | chairman@forsyth.gop | County GOP (Lake Lanier) | A | sent 28 Oct | forsyth.gop. The 2020 Lanier parade ran to Port Royale Marina |
+| 28 Oct | Barry Sanders (chair) | Oconee County Republican Party, Seneca SC | gop@oconeerepublicans.com | County GOP (Lake Keowee) | A | sent 28 Oct | oconeerepublicans.com leadership page. The Aug 24, 2024 Keowee parade was run by an individual |
+| 28 Oct | (vice chair) | Mohave County GOP, Kingman AZ | vicechairman@mohavecountygop.com | County GOP (Lake Havasu) | A | sent 28 Oct | mohavecountygop.com/contact-us |
+| 28 Oct | (wholesale) | United States Flag Store, PA | wholesale@onlinestores.com | Patriotic retailer | B | sent 28 Oct | united-states-flag.com wholesale page |
+| 28 Oct | (sales) | US Patriot Colors | sales@uspatriotflags.com | Patriotic retailer | B | sent 28 Oct | uspatriotcolors.com customer-service page; email is their preferred contact |
+| 28 Oct | Amy | Gadsden and Culpeper | amy@gadsdenandculpeper.com | Patriotic retailer | B | sent 28 Oct | gadsdenandculpeper.com/pages/wholesale (the store's own wholesale contact) |
+| 28 Oct | (orders) | We The People, Pigeon Forge TN | orders@wethepeoplepigeonforge.com | Patriotic gift shop | B | sent 28 Oct | wethepeoplepigeonforge.com/contact |
+| 28 Oct | (info) | Trump Store (Trump Organization), NYC | info@trumpstore.com | Trump retailer | B | sent 28 Oct | trumpstore.com/shipping-returns. Sells a TRUMP boat flag. Official store, so it is unlikely to take outside products |
+| 29 Oct | (chairman) | Republican Party of Palm Beach County FL | Chairman@palmbeach.gop | County GOP (Jupiter / Palm Beach parades) | A | sent 29 Oct | florida.gop/republican-parties/palm-beach. Home county of the Jupiter and Mar-a-Lago Trump boat parades |
+| 29 Oct | (info) | Pinellas County Republican Party FL | info@pinellasrepublicans.com | County GOP (Pinellas parades) | A | sent 29 Oct | florida.gop/republican-parties/pinellas. Pinellas waters hosted the Memorial Day and birthday Trump boat rallies |
+| 29 Oct | (vice chair) | Monroe County Republican Party, Florida Keys | vicechairman@keysgop.com | County GOP (Keys parade) | A | sent 29 Oct | florida.gop/republican-parties/monroe. Keys Republican clubs alerted members to the Keys Trump boat parade |
+| 29 Oct | Doug Stauffer (chair) | Okaloosa County GOP, Destin FL | chairman@okaloosagop.com | County GOP (Destin parade) | A | sent 29 Oct | okaloosagop.com and florida.gop. Office on Harbor Blvd, Destin; county hosts the Destin Trump boat parade |
+| 29 Oct | (info) | Let the People Speak, AL | info@letthepeoplespeak.us | Parade organizer | A | sent 29 Oct | algop.org event page. Organized the Official Lake Martin Trump Boat Parade, Aug 31, 2024, Ridge Marina to Parker Creek |
+| 29 Oct | (chairman) | Broward County Republican Party FL | Chairman@BrowardGop.com | County GOP (Fort Lauderdale) | A | sent 29 Oct | florida.gop/republican-parties/broward. No parade found that it ran |
+| 29 Oct | Rick (officer) | Santa Rosa County Republican Executive Committee FL | rick@srcrec.com | County GOP (Navarre / Pensacola Bay) | A | sent 29 Oct | florida.gop/republican-parties/santa-rosa (org domain srcrec.com). No parade found that it ran |
+| 30 Oct | (chair) | Republican Party of Hillsborough County, Tampa FL | chair@hillsborough.gop | County GOP (Tampa Bay) | A v2 (Malibu) | sent 3 Nov | florida.gop/republican-parties/hillsborough. No parade found that it ran |
+| 30 Oct | (chairman) | Indian River County GOP, Vero Beach FL | Chairman@ircgop.com | County GOP (Indian River Lagoon) | A v2 (Malibu) | sent 3 Nov | florida.gop/republican-parties/indian-river. No parade found that it ran |
+| 30 Oct | (info) | Miami-Dade Republican Party FL | Info@MiamiDadeGOP.org | County GOP (Biscayne Bay) | A v2 (Malibu) | sent 3 Nov | florida.gop/republican-parties/miami-dade. Miami boaters held a Trump boat parade before the Oct 15, 2020 town hall (NBC Miami) |
+| 30 Oct | (chairman) | Montgomery County Republican Party, Montgomery TX | chairman@mctxgop.org | County GOP (Lake Conroe) | A v2 (Malibu) | sent 3 Nov | mctxgop.org/leadership |
+| 30 Oct | (chairman) | Nueces County Republican Party, Corpus Christi TX | Chairman@NuecesCountyGOP.com | County GOP (Corpus Christi Bay) | A v2 (Malibu) | sent 3 Nov | nuecescountygop.com/officers |
+| 4 Nov | (chair) | Republican Party of Pasco County, FL (Gulf coast north of Tampa) | chair@pascogop.com | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chairman) | Citrus County Republican Party, FL (Crystal River, Homosassa) | chairman@citrusgop.org | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (Chairman) | Republican Party of Duval County, Jacksonville FL | Chairman@duval.gop | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chair) | Seminole County Republican Party, FL (Lake Monroe, Lake Jesup) | chair@seminolegop.org | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chair) | Republican Party of Orange County, Orlando FL (Butler Chain of Lakes) | chair@orangefl.gop | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chairman) | Polk County Republican Party, FL (Lakeland, Winter Haven chain of lakes) | chairman@polkgop.org | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chairman) | Clay County Republican Party, FL (St. Johns River) | chairman@clayrepublicans.com | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 4 Nov | (chair) | Harris County Republican Party, Houston TX (Clear Lake, Lake Houston) | chair@harriscountygop.com | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
+| 5 Nov | (chairman) | Leon County Republican Party, Tallahassee FL (Lake Jackson, Lake Talquin) | chairman@leongop.com | County GOP | A v2 (Malibu) | sent 5 Nov | florida.gop county page |
+| 5 Nov | (info) | Brevard Republican Executive Committee, FL (Indian River Lagoon, Space Coast) | info@gopbrevard.org | County GOP | A v2 (Malibu) | sent 5 Nov | votebrevard.gov local parties page |
+
+## Held back (not sendable as found)
+
+- Lake Travis Republican Club: laketravisrepublicanclubtx@gmail.com. Gmail, but it is the club's own published address. Garrett decides.
+- Iredell County GOP (Lake Norman): ChairmanIredellGOP@gmail.com. Same situation.
+- Kosciusko County GOP (Lake Wawasee): info@kcountygop.com. Seen only in a search snippet; unconfirmed.
+- Baldwin County GOP (AL, Oct 2024 ICW parade): no address verified on its own site.
+- No email found: Boaters for Trump (Facebook only), the Jupiter parade (Carlos Gavidia), Saltwater Finaddicts, Saratoga County GOP, Harris and Galveston County GOP, the Table Rock organizers.
+- 29 Oct, skipped (personal addresses only on the party pages): Bay County GOP (ran the 2024 Trump Patriot Boat Parade; yahoo and gmail only), Martin, Sarasota, Collier, Volusia and St. Lucie GOP, Charlotte County Trump Club (comcast). Kosciusko GOP: kcountygop.com no longer resolves, dropped.
+- 30 Oct, skipped (personal addresses only): Horry and Beaufort SC GOP (gmail), Manatee, St. Johns and Escambia FL GOP. Brazoria and Charleston GOP: contact forms only.
+- Channel owners: no public business email found yet. 0 of 5 free 2-packs promised.
+- Do not contact: Jacksonville Light Boat Parade and Bluewater Bay Marina (both declined).
