@@ -1,6 +1,6 @@
 # MAGA outreach: approval sheet, 6 Nov
 
-Not sent. Waiting for Garrett's yes.
+Approved by Garrett 6 Nov; sent 6 Nov.
 
 Same approved v2 text and Malibu photo (approval-photo-malibu.jpg). Subject: "MAGA fender covers: a free sample for your club". Only the greeting changes.
 

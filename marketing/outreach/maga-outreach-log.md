@@ -25,6 +25,7 @@ Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was r
 
 4 Nov: 8 new rows ready (v2 text, Malibu photo), shown to Garrett for approval (maga-approval-2026-11-04.md). No earlier mail to any of these domains in Gmail or any FenderU branch. Skipped (personal addresses only): Lake, Walton, Hernando, Flagler, Marion, Highlands, Gulf FL GOP; Galveston, Brazoria, Calhoun, Aransas and other Texas coastal/lake county chairs. Nassau and Osceola pages list no email. Garrett approved ("send them"); all 8 sent 07:25 to 07:55 UTC from Gmail with the Malibu photo, each sent copy read back (text matches, no google.com/url, photo attached). 34 sent in total.
 5 Nov: Garrett approved Leon and Brevard (maga-approval-2026-11-04-pm.md); both sent 16:19 and 16:23 UTC with the Malibu photo, sent copies read back OK. 36 sent in total. Daily scheduled task's instructions updated to approval-first and the Malibu photo.
+6 Nov: Garrett approved Lexington County SC (maga-approval-2026-11-06.md); sent with the Malibu photo, sent copy read back OK. 37 sent in total.
 
 | Date | Name | Org | Email | Type | Template | Status | Source / context |
 |---|---|---|---|---|---|---|---|
@@ -64,6 +65,7 @@ Sent 28 Oct 2026, 16:13 to 17:03 UTC, on Garrett's "send". Every sent copy was r
 | 4 Nov | (chair) | Harris County Republican Party, Houston TX (Clear Lake, Lake Houston) | chair@harriscountygop.com | County GOP | A v2 (Malibu) | sent 4 Nov | florida.gop county page (texasgop.org county-chairs-2026 for Harris) |
 | 5 Nov | (chairman) | Leon County Republican Party, Tallahassee FL (Lake Jackson, Lake Talquin) | chairman@leongop.com | County GOP | A v2 (Malibu) | sent 5 Nov | florida.gop county page |
 | 5 Nov | (info) | Brevard Republican Executive Committee, FL (Indian River Lagoon, Space Coast) | info@gopbrevard.org | County GOP | A v2 (Malibu) | sent 5 Nov | votebrevard.gov local parties page |
+| 6 Nov | (chair) | Lexington County Republican Party, SC (Lake Murray) | chair@lexingtoncountyrepublicanparty.com | County GOP | A v2 (Malibu) | sent 6 Nov | lexingtoncountyrepublicanparty.com contact page |
 
 ## Held back (not sendable as found)
 
