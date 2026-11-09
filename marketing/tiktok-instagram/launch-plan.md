@@ -12,7 +12,7 @@ posters use."
 
 | Thing | State | Who can change it |
 |---|---|---|
-| TikTok account | None exists: @fenderu, @fenderu.com and @fenderucovers all return "Couldn't find this account" | Garrett creates @fenderu in the TikTok app (phone number or email; a **personal/creator** account, not Business, see §4) |
+| TikTok account | **@fenderullc** (display name FenderU, created June 2026 on Garrett's Gmail, bio "MAGA Fender Covers for Patriot Boaters \| 2-Pack $119 \| fenderu.com", 1 follower). Found 9 Nov; the 5 Nov check only tried @fenderu, which belongs to someone else. It carries **three old videos Garrett called garbage on 9 Nov**; TikTok hides the video list from this cloud session, so they could not be viewed or removed from here | Garrett deletes the three in the app (profile, the video, the three dots, Delete). Every new post is shown here first and goes out as the pack says |
 | Where buyers go | **FenderU.com, always.** Garrett, 5 Nov: "can they not be directed to buy from my website. FenderU.com. That's how I currently sell." Link in bio and every caption point there. TikTok Shop is not part of the plan | Settled |
 | Instagram account | He has one (the connector can't see it: the Make Facebook login has no Instagram scopes) | Garrett connects it to vidIQ once (one sign-in card) if he wants reels published for him without music; otherwise posts from the phone |
 | Posting with real-band music | Only possible **inside the TikTok and Instagram apps**, from the sound picker. No API, connector or scheduled task can attach a licensed song, and burning a song into the file would get the post muted or removed | Garrett, or anyone with his phone: about five taps per post (§4) |
@@ -96,7 +96,7 @@ weekends.
 
 ## 4. How a post goes out (phone, about five taps)
 
-TikTok: open the app as @fenderu, "+", upload the draft from the phone, "Add
+TikTok: open the app as @fenderullc, "+", upload the draft from the phone, "Add
 sound", search the song by name, set it to play from the start, keep the video
 at full length, paste the caption, post. Instagram: "+", Reel, pick the draft,
 "Add audio", search the song, paste the caption, share. The song is attached by
@@ -116,7 +116,7 @@ cannot attach licensed music). That is a fallback, not the plan he asked for.
 
 1. Hashtags above on every post; #trumpboatparade and #boatparade are where the
    Jupiter parade clips live.
-2. Comment from @fenderu under the Trump boat parade clips (the @daananesutz
+2. Comment from @fenderullc under the Trump boat parade clips (the @daananesutz
    "Part" series and any June 14 parade video) with an approved line only:
    "Show your patriotism. FenderU.com". Comments are posts; same rules.
 3. Channel-owner offer (26 Oct rule, one free sample 2-pack): DM the parade
@@ -136,6 +136,6 @@ Settled 5 Nov: buyers are sent to FenderU.com, nothing else.
 - "yes" on the hooks P1-P4 as shown (all from his own approved lines) and on the
   two new hooks P5 and P6, or "no" to either.
 - "yes" on the song pairings, or name the songs he wants instead.
-- Create the TikTok account (@fenderu) and say when it exists.
+- Delete the three old videos on @fenderullc (9 Nov: "Get the garbage images on Tik Tok off of there... Pull them."); nothing new goes up until he has seen it here.
 - Decide: posts go out from his phone with the songs (his taps), or from the
   connector without songs (one Instagram sign-in to vidIQ).
