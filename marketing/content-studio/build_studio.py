@@ -127,7 +127,9 @@ BANNED = [r"the pair", r"\busps\b", r"edge to edge", r"every dock", r"every mari
           r"made in usa", r"madeinusa", r"full.?wrap", r"show your colors", r"48 ?h", r"limited",
           r"\brun\b", r"when they.re gone", r"paypal", r"venmo", r"cash app", r"stripe", r"\bcard\b",
           r"kansas", r"missouri", r"midwest", r"ships (from|within|in)", r"order by", r"5-star",
-          r"★", r"both sides", r"made for american boats", r"shipped by", r"\$99", r"\$118"]
+          r"★", r"both sides", r"made for american boats", r"shipped by", r"\$99", r"\$118",
+          r"#americanmade", r"\bcards\b", r"priority mail", r"ups ground", r"no surprise", r"salt life",
+          r"packed by", r"\b175\b"]
 
 def banned_hits(text):
     return [b for b in BANNED if re.search(b, text, re.I)]
@@ -148,7 +150,8 @@ def wrap(draw, text, f, maxw):
     if cur: lines.append(cur)
     return [l.replace("\u00a0", " ") for l in lines]
 
-def text_band(canvas_size, text, sub=None, y_top=330, size=78, maxw=820):
+def text_band(canvas_size, text, sub=None, y_top=330, size=78, maxw=796):
+    # maxw 796 + 2 x 34 padding = 864 band, so at least 108 px (10%) clear each side at 1080 wide
     """Transparent RGBA layer: dark band, flag hairline, white Oswald, centred."""
     cw, ch = canvas_size
     layer = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
@@ -290,7 +293,32 @@ def onscreen_text(v):
     if any(s[0] == "END" for s in v["shots"]): t += [END_PRICE, END_SITE]
     return [x for x in t if x]
 
+# Caption lines used in PACK.md (verbatim from marketing/captions.md, hashtags trimmed)
+CAPTION_LINES = [
+    "Make America Great Again — right down to the fenders.",
+    "Marine-grade neoprene, flag print. Sold as a 2-pack.",
+    "$119 for the two-pack, shipping included.",
+    "fenderu.com",
+    "#maga #boatlife #boating #americafirst #patriot",
+    "Show your patriotism.",
+    'Marine-grade neoprene. UV protected, waterproof, salt-resistant. Fits standard 8.5" x 26" cylindrical fenders. Sold as a 2-pack.',
+    "#boataccessories #boatlife #boatgear #americafirst #patriot",
+    "MAGA fender covers — marine-grade neoprene, sold as a 2-pack.",
+    'Fits standard 8.5" x 26" cylindrical fenders. $119 for the two-pack, shipping included.',
+    "American-owned and operated.",
+    "Questions welcome.",
+    "#maga #boatlife #lakelife #wakesurf #boating #americafirst #patriot",
+    "#boataccessories #boatlife #marina #neoprene #boatgear #boating #americafirst #patriot",
+    "MAGA Fender Covers, Marine-Grade Neoprene, Sold as a 2-Pack",  # Pinterest title, DRAFT
+]
+
 if __name__ == "__main__":
+    cap_hits = [(c, banned_hits(c)) for c in CAPTION_LINES if banned_hits(c)]
+    if cap_hits: sys.exit(f"BANNED in captions: {cap_hits}")
+    if sys.argv[1:] == ["--check"]:
+        n = sum(len(onscreen_text(v)) for v in VIDEOS)
+        bad = [(v["id"], t) for v in VIDEOS for t in onscreen_text(v) if banned_hits(t)]
+        sys.exit(f"BANNED on screen: {bad}" if bad else print(f"check ok: {n} on-screen lines, {len(CAPTION_LINES)} caption lines, 0 hits") or 0)
     want = set(sys.argv[1:])
     report = []
     for v in VIDEOS:

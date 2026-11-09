@@ -13,8 +13,9 @@ Future runs: read this first, then `fenderu-standing-rules`, HQ.md §3, `marketi
 
 | Date | Word | Covers |
 |---|---|---|
-| 6 Nov 2026 | "Approve the post." | TikTok/Instagram pack P1-P6 as shown (launch-plan.md); P1 first. (Per HQ §3. The Head's brief says P5 and P6 hooks still need his yes, so treat those as unapproved.) |
+| 6 Nov 2026 | "Approve the post." | TikTok/Instagram pack P1-P6 as shown, hooks P1-P6 included (launch-plan.md); P1 first. HQ.md §3 wins, so the P5 and P6 hooks are approved (confirmed by SI Claude Head, 9 Nov). |
 | — | none yet | Content Studio F-series |
+| — | none yet | Keyword-style Pinterest title (DRAFT, PACK.md) |
 
 ## Posted (where, when)
 

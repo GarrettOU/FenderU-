@@ -1,16 +1,18 @@
 # Content Studio pack, 9 Nov 2026
 
+> **Internal document. Never paste from it.** The explanatory bullets quote banned phrases so the checks can be read. Copy only from the caption blocks.
+
 **Nothing here has been posted.** Every item waits for Garrett's word per item.
 Built by `marketing/content-studio/build_studio.py` (rerun: `python3 build_studio.py F1`).
 
 ## How to read this
 
-- **One master file per video** goes to every platform: TikTok, Instagram Reels, Facebook Reel (the file carries a silent AAC track, so use UploadVideo, never uploadAReel) and Pinterest video pin. Each video also has a 1080x1350 still (`*-still-1080x1350.jpg`) for the Facebook photo rotation and Pinterest, and a 5x3 frame grid (`*-grid.jpg`).
+- **One master file per video** goes to every platform: TikTok, Instagram Reels, Facebook Reel (the file carries a silent AAC track, so use UploadVideo, never uploadAReel) and Pinterest video pin. Each video also has a 1080x1350 still (`*-still-1080x1350.jpg`) for the Facebook photo rotation and Pinterest, a 5x3 frame grid (`*-grid.jpg`), and its first frame as a JPEG (`*-frame1.jpg`, used to check the first-frame rule).
 - **Spec (checked with ffprobe):** H.264 High, 1080x1920, 30 fps, AAC 44.1 kHz silent track (max volume −91 dB), 11.8 to 16.1 s, 2.4 to 4.2 MB.
 - **Cover pixels:** photos are only cropped and scaled (one Lanczos pass). There's no filter, grade or redraw. A decoded video frame against a plain scale of the source photo measures 41.7 dB PSNR, which is the difference H.264 compression alone makes.
-- **First frame** of every video is a cover on a fender on a boat. Hooks stay on screen for the first 2.8 s, in the centred safe zone (text bands start 330 px from the top and end above 1,250 px, with 130 px or more clear at the sides). Hard cuts come every 1.7 to 2.8 s.
+- **First frame** of every video is a cover on a fender on a boat. Hooks stay on screen for the first 2.8 s, in the centred safe zone (text bands start 330 px from the top and end above 1,250 px). Measured minimum clear space at the sides, as built: F1 100 px, F3-A 101, F3-B 107, F4 110, F2-A/B 111, F5-A/B 119. F1, F3-A and F3-B are under the 108 px (10%) target by 1 to 8 px; that is still inside TikTok's and Meta's own margins, and these files were not rebuilt. The builder now caps band width at 864 px, so future builds are 108 px or more. Hard cuts come every 1.7 to 2.8 s.
 - **End card** on every video: "$119 FOR THE TWO-PACK, FREE SHIPPING." and "FENDERU.COM". Checked on all eight grids.
-- **Banned-list text check:** every on-screen line and every caption below was run through the build's banned list (the pair, USPS, edge to edge, every dock/marina/parade, matched pair, port and starboard, fly/flying/flies, American-made, scarcity, shipping time, origin, payment methods, ratings). There were **0 hits.**
+- **Banned-list text check:** `python3 build_studio.py --check` runs every on-screen line (57) and every caption line and Pinterest title (15) through the build's banned list. The build also refuses to render a video if any of them hits (the pair, USPS, edge to edge, every dock/marina/parade, matched pair, port and starboard, fly/flying/flies, American-made, scarcity, shipping time, origin, payment methods, ratings, #americanmade, cards, priority mail, UPS Ground, no surprise, salt life, packed by, 175). There were **0 hits.**
 - **Research section F had banned lines. They were fixed here, not copied:** F1's end card "$119 the pair" became the approved price line. F3's "edge to edge" was dropped. F5's "USPS Priority Mail with tracking" slide was replaced by the price end card.
 - **AI label:** F3-A and F3-B use Garrett's Runway photos (02, 03, 05). Toggle "AI-generated content" on TikTok and on Instagram/Facebook when posting those two. All the other videos use only his real Malibu photos, so they need no label.
 - **Music:** none in the files. A song goes on in the app (launch-plan.md §4). Instagram through vidIQ posts without a song.
@@ -40,7 +42,7 @@ Built by `marketing/content-studio/build_studio.py` (rerun: `python3 build_studi
 > fenderu.com
 > #maga #boatlife #boating #americafirst #patriot
 
-**Pinterest, every video.** Title (keywords, not a slogan): "MAGA Fender Covers, Marine-Grade Neoprene, Sold as a 2-Pack". The description is the group-post caption without hashtags. Link: https://fenderu.com/
+**Pinterest, every video.** Title: the approved line as written, "MAGA fender covers — marine-grade neoprene, sold as a 2-pack." A keyword-style title, "MAGA Fender Covers, Marine-Grade Neoprene, Sold as a 2-Pack", is approved words re-cased and re-punctuated, so it is **DRAFT and needs Garrett's yes** before use. The description is the group-post caption without hashtags. Link: https://fenderu.com/
 
 ## The videos
 
@@ -74,7 +76,7 @@ Red header = DRAFT hook, not approved. Green header = approved hook.
 
 ## The Outfit: not built this run
 
-The Outfit repo (GarrettOU/Outfitter---apparel-) is not reachable from this session. Attaching it was refused by the session's permission check, and the git clone needs credentials this session does not have. Without `designs/` and `company/decisions.md` there are no approved mockups to build from, so **no Outfit video was made.** No substitute imagery was used. Next run: attach that repo to the session, and the two Outfit videos (research F1 mockup reveal, F2 Christmas store explainer) get built the same way, with the AI label on, no price and no lodge-cut number.
+No Outfit video was made. The Outfit is out of the Content Studio's scope until a lodge has signed (SI Claude Head, 9 Nov; see STUDIO.md).
 
 ## Words Garrett can say
 
