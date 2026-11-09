@@ -48,3 +48,17 @@ Where the three are used:
 - Channel-owner DM (`marketing/outreach/channel-owner-dm.md`): 05 or 02.
 - Boaters for Trump group posts Garrett pastes himself (`marketing/outreach/boaters-for-trump-posts.md`): 02, 03, 05.
 Still posted before the change and not yet taken down: the 28 Oct Facebook reel (`marketing/reels/runway-reel-01-fb.mp4`), which uses all six; two 30 Oct pins on 01 and 06 are deleted and re-made by the next Pinterest run.
+
+**9 Nov 2026, Garrett:** "I've said multiple times to clean up the clarity of the
+Runway pictures on my website for FenderU and it's still not done." Diagnosis by
+the SI Claude Head: the `sharp/` files were over-sharpened, not blurry. Measured
+Laplacian variance at 720 px: `sharp/*-720` 25,000 to 40,000, `sharp/*-1100`
+13,000 to 21,000, against 400 to 700 for Garrett's real site photos. That is the
+halo-and-crunch look he was seeing, and the desktop browser (2x) was picking the
+most over-processed file (720). The 2752 px originals are clean. `clean/` holds
+each kept photo at 720, 1100, 1440 and 2200 wide, made with a single Lanczos
+downscale from the original and one light unsharp pass (0x0.6+0.5+0.008),
+measured 2,000 to 5,000. The site now serves `clean/` under `/media/runway/v3/`
+with a four-step `srcset`, so 2x and 3x screens get a file at or above their
+pixel density. `sharp/` stays for the Facebook and Pinterest rotations until
+those prompts are repointed; nothing was deleted.
