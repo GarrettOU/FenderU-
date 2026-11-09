@@ -32,27 +32,54 @@ const REELS = {
     "https://raw.githubusercontent.com/GarrettOU/FenderU-/9c0a5e0/marketing/reels/maga-on-the-water.mp4"
 };
 
-// Garrett's on-the-boat photos (28 Oct 2026, marketing/runway; sharpened 4 Nov at display size, 720 and 1100 px, three kept), served from
-// the repo at a pinned commit and shown in the gallery section below.
+// Garrett's on-the-boat photos (28 Oct 2026, marketing/runway). 9 Nov 2026: the
+// sharp/ set was over-sharpened (halos); the gallery now serves marketing/runway/clean/
+// (one Lanczos downscale from the 2752 px originals, one light unsharp pass) at
+// 720/1100/1440/2200 under /media/runway/v3/, pinned to a commit. The old paths map
+// to the same clean files so nothing cached breaks.
 const PHOTOS = {
-  "/media/runway/02-red-express-cruiser-1100.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ca73ec5ffb09f9e3a2821169a78c38d6c679e992/marketing/runway/sharp/02-red-express-cruiser-1100.jpg",
+  "/media/runway/v3/02-red-express-cruiser-720.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/02-red-express-cruiser-720.jpg",
+  "/media/runway/v3/02-red-express-cruiser-1100.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/02-red-express-cruiser-1100.jpg",
+  "/media/runway/v3/02-red-express-cruiser-1440.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/02-red-express-cruiser-1440.jpg",
+  "/media/runway/v3/02-red-express-cruiser-2200.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/02-red-express-cruiser-2200.jpg",
   "/media/runway/02-red-express-cruiser-720.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ca73ec5ffb09f9e3a2821169a78c38d6c679e992/marketing/runway/sharp/02-red-express-cruiser-720.jpg",
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/02-red-express-cruiser-720.jpg",
+  "/media/runway/02-red-express-cruiser-1100.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/02-red-express-cruiser-1100.jpg",
   "/media/runway/02-red-express-cruiser.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ca73ec5ffb09f9e3a2821169a78c38d6c679e992/marketing/runway/sharp/02-red-express-cruiser-1100.jpg",
-  "/media/runway/03-yellow-bowrider-1100.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ca73ec5ffb09f9e3a2821169a78c38d6c679e992/marketing/runway/sharp/03-yellow-bowrider-1100.jpg",
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/02-red-express-cruiser-1440.jpg",
+  "/media/runway/v3/03-yellow-bowrider-720.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/03-yellow-bowrider-720.jpg",
+  "/media/runway/v3/03-yellow-bowrider-1100.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/03-yellow-bowrider-1100.jpg",
+  "/media/runway/v3/03-yellow-bowrider-1440.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/03-yellow-bowrider-1440.jpg",
+  "/media/runway/v3/03-yellow-bowrider-2200.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/03-yellow-bowrider-2200.jpg",
   "/media/runway/03-yellow-bowrider-720.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ca73ec5ffb09f9e3a2821169a78c38d6c679e992/marketing/runway/sharp/03-yellow-bowrider-720.jpg",
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/03-yellow-bowrider-720.jpg",
+  "/media/runway/03-yellow-bowrider-1100.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/03-yellow-bowrider-1100.jpg",
   "/media/runway/03-yellow-bowrider.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ca73ec5ffb09f9e3a2821169a78c38d6c679e992/marketing/runway/sharp/03-yellow-bowrider-1100.jpg",
-  "/media/runway/05-teal-wakeboat-party-1100.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ca73ec5ffb09f9e3a2821169a78c38d6c679e992/marketing/runway/sharp/05-teal-wakeboat-party-1100.jpg",
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/03-yellow-bowrider-1440.jpg",
+  "/media/runway/v3/05-teal-wakeboat-party-720.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/05-teal-wakeboat-party-720.jpg",
+  "/media/runway/v3/05-teal-wakeboat-party-1100.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/05-teal-wakeboat-party-1100.jpg",
+  "/media/runway/v3/05-teal-wakeboat-party-1440.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/05-teal-wakeboat-party-1440.jpg",
+  "/media/runway/v3/05-teal-wakeboat-party-2200.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/05-teal-wakeboat-party-2200.jpg",
   "/media/runway/05-teal-wakeboat-party-720.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ca73ec5ffb09f9e3a2821169a78c38d6c679e992/marketing/runway/sharp/05-teal-wakeboat-party-720.jpg",
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/05-teal-wakeboat-party-720.jpg",
+  "/media/runway/05-teal-wakeboat-party-1100.jpg":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/05-teal-wakeboat-party-1100.jpg",
   "/media/runway/05-teal-wakeboat-party.jpg":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ca73ec5ffb09f9e3a2821169a78c38d6c679e992/marketing/runway/sharp/05-teal-wakeboat-party-1100.jpg"
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/a5f35af91e8ac3e3ee2fb35aa0dfa3851f8e71c1/marketing/runway/clean/05-teal-wakeboat-party-1440.jpg"
 };
 
 const json = (body, status = 200) => new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
@@ -125,7 +152,7 @@ function scrubCopy(html) {
     // Six more boats in the gallery section (Garrett's photos, 28 Oct 2026).
     .replace(/(<section class="gallery-sec">[\s\S]*?)(<\/div>\s*<\/section>)/, (m, a, b) => a + GALLERY_CARDS + b);
 }
-const GALLERY_CARDS = "<div class=\"gallery-card\"><img src=\"/media/runway/02-red-express-cruiser-1100.jpg\" srcset=\"/media/runway/02-red-express-cruiser-720.jpg 720w, /media/runway/02-red-express-cruiser-1100.jpg 1100w\" sizes=\"(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/03-yellow-bowrider-1100.jpg\" srcset=\"/media/runway/03-yellow-bowrider-720.jpg 720w, /media/runway/03-yellow-bowrider-1100.jpg 1100w\" sizes=\"(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/05-teal-wakeboat-party-1100.jpg\" srcset=\"/media/runway/05-teal-wakeboat-party-720.jpg 720w, /media/runway/05-teal-wakeboat-party-1100.jpg 1100w\" sizes=\"(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div>";
+const GALLERY_CARDS = "<div class=\"gallery-card\"><img src=\"/media/runway/v3/02-red-express-cruiser-1100.jpg\" srcset=\"/media/runway/v3/02-red-express-cruiser-720.jpg 720w, /media/runway/v3/02-red-express-cruiser-1100.jpg 1100w, /media/runway/v3/02-red-express-cruiser-1440.jpg 1440w, /media/runway/v3/02-red-express-cruiser-2200.jpg 2200w\" sizes=\"(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/v3/03-yellow-bowrider-1100.jpg\" srcset=\"/media/runway/v3/03-yellow-bowrider-720.jpg 720w, /media/runway/v3/03-yellow-bowrider-1100.jpg 1100w, /media/runway/v3/03-yellow-bowrider-1440.jpg 1440w, /media/runway/v3/03-yellow-bowrider-2200.jpg 2200w\" sizes=\"(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div><div class=\"gallery-card\"><img src=\"/media/runway/v3/05-teal-wakeboat-party-1100.jpg\" srcset=\"/media/runway/v3/05-teal-wakeboat-party-720.jpg 720w, /media/runway/v3/05-teal-wakeboat-party-1100.jpg 1100w, /media/runway/v3/05-teal-wakeboat-party-1440.jpg 1440w, /media/runway/v3/05-teal-wakeboat-party-2200.jpg 2200w\" sizes=\"(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px\" alt=\"Boat with FenderU MAGA fender covers\" loading=\"lazy\"></div>";
 
 async function serveReel(request, src) {
   const range = request.headers.get("Range");
