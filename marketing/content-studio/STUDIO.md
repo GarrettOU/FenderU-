@@ -25,4 +25,8 @@ Nothing from the Content Studio has been posted.
 - F1, F2-A, F3-A, F4, F5-A: ready, approved hooks. Needs "post <id>".
 - F2-B, F3-B, F5-B: DRAFT hooks. Needs "approve <id> hook" or "no".
 - F3-A/B use Runway photos: AI label on when posted.
-- The Outfit two videos: blocked on repo access.
+- The Outfit two videos: blocked on repo access. Plan from SI Claude Head (9 Nov, 16:23 UTC), for the Wednesday run: call add_repo for GarrettOU/Outfitter---apparel- (read), clone it, and build from designs/ only, with the AI label where required, no lodge-cut number and no prices. Note: on 9 Nov this session's permission check refused add_repo, so if it is refused again the run reports that and builds nothing for The Outfit.
+
+## Standing notes
+
+- Imagery: any FenderU still or video uses `marketing/runway/clean/` only, never `sharp/` or `web/`. The Facebook and Pinterest rotations move to clean/ (commit 8792d87) once Garrett says "fix posters" (SI Claude Head, 9 Nov).
