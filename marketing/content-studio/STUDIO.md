@@ -22,7 +22,8 @@ Future runs: read this first, then `fenderu-standing-rules`, HQ.md §3, `marketi
 ## Posted (where, when)
 
 - **13 Nov 2026: G1 posted to TikTok (@fenderullc) by Garrett from his phone** (he said "posted"). Caption: the reel caption with 5 hashtags. Sound: his pick from the in-app library, or none.
-- Facebook Page and Pinterest for G1: not yet; the 15:53 UTC retry posts them through Make.
+- **13 Nov 2026, 16:19 UTC: G1 posted to the FenderU Facebook Page** as a video. Page check passed: the connection lists exactly one page, FenderU 1235020856358701. Make scenario 6138548 used UploadVideo with the bank reel caption whole, execution fdaa7ab99c154ec8bf749659968d3d53, SUCCESS. The slot was borrowed from 6229425 and given back (6229425 active again, 6138548 inactive); 6374100 was not touched.
+- G1 on Pinterest: **not pinned.** The Pinterest scenario only makes image pins. A video pin needs Pinterest's media-upload step first, which none of the existing scenarios have. That waits on Garrett's word: "pin G1 still" pins the 1080x1350 G1 still with the approved title and link; "build video pins" adds the upload step.
 
 ## Performance checks
 
