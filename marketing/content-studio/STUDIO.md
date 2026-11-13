@@ -21,7 +21,8 @@ Future runs: read this first, then `fenderu-standing-rules`, HQ.md §3, `marketi
 
 ## Posted (where, when)
 
-Nothing from the Content Studio has been posted.
+- **13 Nov 2026: G1 posted to TikTok (@fenderullc) by Garrett from his phone** (he said "posted"). Caption: the reel caption with 5 hashtags. Sound: his pick from the in-app library, or none.
+- Facebook Page and Pinterest for G1: not yet; the 15:53 UTC retry posts them through Make.
 
 ## Performance checks
 
@@ -41,6 +42,9 @@ Nothing from the Content Studio has been posted.
 - The Outfit: out of scope (see standing notes).
 
 ## Standing notes
+
+- **Music (13 Nov):** @fenderullc is a TikTok Business account. None of the launch-plan songs show up in its sound library (Garrett: "none of that music on on my tik tok app. none."). From now on, pack notes say "any sound from your in-app library, or none". No band songs unless he switches the account to Personal.
+- **Getting files to his phone:** send each approved video with SendUserFile so he can Save Video from the Claude app before posting.
 
 - **The Outfit is out of the Studio's scope** until a lodge has signed and SI Claude Head says otherwise (Head, 9 Nov 16:25 UTC, replacing its 16:23 note). Do not try the Outfit repo again. The weekly run is FenderU only: five videos, platform exports, previews, PACK.md, draft PR, and one report under 25 lines.
 
