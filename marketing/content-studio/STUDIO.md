@@ -23,7 +23,8 @@ Future runs: read this first, then `fenderu-standing-rules`, HQ.md §3, `marketi
 
 - **13 Nov 2026: G1 posted to TikTok (@fenderullc) by Garrett from his phone** (he said "posted"). Caption: the reel caption with 5 hashtags. Sound: his pick from the in-app library, or none.
 - **13 Nov 2026, 16:19 UTC: G1 posted to the FenderU Facebook Page** as a video. Page check passed: the connection lists exactly one page, FenderU 1235020856358701. Make scenario 6138548 used UploadVideo with the bank reel caption whole, execution fdaa7ab99c154ec8bf749659968d3d53, SUCCESS. The slot was borrowed from 6229425 and given back (6229425 active again, 6138548 inactive); 6374100 was not touched.
-- G1 on Pinterest: **not pinned.** The Pinterest scenario only makes image pins. A video pin needs Pinterest's media-upload step first, which none of the existing scenarios have. That waits on Garrett's word: "pin G1 still" pins the 1080x1350 G1 still with the approved title and link; "build video pins" adds the upload step.
+- **14 Nov 2026, 18:26 UTC: G1 still pinned to Pinterest** on Garrett's "pin G1 still" (13 Nov). Board: Patriotic Boat Fender Covers (763852855489296990). Title: "MAGA fender covers — marine-grade neoprene, sold as a 2-pack." Description: the group-post caption without hashtags. Link: https://fenderu.com/. Image: G1-still-1080x1350.jpg at 79bc533. Make scenario 6229425, execution 1f088f931d59407881d1143aea57c7e1, SUCCESS. The scenario was temporarily set to this single pin, then restored to its five-pin blueprint and left active.
+- Video pins: not built. That needs a Pinterest media-upload step and waits on "build video pins".
 
 ## Performance checks
 
