@@ -144,6 +144,13 @@ function scrubCopy(html) {
     // Garrett banned "the pair" (21 Oct). The link-preview tags still had it.
     .replace(/\$119 the pair with free shipping\./g, () => "$119 for the two-pack, free shipping.")
     .replace(/\$119 the pair/g, () => "$119 for the two-pack")
+    // The covers have drawstrings at both ends, not an elastic top (Garrett,
+    // 11 Sep 2026; "fix it", 16 Nov 2026). Approved wording only.
+    .replace(/<strong>Elastic top<\/strong>(\s*)(—|&mdash;|&#8212;)(\s*)stretches over the fender and holds its shape/g,
+      (m, a, d, b) => `<strong>Drawstring at both ends</strong>${a}${d}${b}cinches snug over the fender`)
+    .replace(/The elastic top stretches a bit to take up small differences, so here/g, () => "Drawstrings at both ends cinch it snug, so here")
+    // No shipping-timing language anywhere (Garrett's rule): drop the UPS day window at checkout.
+    .replace(/UPS states 1\s*(–|&ndash;|&#8211;|-)\s*5 days\s*(·|&middot;|&#183;)\s*tracking included/g, () => "Tracking included")
     // Dead code and notes from the old Netlify host. The live-rates block is
     // replaced by inert stubs because other functions still reference them.
     .replace(/<!--\s*FIX #8:[\s\S]*?-->\s*/, "")
