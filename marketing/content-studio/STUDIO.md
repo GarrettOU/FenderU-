@@ -34,6 +34,12 @@ Future runs: read this first, then `fenderu-standing-rules`, HQ.md §3, `marketi
   - Make reports run status only, not reach. vidIQ has no social account connected (account list empty), so Instagram reach can't be read.
   - Next: once any F or G video posts, read its Facebook reach the following week. Until a channel can report reach, judge the pack by Garrett's picks rather than by numbers.
 
+- **18 Nov run.**
+  - G1 on TikTok: vidIQ public data shows video 7707688760661642526 at 416 views, 17 likes, 2 comments and 1 share after 5 days. It is 12 s long, matching G1 (11.6 s; the P1 draft is 15 s). HQ.md item 0d calls the 13 Nov TikTok post "P1". The length says G1, and both open on the same hook, "THEY HAVEN'T SEEN THESE YET." The old August posts sit at 106 to 114 views with 0 or 1 like.
+  - vidIQ has no connected accounts yet: the 15 Nov links were never completed, so it can't publish or read private insights. The HQ daily TikTok task waits on the same connection.
+  - Lesson 1: the one post with on-screen text over a cover-on-boat photo plus his own trending sound got about 4x the reach of the August posts. Keep the first frame on the cover and let him pick the sound in the app.
+  - Lesson 2: TikTok reach is the only number we can read. Once vidIQ is connected, read Instagram and Facebook reach weekly before building more.
+
 ## Queued, waiting on his word
 
 - F1, F2-A, F3-A, F4, F5-A: ready, approved hooks. Needs "post <id>".
@@ -44,6 +50,8 @@ Future runs: read this first, then `fenderu-standing-rules`, HQ.md §3, `marketi
 - The Outfit: out of scope (see standing notes).
 
 ## Standing notes
+
+- **18 Nov: no new pack built this run, on purpose.** The 18 Nov main-session pack (`marketing/content/2026-11-18/`, R1-R5 and a carousel, approved and in every rotation) already uses the same approved hooks. Waiting to post: F (8, of which 5 are postable), G2-G5, R1-R5 and P1-P6. Every approved hook line has now been built at least twice. A new pack would only repeat them with different crops, so the next one waits on new lines from Garrett, or on his "build H pack" (repeats with fresh photo sequences).
 
 - **Music (13 Nov):** @fenderullc is a TikTok Business account. None of the launch-plan songs show up in its sound library (Garrett: "none of that music on on my tik tok app. none."). From now on, pack notes say "any sound from your in-app library, or none". No band songs unless he switches the account to Personal.
 - **Getting files to his phone:** send each approved video with SendUserFile so he can Save Video from the Claude app before posting.
