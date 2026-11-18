@@ -29,7 +29,30 @@ const ORDER_ALERT_URL = "https://hook.us2.make.com/vnrslz7r1mgscxh8ff28dx32gkghy
 // from the repo at a pinned commit so Facebook gets a real video/mp4 URL.
 const REELS = {
   "/media/fb/reel-d-make-america-great-again.mp4":
-    "https://raw.githubusercontent.com/GarrettOU/FenderU-/9c0a5e0/marketing/reels/maga-on-the-water.mp4"
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/9c0a5e0/marketing/reels/maga-on-the-water.mp4",
+  // 18 Nov 2026 pack (Garrett: "post the pack") and the 6 Nov approved P1-P6.
+  "/media/fb/R1-fits-your-fenders.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/content/2026-11-18/reels/R1-fits-your-fenders.mp4",
+  "/media/fb/R2-show-your-patriotism.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/content/2026-11-18/reels/R2-show-your-patriotism.mp4",
+  "/media/fb/R3-right-down-to-the-fenders.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/content/2026-11-18/reels/R3-right-down-to-the-fenders.mp4",
+  "/media/fb/R4-bare-fenders.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/content/2026-11-18/reels/R4-bare-fenders.mp4",
+  "/media/fb/R5-they-havent-seen-these-yet.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/content/2026-11-18/reels/R5-they-havent-seen-these-yet.mp4",
+  "/media/fb/P1-they-havent-seen-these-yet.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/tiktok-instagram/drafts/P1-they-havent-seen-these-yet.mp4",
+  "/media/fb/P2-bare-fenders.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/tiktok-instagram/drafts/P2-bare-fenders.mp4",
+  "/media/fb/P3-maga-down-to-the-fenders.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/tiktok-instagram/drafts/P3-maga-down-to-the-fenders.mp4",
+  "/media/fb/P4-show-your-patriotism.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/tiktok-instagram/drafts/P4-show-your-patriotism.mp4",
+  "/media/fb/P5-plain-white-fenders.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/tiktok-instagram/drafts/P5-plain-white-fenders.mp4",
+  "/media/fb/P6-boat-dads.mp4":
+    "https://raw.githubusercontent.com/GarrettOU/FenderU-/ea87d11bbd81c0b7df606be9ce912b44e82edbc5/marketing/tiktok-instagram/drafts/P6-boat-dads.mp4"
 };
 
 // Garrett's on-the-boat photos (28 Oct 2026, marketing/runway). 9 Nov 2026: the
