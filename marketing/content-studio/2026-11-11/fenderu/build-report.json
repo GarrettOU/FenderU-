@@ -1,0 +1,78 @@
+[
+ {
+  "id": "G1",
+  "mp4": "2026-11-11/fenderu/G1/G1.mp4",
+  "seconds": 11.6,
+  "runway": [],
+  "text": [
+   "THEY HAVEN'T SEEN THESE YET.",
+   "MARINE-GRADE NEOPRENE, FLAG PRINT.",
+   "SOLD AS A 2-PACK.",
+   "FITS STANDARD 8.5\" x 26\" CYLINDRICAL FENDERS.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "G2",
+  "mp4": "2026-11-11/fenderu/G2/G2.mp4",
+  "seconds": 11.6,
+  "runway": [],
+  "text": [
+   "BARE FENDERS ARE A WASTED OPPORTUNITY.",
+   "SHOW YOUR PATRIOTISM.",
+   "SLIPS ON IN SECONDS, NO TOOLS.",
+   "KEEPS DOCK GRIT OFF THE HULL.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "G3",
+  "mp4": "2026-11-11/fenderu/G3/G3.mp4",
+  "seconds": 11.6,
+  "runway": [
+   "r02",
+   "r03",
+   "r05"
+  ],
+  "text": [
+   "MAKE AMERICA GREAT AGAIN, RIGHT DOWN TO THE FENDERS.",
+   "MARINE-GRADE NEOPRENE.",
+   "UV PROTECTED, WATERPROOF, SALT-RESISTANT.",
+   "SOLD AS A 2-PACK.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "G4",
+  "mp4": "2026-11-11/fenderu/G4/G4.mp4",
+  "seconds": 11.6,
+  "runway": [],
+  "text": [
+   "PLAIN WHITE FENDERS ON A MAGA BOAT?",
+   "MAGA FENDER COVERS",
+   "MARINE-GRADE NEOPRENE, SOLD AS A 2-PACK.",
+   "FITS STANDARD 8.5\" x 26\" CYLINDRICAL FENDERS.",
+   "SLIPS ON IN SECONDS, NO TOOLS.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "G5",
+  "mp4": "2026-11-11/fenderu/G5/G5.mp4",
+  "seconds": 11.6,
+  "runway": [],
+  "text": [
+   "BOAT DADS ARE HARD TO BUY FOR.",
+   "MAGA FENDER COVERS",
+   "MARINE-GRADE NEOPRENE, SOLD AS A 2-PACK.",
+   "IF IT DOESN'T FIT, HE'LL TAKE THE RETURN.",
+   "QUESTIONS WELCOME.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ }
+]
