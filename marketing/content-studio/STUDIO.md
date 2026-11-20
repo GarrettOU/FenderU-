@@ -26,6 +26,8 @@ Future runs: read this first, then `fenderu-standing-rules`, HQ.md §3, `marketi
 - **14 Nov 2026, 18:26 UTC: G1 still pinned to Pinterest** on Garrett's "pin G1 still" (13 Nov). Board: Patriotic Boat Fender Covers (763852855489296990). Title: "MAGA fender covers — marine-grade neoprene, sold as a 2-pack." Description: the group-post caption without hashtags. Link: https://fenderu.com/. Image: G1-still-1080x1350.jpg at 79bc533. Make scenario 6229425, execution 1f088f931d59407881d1143aea57c7e1, SUCCESS. The scenario was temporarily set to this single pin, then restored to its five-pin blueprint and left active.
 - Video pins: not built. That needs a Pinterest media-upload step and waits on "build video pins".
 
+- **20 Nov 2026: H1 posted to the FenderU Facebook Page** on Garrett's "post H1". Page check passed: the connection lists one Page, FenderU 1235020856358701. Make 6138548 used UploadVideo with the bank reel caption whole, execution 9a2e4834af224b6e9f46ab77c39f6a3f, SUCCESS. The slot was borrowed from 6229425 and given back; 6138548 was restored to its R1 blueprint for the Saturday task and left inactive. TikTok: H1.mp4 was sent to Garrett for a phone post, because vidIQ still has no connected accounts.
+
 ## Performance checks
 
 - 11 Nov run: nothing from the Studio has posted, so there is nothing of ours to measure.
