@@ -4,6 +4,16 @@ Serves fenderu.com and takes orders. Pages and files come from the `fenderu`
 Worker over a service binding; this Worker owns `/api/*` and adds
 `wire-checkout.js` to every page.
 
+## Site copy: one source
+
+The page files in the `fenderu` Worker still hold some old lines ("Elastic
+top", "won't absorb water like fabric covers", "edge to edge"). The corrected
+wording is applied by `scrubCopy()` in `worker.js`, and **this repo's default
+branch is the only source** for what fenderu.com says. Don't fix copy on a side
+branch, in an artifact, or in a local `cfdeploy/` folder: deploy from here.
+`build.mjs` runs a copy guard and refuses to build if a banned line gets
+through, and the deploy's front check fails if the served page still shows one.
+
 ## Checkout
 
 One Place Order button. The buyer picks how to pay in the Payment step, above

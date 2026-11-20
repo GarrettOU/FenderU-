@@ -157,7 +157,7 @@ export default {
 
 // Garrett banned "edge to edge" and "Made for American Boats" everywhere.
 // The page source is clean now; this stays as a backstop.
-function scrubCopy(html) {
+export function scrubCopy(html) {
   return html
     .replace(/,?\s*(printed\s+)?edge[\s-]to[\s-]edge/gi, "")
     .replace(/made for american boats\.?\s*/gi, "")
@@ -167,6 +167,16 @@ function scrubCopy(html) {
     // Garrett banned "the pair" (21 Oct). The link-preview tags still had it.
     .replace(/\$119 the pair with free shipping\./g, () => "$119 for the two-pack, free shipping.")
     .replace(/\$119 the pair/g, () => "$119 for the two-pack")
+    // COPY RULES (Garrett, approved wording). The page files in the `fenderu`
+    // Worker still carry the old lines, so these rewrites are the fix. They
+    // live only here, on this repo's default branch; build.mjs refuses to
+    // build if any of them stops working. Lost once already (16 Nov fix sat on
+    // a side branch, 18 Nov deploy went out without it), so never remove them.
+    .replace(/<strong>Elastic top<\/strong>(\s*)(—|&mdash;|&#8212;)(\s*)stretches over the fender and holds its shape/g,
+      (m, a, d, b) => `<strong>Drawstring at both ends</strong>${a}${d}${b}cinches snug over the fender`)
+    .replace(/The elastic top stretches a bit to take up small differences, so here/g, () => "Drawstrings at both ends cinch it snug, so here")
+    .replace(/won(['’]|&rsquo;|&#8217;|&#39;)t absorb water like fabric covers/g, (m, q) => `won${q}t absorb water like other fabrics`)
+    .replace(/\bMissouri\b/g, () => "Kansas")
     // Dead code and notes from the old Netlify host. The live-rates block is
     // replaced by inert stubs because other functions still reference them.
     .replace(/<!--\s*FIX #8:[\s\S]*?-->\s*/, "")
