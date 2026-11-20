@@ -23,7 +23,7 @@ never used.
 
 Photo: `marketing/runway/sharp/02-red-express-cruiser.jpg`
 
-Make America Great Again — right down to the fenders.
+Make America Great Again.
 
 Marine-grade neoprene, American flag and MAGA print. Sold as a 2-pack. Fits standard 8.5" x 26" cylindrical fenders.
 

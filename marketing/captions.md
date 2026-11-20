@@ -8,7 +8,7 @@ and in `cfworker/worker.js` (`scrubCopy`).
 
 ## Reel: "Make America Great Again" (Facebook Page)
 
-Make America Great Again — right down to the fenders.
+Make America Great Again.
 
 Marine-grade neoprene, flag print. Sold as a 2-pack.
 
