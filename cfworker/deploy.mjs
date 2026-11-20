@@ -139,7 +139,7 @@ for (let i = 0; i < 12 && !ok; i++) {
     const html = await page.text();
     const img = await fetch(`${preview}/og-image.jpg`);
     const terms = await fetch(`${preview}/terms`);
-    const copyClean = !/elastic top|edge[\s-]to[\s-]edge|like fabric covers|missouri/i.test(html);
+    const copyClean = !/elastic top|edge[\s-]to[\s-]edge|like fabric covers|missouri|down to (your|the) (fenders|dock lines)/i.test(html);
     why = `page ${page.status}, wiring ${html.includes("__fuWired")}, price ${html.includes("$119")}, ` +
       `how-to-order ${html.includes('id="how"')}, image ${img.status}, terms ${terms.status}, copy ${copyClean}`;
     ok = page.ok && html.includes("__fuWired") && html.includes("$119") && !html.includes('id="how"') && img.ok && terms.ok && copyClean;

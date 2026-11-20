@@ -177,6 +177,9 @@ export function scrubCopy(html) {
     .replace(/The elastic top stretches a bit to take up small differences, so here/g, () => "Drawstrings at both ends cinch it snug, so here")
     .replace(/won(['’]|&rsquo;|&#8217;|&#39;)t absorb water like fabric covers/g, (m, q) => `won${q}t absorb water like other fabrics`)
     .replace(/\bMissouri\b/g, () => "Kansas")
+    // Garrett banned "Right Down to Your Fenders" and its family (20 Nov 2026).
+    .replace(/(\s*(—|&mdash;|&#8212;)\s*)?<span>\s*Right Down to Your Fenders\s*<\/span>/gi, "")
+    .replace(/\s*(—|&mdash;|&#8212;)\s*right down to (your|the) (fenders|dock lines)/gi, "")
     // Dead code and notes from the old Netlify host. The live-rates block is
     // replaced by inert stubs because other functions still reference them.
     .replace(/<!--\s*FIX #8:[\s\S]*?-->\s*/, "")

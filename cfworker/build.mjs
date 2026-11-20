@@ -18,10 +18,12 @@ const OLD_LINES = [
   "<li>Waterproof &amp; salt-resistant — won't absorb water like fabric covers</li>",
   "<li>Waterproof &amp; salt-resistant — won&rsquo;t absorb water like fabric covers</li>",
   "<p>Neoprene fender covers, printed edge to edge.</p>",
-  "<p>Shipped from Missouri.</p>"
+  "<p>Shipped from Missouri.</p>",
+  "<h2>Make America Great Again — <span>Right Down to Your Fenders</span></h2>",
+  "<p class=\"ft\">Make America Great Again — right down to your dock lines. Premium neoprene fender covers"
 ].join("\n");
 const out = scrubCopy(OLD_LINES);
-const BANNED = [/elastic/i, /edge[\s-]to[\s-]edge/i, /like fabric covers/i, /missouri/i, /matched pair/i, /port and starboard/i, /sold as a pair/i];
+const BANNED = [/elastic/i, /edge[\s-]to[\s-]edge/i, /like fabric covers/i, /missouri/i, /matched pair/i, /port and starboard/i, /sold as a pair/i, /down to (your|the) (fenders|dock lines)/i];
 const leaks = BANNED.filter((r) => r.test(out)).map(String);
 const REQUIRED = ["Drawstring at both ends</strong>", "cinches snug over the fender", "Drawstrings at both ends cinch it snug, so here", "absorb water like other fabrics", "Kansas"];
 const missing = REQUIRED.filter((x) => !out.includes(x));
