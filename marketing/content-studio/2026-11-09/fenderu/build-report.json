@@ -1,0 +1,131 @@
+[
+ {
+  "id": "F1",
+  "mp4": "2026-11-09/fenderu/F1/F1.mp4",
+  "seconds": 16.1,
+  "runway": [],
+  "text": [
+   "FITS STANDARD 8.5\" x 26\" CYLINDRICAL FENDERS.",
+   "TAYLOR MADE",
+   "STANDARD 8.5\" x 26\" CYLINDRICAL FENDERS",
+   "BASS PRO SHOPS",
+   "STANDARD 8.5\" x 26\" CYLINDRICAL FENDERS",
+   "DOCK EDGE",
+   "STANDARD 8.5\" x 26\" CYLINDRICAL FENDERS",
+   "SEACHOICE",
+   "STANDARD 8.5\" x 26\" CYLINDRICAL FENDERS",
+   "EXTREME MAX BOATTECTOR",
+   "STANDARD 8.5\" x 26\" CYLINDRICAL FENDERS",
+   "SOLD AS A 2-PACK.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "F2-A",
+  "mp4": "2026-11-09/fenderu/F2-A/F2-A.mp4",
+  "seconds": 13.6,
+  "runway": [],
+  "text": [
+   "SHOW YOUR PATRIOTISM.",
+   "SLIPS ON IN SECONDS, NO TOOLS.",
+   "ELASTIC TOP.",
+   "MARINE-GRADE NEOPRENE.",
+   "UV PROTECTED, WATERPROOF, SALT-RESISTANT.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "F2-B",
+  "mp4": "2026-11-09/fenderu/F2-B/F2-B.mp4",
+  "seconds": 13.6,
+  "runway": [],
+  "text": [
+   "SLIPS ON IN SECONDS. NO TOOLS.",
+   "KEEPS DOCK GRIT OFF THE HULL.",
+   "ELASTIC TOP.",
+   "MARINE-GRADE NEOPRENE.",
+   "UV PROTECTED, WATERPROOF, SALT-RESISTANT.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "F3-A",
+  "mp4": "2026-11-09/fenderu/F3-A/F3-A.mp4",
+  "seconds": 11.8,
+  "runway": [
+   "r02",
+   "r03",
+   "r05"
+  ],
+  "text": [
+   "MARINE-GRADE NEOPRENE, FLAG PRINT.",
+   "MAKE AMERICA GREAT AGAIN",
+   "SOLD AS A 2-PACK.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "F3-B",
+  "mp4": "2026-11-09/fenderu/F3-B/F3-B.mp4",
+  "seconds": 11.8,
+  "runway": [
+   "r02",
+   "r03",
+   "r05"
+  ],
+  "text": [
+   "MARINE-GRADE NEOPRENE. AMERICAN FLAG AND MAGA PRINT.",
+   "MAKE AMERICA GREAT AGAIN",
+   "SOLD AS A 2-PACK.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "F4",
+  "mp4": "2026-11-09/fenderu/F4/F4.mp4",
+  "seconds": 12.0,
+  "runway": [],
+  "text": [
+   "AMERICAN-OWNED AND OPERATED.",
+   "THE OWNER ANSWERS HIS OWN EMAIL.",
+   "IF IT DOESN'T FIT, HE'LL TAKE THE RETURN.",
+   "QUESTIONS WELCOME.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "F5-A",
+  "mp4": "2026-11-09/fenderu/F5-A/F5-A.mp4",
+  "seconds": 12.2,
+  "runway": [],
+  "text": [
+   "MAGA FENDER COVERS",
+   "MARINE-GRADE NEOPRENE, SOLD AS A 2-PACK.",
+   "UV PROTECTED, WATERPROOF, SALT-RESISTANT.",
+   "KEEPS DOCK GRIT OFF THE HULL.",
+   "30-DAY RETURNS.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ },
+ {
+  "id": "F5-B",
+  "mp4": "2026-11-09/fenderu/F5-B/F5-B.mp4",
+  "seconds": 12.2,
+  "runway": [],
+  "text": [
+   "BOAT FENDER COVERS, SOLD AS A 2-PACK.",
+   "UV PROTECTED, WATERPROOF, SALT-RESISTANT.",
+   "KEEPS DOCK GRIT OFF THE HULL.",
+   "30-DAY RETURNS.",
+   "$119 for the two-pack, free shipping.",
+   "fenderu.com"
+  ]
+ }
+]
