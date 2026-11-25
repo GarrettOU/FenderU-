@@ -86,12 +86,12 @@ VIDEOS = [
 F2_SHOTS = [
     ("g03", 2.8, (0.58, 0.55, 1.00, 1.07, 0), "HOOK", None),
     ("g04", 2.0, (0.45, 0.40, 1.00, 1.06, 0), "SLIPS ON IN SECONDS, NO TOOLS.", None),
-    ("g04", 2.0, (0.45, 0.30, 1.30, 1.22, 0), "ELASTIC TOP.", None),
+    ("g04", 2.0, (0.45, 0.30, 1.30, 1.22, 0), "SOLD AS A 2-PACK.", None),
     ("g01", 2.0, (0.60, 0.55, 1.06, 1.00, 0), "MARINE-GRADE NEOPRENE.", None),
     ("g02", 2.0, (0.42, 0.55, 1.00, 1.00, 0.10), "UV PROTECTED, WATERPROOF, SALT-RESISTANT.", None),
     ("END", 2.8, None, None, None),
 ]
-F2_LINES = [("slips on in seconds, no tools; elastic top", SRC_FACT),
+F2_LINES = [("slips on in seconds, no tools", SRC_FACT), ("Sold as a 2-pack.", SRC_CAP),
             ("Marine-grade neoprene. / UV protected, waterproof, salt-resistant.", SRC_CAP)]
 F3_SHOTS = [
     ("r02", 2.8, (0.77, 0.68, 1.00, 1.08, 0), "HOOK", None),
@@ -143,8 +143,8 @@ VIDEOS_1111 = [
                 ("g02", 2.0, (0.38, 0.55, 1.00, 1.00, 0.12), "KEEPS DOCK GRIT OFF THE HULL.", None),
                 ("END", 2.8, None, None, None)],
          lines=[("Show your patriotism.", SRC_CAP), ("slips on in seconds, no tools; keeps dock grit off the hull", SRC_FACT)]),
-    dict(id="G3", title="Right down to the fenders (Runway)", caption="reel",
-         hook=("MAKE AMERICA GREAT AGAIN, RIGHT DOWN TO THE FENDERS.", "APPROVED", "P3, " + SRC_LP + "; reel caption"),
+    dict(id="G3", title="Make America Great Again (Runway)", caption="reel",
+         hook=("MAKE AMERICA GREAT AGAIN.", "APPROVED", "reel caption, captions.md (20 Nov: 'right down to the fenders' dropped)"),
          shots=[("r05", 2.8, (0.30, 0.64, 1.00, 1.08, 0), "HOOK", None),
                 ("r02", 2.0, (0.77, 0.70, 1.08, 1.00, 0), "MARINE-GRADE NEOPRENE.", None),
                 ("r03", 2.0, (0.62, 0.74, 1.00, 1.06, 0), "UV PROTECTED, WATERPROOF, SALT-RESISTANT.", None),
@@ -181,7 +181,8 @@ BANNED = [r"the pair", r"\busps\b", r"edge to edge", r"every dock", r"every mari
           r"kansas", r"missouri", r"midwest", r"ships (from|within|in)", r"order by", r"5-star",
           r"★", r"both sides", r"made for american boats", r"shipped by", r"\$99", r"\$118",
           r"#americanmade", r"\bcards\b", r"priority mail", r"ups ground", r"no surprise", r"salt life",
-          r"packed by", r"\b175\b"]
+          r"packed by", r"\b175\b",
+          r"right down to", r"\belastic\b", r"like fabric covers"]
 
 def banned_hits(text):
     return [b for b in BANNED if re.search(b, text, re.I)]
@@ -347,7 +348,7 @@ def onscreen_text(v):
 
 # Caption lines used in PACK.md (verbatim from marketing/captions.md, hashtags trimmed)
 CAPTION_LINES = [
-    "Make America Great Again — right down to the fenders.",
+    "Make America Great Again.",
     "Marine-grade neoprene, flag print. Sold as a 2-pack.",
     "$119 for the two-pack, shipping included.",
     "fenderu.com",

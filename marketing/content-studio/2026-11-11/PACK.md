@@ -28,7 +28,7 @@ Built by `marketing/content-studio/build_studio.py` (`STUDIO_PACK=2026-11-11 pyt
 These are verbatim from `marketing/captions.md`. TikTok and Instagram get 5 hashtags from the approved pool; Facebook gets the bank caption whole.
 
 **Reel caption**
-> Make America Great Again — right down to the fenders.
+> Make America Great Again.
 > Marine-grade neoprene, flag print. Sold as a 2-pack.
 > $119 for the two-pack, shipping included.
 > fenderu.com
@@ -57,7 +57,7 @@ These are verbatim from `marketing/captions.md`. TikTok and Instagram get 5 hash
 |---|---|---|---|---|---|---|---|
 | **G1** | `fenderu/G1/G1.mp4` | THEY HAVEN'T SEEN THESE YET. | **APPROVED** (P1, 6 Nov) | MARINE-GRADE NEOPRENE, FLAG PRINT. / SOLD AS A 2-PACK. / FITS STANDARD 8.5" x 26" CYLINDRICAL FENDERS. (captions.md) | Reel | Ain't Seen Nothin' Yet | g03, g04, g01, g02 (real) |
 | **G2** | `fenderu/G2/G2.mp4` | BARE FENDERS ARE A WASTED OPPORTUNITY. | **APPROVED** (P2, 6 Nov) | SHOW YOUR PATRIOTISM. (captions.md) / SLIPS ON IN SECONDS, NO TOOLS. / KEEPS DOCK GRIT OFF THE HULL. (approved facts) | Photo | Life Is a Highway | g01, g03, g04, g02 (real) |
-| **G3** | `fenderu/G3/G3.mp4` | MAKE AMERICA GREAT AGAIN, RIGHT DOWN TO THE FENDERS. | **APPROVED** (P3, 6 Nov; reel caption) | MARINE-GRADE NEOPRENE. / UV PROTECTED, WATERPROOF, SALT-RESISTANT. / SOLD AS A 2-PACK. (captions.md) | Reel | Calling Me from Miami | Runway 05, 02, 03 + g03. **AI label on** |
+| **G3** | `fenderu/G3/G3.mp4` | MAKE AMERICA GREAT AGAIN. | **APPROVED** (captions.md reel line; rebuilt 25 Nov after the 20 Nov ban on "right down to the fenders") | MARINE-GRADE NEOPRENE. / UV PROTECTED, WATERPROOF, SALT-RESISTANT. / SOLD AS A 2-PACK. (captions.md) | Reel | Calling Me from Miami | Runway 05, 02, 03 + g03. **AI label on** |
 | **G4** | `fenderu/G4/G4.mp4` | PLAIN WHITE FENDERS ON A MAGA BOAT? | **APPROVED** (P5, 6 Nov) | MAGA FENDER COVERS / MARINE-GRADE NEOPRENE, SOLD AS A 2-PACK. / FITS STANDARD 8.5" x 26" CYLINDRICAL FENDERS. (captions.md) / SLIPS ON IN SECONDS, NO TOOLS. (approved facts) | Group | Lose Yourself (instrumental) | g02, g04, g01, g03 (real) |
 | **G5** | `fenderu/G5/G5.mp4` | BOAT DADS ARE HARD TO BUY FOR. | **APPROVED** (P6, 6 Nov) | MAGA FENDER COVERS / MARINE-GRADE NEOPRENE, SOLD AS A 2-PACK. / QUESTIONS WELCOME. (captions.md) / IF IT DOESN'T FIT, HE'LL TAKE THE RETURN. (approved facts) | Photo | It Ain't Me | g01, g04, g03, g02 (real) |
 

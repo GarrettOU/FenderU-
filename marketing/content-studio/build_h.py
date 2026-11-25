@@ -42,7 +42,7 @@ VIDEOS = [
         ("END", 2.8, None, None, None)]),
     dict(id="H4", title="Lake dock at sunset", caption="reel", shots=[
         ("g03", 2.8, (0.55, 0.62, 1.20, 1.28, 0), "HOOK", None),
-        ("CLIP", 3.2, ("17833560", 3.0), "MAKE AMERICA GREAT AGAIN, RIGHT DOWN TO THE FENDERS.", None),
+        ("CLIP", 3.2, ("17833560", 3.0), "MAKE AMERICA GREAT AGAIN.", None),
         ("g01", 2.2, (0.60, 0.55, 1.06, 1.00, 0), "MARINE-GRADE NEOPRENE, FLAG PRINT.", None),
         ("END", 2.8, None, None, None)]),
     dict(id="H5", title="Boat across the lake (drone)", caption="group", shots=[

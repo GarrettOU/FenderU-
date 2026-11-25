@@ -22,13 +22,13 @@ Garrett, 19 Nov: "get tik tok going more often with new posts. create new reels 
 | H1 | Pontoon at a lake dock (Richard L, Pexels 32236223) | SHOW YOUR PATRIOTISM. | FITS STANDARD 8.5" x 26" CYLINDRICAL FENDERS. | Reel |
 | H2 | Red runabout on a lake (iPhone Snaps, Pexels 33409724) | MAKE AMERICA GREAT AGAIN | SOLD AS A 2-PACK. | Reel |
 | H3 | Cruiser in a marina slip (Teju, Pexels 37216200) | BARE FENDERS ARE A WASTED OPPORTUNITY. | SLIPS ON IN SECONDS, NO TOOLS. | Photo |
-| H4 | Lake dock at sunset (Melody Manzano, Pexels 17833560) | MAKE AMERICA GREAT AGAIN, RIGHT DOWN TO THE FENDERS. | MARINE-GRADE NEOPRENE, FLAG PRINT. | Reel |
+| H4 | Lake dock at sunset (Melody Manzano, Pexels 17833560) | MAKE AMERICA GREAT AGAIN. (rebuilt 25 Nov; the old line is banned) | MARINE-GRADE NEOPRENE, FLAG PRINT. | Reel |
 | H5 | Boat across a lake, drone (Jaxon Matthew Willis, Pexels 12533599) | AMERICAN-OWNED AND OPERATED. | UV PROTECTED, WATERPROOF, SALT-RESISTANT. | Group |
 | H6 | Yachts at a marina (Mihaela Claudia Puscas, Pexels 39796220) | MAGA FENDER COVERS / MARINE-GRADE NEOPRENE, SOLD AS A 2-PACK. | FITS STANDARD 8.5" x 26" CYLINDRICAL FENDERS. | Group |
 
 ## TikTok caption (all six; from the reel caption, hashtags trimmed)
 
-> Make America Great Again — right down to the fenders.
+> Make America Great Again.
 > $119 for the two-pack, shipping included.
 > fenderu.com
 > #maga #boatlife #boating #americafirst #patriot
