@@ -19,6 +19,21 @@ const WIRE_CHECKOUT = __WIRE_CHECKOUT__;
 
 const JSON_HEADERS = { "Content-Type": "application/json" };
 const PRICE_CENTS = 11900; // $119 per 2-pack, free shipping
+// Cyber Monday (Garrett, 25 Nov 2026: "$89 ... for cyber Monday only").
+// Mon 30 Nov 2026, midnight to midnight Central. Outside this window every
+// price is $119 again on its own; nothing needs switching back.
+const SALE_START = Date.parse("2026-11-30T06:00:00Z");
+const SALE_END = Date.parse("2026-12-01T06:00:00Z");
+const SALE_CENTS = 8900;
+export function saleOn(now = Date.now()) { return now >= SALE_START && now < SALE_END; }
+export function priceCents(now = Date.now()) { return saleOn(now) ? SALE_CENTS : PRICE_CENTS; }
+export function applySalePrice(html) {
+  return html
+    .replace(/"price":"119\.00"/g, '"price":"89.00"')
+    .replace(/var PRICE(\s*)=\s*119;/g, (m, sp) => `var PRICE${sp}= 89;`)
+    .replace(/\$119\.00/g, "$89.00")
+    .replace(/\$119\b/g, "$89");
+}
 const PRODUCT_NAME = "FenderU MAGA Fender Cover 2-Pack";
 const CARRIER = "UPS";
 const PAYPAL_RECEIVER = "garrettfrench1979@gmail.com";
@@ -138,6 +153,9 @@ export default {
     const headers = new Headers(raw.headers);
     headers.delete("content-length");
     let html = scrubCopy(await raw.text());
+    if (saleOn()) html = applySalePrice(html);
+    // Pages are never cached, so the Cyber Monday price comes and goes on time.
+    headers.set("Cache-Control", "no-cache");
     // PayPal Standard takes the merchant ID in place of the account email, so
     // the page source doesn't carry Garrett's address.
     if (env.PAYPAL_MERCHANT_ID) html = html.split("business=garrettfrench1979%40gmail.com").join("business=" + encodeURIComponent(env.PAYPAL_MERCHANT_ID));
@@ -299,7 +317,7 @@ async function cardCheckout(request, env, url) {
     const params = {
       mode: "payment",
       "line_items[0][price_data][currency]": "usd",
-      "line_items[0][price_data][unit_amount]": String(PRICE_CENTS),
+      "line_items[0][price_data][unit_amount]": String(priceCents()),
       "line_items[0][price_data][product_data][name]": PRODUCT_NAME,
       "line_items[0][quantity]": String(qty),
       customer_email: f.email,
@@ -435,7 +453,8 @@ async function paypalCreateOrder(request, env) {
     const qty = quantity(d.qty);
     const f = shipTo(d);
     if (!f) return json({ error: "missing shipping details" }, 400);
-    const total = ((PRICE_CENTS * qty) / 100).toFixed(2);
+    const unit = priceCents();
+    const total = ((unit * qty) / 100).toFixed(2);
     const meta = { n: f.name, e: f.email, p: f.phone, q: qty };
     const order = await paypalApi(env, "POST", "/v2/checkout/orders", {
       intent: "CAPTURE",
@@ -446,7 +465,7 @@ async function paypalCreateOrder(request, env) {
           currency_code: "USD", value: total,
           breakdown: { item_total: { currency_code: "USD", value: total } }
         },
-        items: [{ name: PRODUCT_NAME, quantity: String(qty), unit_amount: { currency_code: "USD", value: (PRICE_CENTS / 100).toFixed(2) } }],
+        items: [{ name: PRODUCT_NAME, quantity: String(qty), unit_amount: { currency_code: "USD", value: (unit / 100).toFixed(2) } }],
         shipping: {
           name: { full_name: f.name },
           address: {
