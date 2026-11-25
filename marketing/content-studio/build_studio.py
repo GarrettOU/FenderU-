@@ -86,12 +86,12 @@ VIDEOS = [
 F2_SHOTS = [
     ("g03", 2.8, (0.58, 0.55, 1.00, 1.07, 0), "HOOK", None),
     ("g04", 2.0, (0.45, 0.40, 1.00, 1.06, 0), "SLIPS ON IN SECONDS, NO TOOLS.", None),
-    ("g04", 2.0, (0.45, 0.30, 1.30, 1.22, 0), "ELASTIC TOP.", None),
+    ("g04", 2.0, (0.45, 0.30, 1.30, 1.22, 0), "SOLD AS A 2-PACK.", None),
     ("g01", 2.0, (0.60, 0.55, 1.06, 1.00, 0), "MARINE-GRADE NEOPRENE.", None),
     ("g02", 2.0, (0.42, 0.55, 1.00, 1.00, 0.10), "UV PROTECTED, WATERPROOF, SALT-RESISTANT.", None),
     ("END", 2.8, None, None, None),
 ]
-F2_LINES = [("slips on in seconds, no tools; elastic top", SRC_FACT),
+F2_LINES = [("slips on in seconds, no tools", SRC_FACT), ("Sold as a 2-pack.", SRC_CAP),
             ("Marine-grade neoprene. / UV protected, waterproof, salt-resistant.", SRC_CAP)]
 F3_SHOTS = [
     ("r02", 2.8, (0.77, 0.68, 1.00, 1.08, 0), "HOOK", None),
@@ -121,6 +121,58 @@ for v in VIDEOS:
     if v["id"] == "F5-A":
         v["hook_sub"] = "MARINE-GRADE NEOPRENE, SOLD AS A 2-PACK."
 
+# ---- pack of 11 Nov 2026: hooks P1, P2, P3, P5, P6 from launch-plan.md ------
+# Approved by Garrett 6 Nov ("Approve the post.", HQ.md section 3); P5 and P6
+# confirmed approved by SI Claude Head on 9 Nov.
+SRC_LP = "launch-plan.md section 3; approved 6 Nov (HQ.md section 3)"
+FIT = 'FITS STANDARD 8.5" x 26" CYLINDRICAL FENDERS.'
+VIDEOS_1111 = [
+    dict(id="G1", title="They haven't seen these", caption="reel",
+         hook=("THEY HAVEN'T SEEN THESE YET.", "APPROVED", "P1, " + SRC_LP),
+         shots=[("g03", 2.8, (0.62, 0.50, 1.04, 1.12, 0), "HOOK", None),
+                ("g04", 2.0, (0.45, 0.50, 1.10, 1.02, 0), "MARINE-GRADE NEOPRENE, FLAG PRINT.", None),
+                ("g01", 2.0, (0.58, 0.55, 1.00, 1.00, -0.08), "SOLD AS A 2-PACK.", None),
+                ("g02", 2.0, (0.50, 0.55, 1.08, 1.02, 0), FIT, None),
+                ("END", 2.8, None, None, None)],
+         lines=[("Marine-grade neoprene, flag print. / Sold as a 2-pack. / " + FIT, SRC_CAP)]),
+    dict(id="G2", title="Bare fenders", caption="photo",
+         hook=("BARE FENDERS ARE A WASTED OPPORTUNITY.", "APPROVED", "P2, " + SRC_LP + "; Facebook rotation item 8"),
+         shots=[("g01", 2.8, (0.60, 0.52, 1.00, 1.08, 0), "HOOK", None),
+                ("g03", 2.0, (0.55, 0.60, 1.18, 1.10, 0), "SHOW YOUR PATRIOTISM.", None),
+                ("g04", 2.0, (0.45, 0.35, 1.00, 1.07, 0), "SLIPS ON IN SECONDS, NO TOOLS.", None),
+                ("g02", 2.0, (0.38, 0.55, 1.00, 1.00, 0.12), "KEEPS DOCK GRIT OFF THE HULL.", None),
+                ("END", 2.8, None, None, None)],
+         lines=[("Show your patriotism.", SRC_CAP), ("slips on in seconds, no tools; keeps dock grit off the hull", SRC_FACT)]),
+    dict(id="G3", title="Make America Great Again (Runway)", caption="reel",
+         hook=("MAKE AMERICA GREAT AGAIN.", "APPROVED", "reel caption, captions.md (20 Nov: 'right down to the fenders' dropped)"),
+         shots=[("r05", 2.8, (0.30, 0.64, 1.00, 1.08, 0), "HOOK", None),
+                ("r02", 2.0, (0.77, 0.70, 1.08, 1.00, 0), "MARINE-GRADE NEOPRENE.", None),
+                ("r03", 2.0, (0.62, 0.74, 1.00, 1.06, 0), "UV PROTECTED, WATERPROOF, SALT-RESISTANT.", None),
+                ("g03", 2.0, (0.58, 0.55, 1.06, 1.00, 0), "SOLD AS A 2-PACK.", None),
+                ("END", 2.8, None, None, None)],
+         lines=[("Marine-grade neoprene. / UV protected, waterproof, salt-resistant. / Sold as a 2-pack.", SRC_CAP)]),
+    dict(id="G4", title="Plain white fenders", caption="group",
+         hook=("PLAIN WHITE FENDERS ON A MAGA BOAT?", "APPROVED", "P5, " + SRC_LP + "; confirmed by SI Claude Head 9 Nov"),
+         shots=[("g02", 2.8, (0.45, 0.55, 1.00, 1.06, 0), "HOOK", None),
+                ("g04", 2.0, (0.45, 0.45, 1.00, 1.06, 0), "MAGA FENDER COVERS", "MARINE-GRADE NEOPRENE, SOLD AS A 2-PACK."),
+                ("g01", 2.0, (0.62, 0.55, 1.06, 1.00, 0), FIT, None),
+                ("g03", 2.0, (0.58, 0.58, 1.00, 1.06, 0), "SLIPS ON IN SECONDS, NO TOOLS.", None),
+                ("END", 2.8, None, None, None)],
+         lines=[("MAGA fender covers — marine-grade neoprene, sold as a 2-pack. / " + FIT, SRC_CAP), ("slips on in seconds, no tools", SRC_FACT)]),
+    dict(id="G5", title="Boat dads", caption="photo",
+         hook=("BOAT DADS ARE HARD TO BUY FOR.", "APPROVED", "P6, " + SRC_LP + "; confirmed by SI Claude Head 9 Nov"),
+         shots=[("g01", 2.8, (0.58, 0.52, 1.00, 1.07, 0), "HOOK", None),
+                ("g04", 2.0, (0.45, 0.42, 1.05, 1.00, 0), "MAGA FENDER COVERS", "MARINE-GRADE NEOPRENE, SOLD AS A 2-PACK."),
+                ("g03", 2.0, (0.58, 0.55, 1.00, 1.06, 0), "IF IT DOESN'T FIT, HE'LL TAKE THE RETURN.", None),
+                ("g02", 2.0, (0.42, 0.55, 1.00, 1.00, 0.10), "QUESTIONS WELCOME.", None),
+                ("END", 2.8, None, None, None)],
+         lines=[("MAGA fender covers — marine-grade neoprene, sold as a 2-pack. / Questions welcome.", SRC_CAP), ("if it doesn't fit, he'll take the return", SRC_FACT)]),
+]
+PACK = os.environ.get("STUDIO_PACK", "2026-11-09")
+if PACK == "2026-11-11":
+    VIDEOS = VIDEOS_1111
+    OUT = os.path.join(HERE, "2026-11-11", "fenderu")
+
 # ---- banned list (HQ.md section 3 wins over the skill) ------------------------
 BANNED = [r"the pair", r"\busps\b", r"edge to edge", r"every dock", r"every marina", r"every parade",
           r"matched pair", r"port and starboard", r"\bfly\b", r"flying", r"flies", r"american-made",
@@ -129,7 +181,8 @@ BANNED = [r"the pair", r"\busps\b", r"edge to edge", r"every dock", r"every mari
           r"kansas", r"missouri", r"midwest", r"ships (from|within|in)", r"order by", r"5-star",
           r"★", r"both sides", r"made for american boats", r"shipped by", r"\$99", r"\$118",
           r"#americanmade", r"\bcards\b", r"priority mail", r"ups ground", r"no surprise", r"salt life",
-          r"packed by", r"\b175\b"]
+          r"packed by", r"\b175\b",
+          r"right down to", r"\belastic\b", r"like fabric covers"]
 
 def banned_hits(text):
     return [b for b in BANNED if re.search(b, text, re.I)]
@@ -295,7 +348,7 @@ def onscreen_text(v):
 
 # Caption lines used in PACK.md (verbatim from marketing/captions.md, hashtags trimmed)
 CAPTION_LINES = [
-    "Make America Great Again — right down to the fenders.",
+    "Make America Great Again.",
     "Marine-grade neoprene, flag print. Sold as a 2-pack.",
     "$119 for the two-pack, shipping included.",
     "fenderu.com",

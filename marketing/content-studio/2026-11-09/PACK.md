@@ -21,7 +21,7 @@ Built by `marketing/content-studio/build_studio.py` (rerun: `python3 build_studi
 ## Captions (verbatim from `marketing/captions.md`; only the hashtag line is trimmed to 5 from the approved pool)
 
 **Reel caption.** TikTok and IG get it with 5 tags; the Facebook Reel gets the bank caption whole.
-> Make America Great Again — right down to the fenders.
+> Make America Great Again.
 > Marine-grade neoprene, flag print. Sold as a 2-pack.
 > $119 for the two-pack, shipping included.
 > fenderu.com
@@ -49,8 +49,8 @@ Built by `marketing/content-studio/build_studio.py` (rerun: `python3 build_studi
 | Video | File | Hook on screen (first 2.8 s) | Hook status | Rest of the on-screen text (source) | Caption | Length | Photos used |
 |---|---|---|---|---|---|---|---|
 | **F1** Fit guide | `fenderu/F1/F1.mp4` | FITS STANDARD 8.5" x 26" CYLINDRICAL FENDERS. | **APPROVED** (captions.md, photo post) | TAYLOR MADE / BASS PRO SHOPS / DOCK EDGE / SEACHOICE / EXTREME MAX BOATTECTOR, each with "STANDARD 8.5" x 26" CYLINDRICAL FENDERS" (standing rules, approved facts). SOLD AS A 2-PACK. (captions.md) | Photo | 16.1 s | g03, g04, g01, g02 (real) |
-| **F2-A** Slips on | `fenderu/F2-A/F2-A.mp4` | SHOW YOUR PATRIOTISM. | **APPROVED** (9 Oct, captions.md) | SLIPS ON IN SECONDS, NO TOOLS. / ELASTIC TOP. (approved facts). MARINE-GRADE NEOPRENE. / UV PROTECTED, WATERPROOF, SALT-RESISTANT. (captions.md) | Photo | 13.6 s | g03, g04, g01, g02 (real) |
-| **F2-B** Slips on | `fenderu/F2-B/F2-B.mp4` | SLIPS ON IN SECONDS. NO TOOLS. | **DRAFT**. Built from an approved fact, but not yet approved as a hook | KEEPS DOCK GRIT OFF THE HULL. / ELASTIC TOP. (approved facts). MARINE-GRADE NEOPRENE. / UV PROTECTED, WATERPROOF, SALT-RESISTANT. (captions.md) | Photo | 13.6 s | g03, g04, g01, g02 (real) |
+| **F2-A** Slips on | `fenderu/F2-A/F2-A.mp4` | SHOW YOUR PATRIOTISM. | **APPROVED** (9 Oct, captions.md) | SLIPS ON IN SECONDS, NO TOOLS. (approved fact) / SOLD AS A 2-PACK. (rebuilt 25 Nov; 'elastic top' was wrong, the cover has drawstrings). MARINE-GRADE NEOPRENE. / UV PROTECTED, WATERPROOF, SALT-RESISTANT. (captions.md) | Photo | 13.6 s | g03, g04, g01, g02 (real) |
+| **F2-B** Slips on | `fenderu/F2-B/F2-B.mp4` | SLIPS ON IN SECONDS. NO TOOLS. | **DRAFT**. Built from an approved fact, but not yet approved as a hook | KEEPS DOCK GRIT OFF THE HULL. (approved fact) / SOLD AS A 2-PACK. (rebuilt 25 Nov; 'elastic top' was wrong). MARINE-GRADE NEOPRENE. / UV PROTECTED, WATERPROOF, SALT-RESISTANT. (captions.md) | Photo | 13.6 s | g03, g04, g01, g02 (real) |
 | **F3-A** POV push-in | `fenderu/F3-A/F3-A.mp4` | MARINE-GRADE NEOPRENE, FLAG PRINT. | **APPROVED** (captions.md, reel) | MAKE AMERICA GREAT AGAIN (9 Oct). SOLD AS A 2-PACK. (captions.md) | Reel | 11.8 s | Runway 02, 03, 05 (clean 2200) + g03. **AI label on** |
 | **F3-B** POV push-in | `fenderu/F3-B/F3-B.mp4` | MARINE-GRADE NEOPRENE. AMERICAN FLAG AND MAGA PRINT. | **DRAFT**. Research line with "edge to edge" removed | same as F3-A | Reel | 11.8 s | same as F3-A. **AI label on** |
 | **F4** Who you're buying from | `fenderu/F4/F4.mp4` | AMERICAN-OWNED AND OPERATED. | **APPROVED** (captions.md, group post) | THE OWNER ANSWERS HIS OWN EMAIL. / IF IT DOESN'T FIT, HE'LL TAKE THE RETURN. (approved facts). QUESTIONS WELCOME. (captions.md) | Group | 12.0 s | g01, g04, g03, g02 (real) |
