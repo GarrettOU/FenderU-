@@ -28,6 +28,14 @@ Future runs: read this first, then `fenderu-standing-rules`, HQ.md §3, `marketi
 
 - **20 Nov 2026: H1 posted to the FenderU Facebook Page** on Garrett's "post H1". Page check passed: the connection lists one Page, FenderU 1235020856358701. Make 6138548 used UploadVideo with the bank reel caption whole, execution 9a2e4834af224b6e9f46ab77c39f6a3f, SUCCESS. The slot was borrowed from 6229425 and given back; 6138548 was restored to its R1 blueprint for the Saturday task and left inactive. TikTok: H1.mp4 was sent to Garrett for a phone post, because vidIQ still has no connected accounts.
 
+- **25 Nov run (sweep):** Garrett's 20 Nov "Stop saying right down to your fenders." and the drawstring correction ("elastic top" is wrong) are applied to all Studio work.
+  - Rebuilt under the same names: G3 (hook now "MAKE AMERICA GREAT AGAIN."), H4 (boat line now "MAKE AMERICA GREAT AGAIN."), F2-A and F2-B ("ELASTIC TOP." replaced by "SOLD AS A 2-PACK.").
+  - Every PACK.md caption now uses the bank's new reel line, "Make America Great Again."
+  - The banned list now includes "right down to", "elastic" and "like fabric covers".
+  - Still live with the old phrase in the caption: the Facebook posts of G1 (13 Nov) and H1 (20 Nov, posted about 7 hours before the ban). Editing or removing a live post needs Garrett's word ("fix captions").
+  - TikTok: H1 is not on @fenderullc yet (4 videos, newest is G1 at 459 views, 18 likes, 3 comments). vidIQ still has no connected accounts.
+  - Cyber Monday (30 Nov) the site shows $89 all day. Studio end cards say $119, so nothing from the Studio goes up on 30 Nov.
+
 ## Performance checks
 
 - 11 Nov run: nothing from the Studio has posted, so there is nothing of ours to measure.
